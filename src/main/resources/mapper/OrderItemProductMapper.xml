@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yijiupi.dao.OrderItemProductMapper" >
+  <resultMap id="BaseResultMap" type="com.yijiupi.entity.OrderItemProduct" >
+    <id column="Id" property="id" jdbcType="BIGINT" />
+    <result column="OrderId" property="orderid" jdbcType="BIGINT" />
+    <result column="ProductId" property="productid" jdbcType="BIGINT" />
+    <result column="ProductVersion" property="productversion" jdbcType="VARCHAR" />
+    <result column="ProductSaleSpec_Id" property="productsalespecId" jdbcType="BIGINT" />
+    <result column="ProductName" property="productname" jdbcType="VARCHAR" />
+    <result column="ProductSaleSpec" property="productsalespec" jdbcType="VARCHAR" />
+    <result column="SaleSpecQuantity" property="salespecquantity" jdbcType="INTEGER" />
+    <result column="SellUnit" property="sellunit" jdbcType="VARCHAR" />
+    <result column="ProductSpec" property="productspec" jdbcType="VARCHAR" />
+    <result column="SpecQuantity" property="specquantity" jdbcType="INTEGER" />
+    <result column="PackageName" property="packagename" jdbcType="VARCHAR" />
+    <result column="UnitName" property="unitname" jdbcType="VARCHAR" />
+    <result column="SaleMode" property="salemode" jdbcType="TINYINT" />
+    <result column="IsUseBonus" property="isusebonus" jdbcType="BIT" />
+    <result column="IsUseCoupon" property="isusecoupon" jdbcType="BIT" />
+    <result column="IsCumulative" property="iscumulative" jdbcType="BIT" />
+    <result column="isAdditionalPurchase" property="isadditionalpurchase" jdbcType="BIT" />
+    <result column="SupplierId" property="supplierid" jdbcType="INTEGER" />
+    <result column="IsRegionPurchaseProduct" property="isregionpurchaseproduct" jdbcType="BIT" />
+    <result column="OldProductID" property="oldproductid" jdbcType="BIGINT" />
+    <result column="productBusinessClass" property="productbusinessclass" jdbcType="TINYINT" />
+    <result column="isInOrderGive" property="isinordergive" jdbcType="BIT" />
+    <result column="IsHiddenProduct" property="ishiddenproduct" jdbcType="BIT" />
+    <result column="LastModifyTime" property="lastmodifytime" jdbcType="TIMESTAMP" />
+    <result column="productInfoId" property="productinfoid" jdbcType="INTEGER" />
+    <result column="productSpecId" property="productspecid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, OrderId, ProductId, ProductVersion, ProductSaleSpec_Id, ProductName, ProductSaleSpec, 
+    SaleSpecQuantity, SellUnit, ProductSpec, SpecQuantity, PackageName, UnitName, SaleMode, 
+    IsUseBonus, IsUseCoupon, IsCumulative, isAdditionalPurchase, SupplierId, IsRegionPurchaseProduct, 
+    OldProductID, productBusinessClass, isInOrderGive, IsHiddenProduct, LastModifyTime, 
+    productInfoId, productSpecId
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from orderitemproduct
+    where Id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from orderitemproduct
+    where Id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.yijiupi.entity.OrderItemProduct" >
+    insert into orderitemproduct (Id, OrderId, ProductId, 
+      ProductVersion, ProductSaleSpec_Id, ProductName, 
+      ProductSaleSpec, SaleSpecQuantity, SellUnit, 
+      ProductSpec, SpecQuantity, PackageName, 
+      UnitName, SaleMode, IsUseBonus, 
+      IsUseCoupon, IsCumulative, isAdditionalPurchase, 
+      SupplierId, IsRegionPurchaseProduct, OldProductID, 
+      productBusinessClass, isInOrderGive, IsHiddenProduct, 
+      LastModifyTime, productInfoId, productSpecId
+      )
+    values (#{id,jdbcType=BIGINT}, #{orderid,jdbcType=BIGINT}, #{productid,jdbcType=BIGINT}, 
+      #{productversion,jdbcType=VARCHAR}, #{productsalespecId,jdbcType=BIGINT}, #{productname,jdbcType=VARCHAR}, 
+      #{productsalespec,jdbcType=VARCHAR}, #{salespecquantity,jdbcType=INTEGER}, #{sellunit,jdbcType=VARCHAR}, 
+      #{productspec,jdbcType=VARCHAR}, #{specquantity,jdbcType=INTEGER}, #{packagename,jdbcType=VARCHAR}, 
+      #{unitname,jdbcType=VARCHAR}, #{salemode,jdbcType=TINYINT}, #{isusebonus,jdbcType=BIT}, 
+      #{isusecoupon,jdbcType=BIT}, #{iscumulative,jdbcType=BIT}, #{isadditionalpurchase,jdbcType=BIT}, 
+      #{supplierid,jdbcType=INTEGER}, #{isregionpurchaseproduct,jdbcType=BIT}, #{oldproductid,jdbcType=BIGINT}, 
+      #{productbusinessclass,jdbcType=TINYINT}, #{isinordergive,jdbcType=BIT}, #{ishiddenproduct,jdbcType=BIT}, 
+      #{lastmodifytime,jdbcType=TIMESTAMP}, #{productinfoid,jdbcType=INTEGER}, #{productspecid,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yijiupi.entity.OrderItemProduct" >
+    insert into orderitemproduct
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        Id,
+      </if>
+      <if test="orderid != null" >
+        OrderId,
+      </if>
+      <if test="productid != null" >
+        ProductId,
+      </if>
+      <if test="productversion != null" >
+        ProductVersion,
+      </if>
+      <if test="productsalespecId != null" >
+        ProductSaleSpec_Id,
+      </if>
+      <if test="productname != null" >
+        ProductName,
+      </if>
+      <if test="productsalespec != null" >
+        ProductSaleSpec,
+      </if>
+      <if test="salespecquantity != null" >
+        SaleSpecQuantity,
+      </if>
+      <if test="sellunit != null" >
+        SellUnit,
+      </if>
+      <if test="productspec != null" >
+        ProductSpec,
+      </if>
+      <if test="specquantity != null" >
+        SpecQuantity,
+      </if>
+      <if test="packagename != null" >
+        PackageName,
+      </if>
+      <if test="unitname != null" >
+        UnitName,
+      </if>
+      <if test="salemode != null" >
+        SaleMode,
+      </if>
+      <if test="isusebonus != null" >
+        IsUseBonus,
+      </if>
+      <if test="isusecoupon != null" >
+        IsUseCoupon,
+      </if>
+      <if test="iscumulative != null" >
+        IsCumulative,
+      </if>
+      <if test="isadditionalpurchase != null" >
+        isAdditionalPurchase,
+      </if>
+      <if test="supplierid != null" >
+        SupplierId,
+      </if>
+      <if test="isregionpurchaseproduct != null" >
+        IsRegionPurchaseProduct,
+      </if>
+      <if test="oldproductid != null" >
+        OldProductID,
+      </if>
+      <if test="productbusinessclass != null" >
+        productBusinessClass,
+      </if>
+      <if test="isinordergive != null" >
+        isInOrderGive,
+      </if>
+      <if test="ishiddenproduct != null" >
+        IsHiddenProduct,
+      </if>
+      <if test="lastmodifytime != null" >
+        LastModifyTime,
+      </if>
+      <if test="productinfoid != null" >
+        productInfoId,
+      </if>
+      <if test="productspecid != null" >
+        productSpecId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="orderid != null" >
+        #{orderid,jdbcType=BIGINT},
+      </if>
+      <if test="productid != null" >
+        #{productid,jdbcType=BIGINT},
+      </if>
+      <if test="productversion != null" >
+        #{productversion,jdbcType=VARCHAR},
+      </if>
+      <if test="productsalespecId != null" >
+        #{productsalespecId,jdbcType=BIGINT},
+      </if>
+      <if test="productname != null" >
+        #{productname,jdbcType=VARCHAR},
+      </if>
+      <if test="productsalespec != null" >
+        #{productsalespec,jdbcType=VARCHAR},
+      </if>
+      <if test="salespecquantity != null" >
+        #{salespecquantity,jdbcType=INTEGER},
+      </if>
+      <if test="sellunit != null" >
+        #{sellunit,jdbcType=VARCHAR},
+      </if>
+      <if test="productspec != null" >
+        #{productspec,jdbcType=VARCHAR},
+      </if>
+      <if test="specquantity != null" >
+        #{specquantity,jdbcType=INTEGER},
+      </if>
+      <if test="packagename != null" >
+        #{packagename,jdbcType=VARCHAR},
+      </if>
+      <if test="unitname != null" >
+        #{unitname,jdbcType=VARCHAR},
+      </if>
+      <if test="salemode != null" >
+        #{salemode,jdbcType=TINYINT},
+      </if>
+      <if test="isusebonus != null" >
+        #{isusebonus,jdbcType=BIT},
+      </if>
+      <if test="isusecoupon != null" >
+        #{isusecoupon,jdbcType=BIT},
+      </if>
+      <if test="iscumulative != null" >
+        #{iscumulative,jdbcType=BIT},
+      </if>
+      <if test="isadditionalpurchase != null" >
+        #{isadditionalpurchase,jdbcType=BIT},
+      </if>
+      <if test="supplierid != null" >
+        #{supplierid,jdbcType=INTEGER},
+      </if>
+      <if test="isregionpurchaseproduct != null" >
+        #{isregionpurchaseproduct,jdbcType=BIT},
+      </if>
+      <if test="oldproductid != null" >
+        #{oldproductid,jdbcType=BIGINT},
+      </if>
+      <if test="productbusinessclass != null" >
+        #{productbusinessclass,jdbcType=TINYINT},
+      </if>
+      <if test="isinordergive != null" >
+        #{isinordergive,jdbcType=BIT},
+      </if>
+      <if test="ishiddenproduct != null" >
+        #{ishiddenproduct,jdbcType=BIT},
+      </if>
+      <if test="lastmodifytime != null" >
+        #{lastmodifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="productinfoid != null" >
+        #{productinfoid,jdbcType=INTEGER},
+      </if>
+      <if test="productspecid != null" >
+        #{productspecid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yijiupi.entity.OrderItemProduct" >
+    update orderitemproduct
+    <set >
+      <if test="orderid != null" >
+        OrderId = #{orderid,jdbcType=BIGINT},
+      </if>
+      <if test="productid != null" >
+        ProductId = #{productid,jdbcType=BIGINT},
+      </if>
+      <if test="productversion != null" >
+        ProductVersion = #{productversion,jdbcType=VARCHAR},
+      </if>
+      <if test="productsalespecId != null" >
+        ProductSaleSpec_Id = #{productsalespecId,jdbcType=BIGINT},
+      </if>
+      <if test="productname != null" >
+        ProductName = #{productname,jdbcType=VARCHAR},
+      </if>
+      <if test="productsalespec != null" >
+        ProductSaleSpec = #{productsalespec,jdbcType=VARCHAR},
+      </if>
+      <if test="salespecquantity != null" >
+        SaleSpecQuantity = #{salespecquantity,jdbcType=INTEGER},
+      </if>
+      <if test="sellunit != null" >
+        SellUnit = #{sellunit,jdbcType=VARCHAR},
+      </if>
+      <if test="productspec != null" >
+        ProductSpec = #{productspec,jdbcType=VARCHAR},
+      </if>
+      <if test="specquantity != null" >
+        SpecQuantity = #{specquantity,jdbcType=INTEGER},
+      </if>
+      <if test="packagename != null" >
+        PackageName = #{packagename,jdbcType=VARCHAR},
+      </if>
+      <if test="unitname != null" >
+        UnitName = #{unitname,jdbcType=VARCHAR},
+      </if>
+      <if test="salemode != null" >
+        SaleMode = #{salemode,jdbcType=TINYINT},
+      </if>
+      <if test="isusebonus != null" >
+        IsUseBonus = #{isusebonus,jdbcType=BIT},
+      </if>
+      <if test="isusecoupon != null" >
+        IsUseCoupon = #{isusecoupon,jdbcType=BIT},
+      </if>
+      <if test="iscumulative != null" >
+        IsCumulative = #{iscumulative,jdbcType=BIT},
+      </if>
+      <if test="isadditionalpurchase != null" >
+        isAdditionalPurchase = #{isadditionalpurchase,jdbcType=BIT},
+      </if>
+      <if test="supplierid != null" >
+        SupplierId = #{supplierid,jdbcType=INTEGER},
+      </if>
+      <if test="isregionpurchaseproduct != null" >
+        IsRegionPurchaseProduct = #{isregionpurchaseproduct,jdbcType=BIT},
+      </if>
+      <if test="oldproductid != null" >
+        OldProductID = #{oldproductid,jdbcType=BIGINT},
+      </if>
+      <if test="productbusinessclass != null" >
+        productBusinessClass = #{productbusinessclass,jdbcType=TINYINT},
+      </if>
+      <if test="isinordergive != null" >
+        isInOrderGive = #{isinordergive,jdbcType=BIT},
+      </if>
+      <if test="ishiddenproduct != null" >
+        IsHiddenProduct = #{ishiddenproduct,jdbcType=BIT},
+      </if>
+      <if test="lastmodifytime != null" >
+        LastModifyTime = #{lastmodifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="productinfoid != null" >
+        productInfoId = #{productinfoid,jdbcType=INTEGER},
+      </if>
+      <if test="productspecid != null" >
+        productSpecId = #{productspecid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yijiupi.entity.OrderItemProduct" >
+    update orderitemproduct
+    set OrderId = #{orderid,jdbcType=BIGINT},
+      ProductId = #{productid,jdbcType=BIGINT},
+      ProductVersion = #{productversion,jdbcType=VARCHAR},
+      ProductSaleSpec_Id = #{productsalespecId,jdbcType=BIGINT},
+      ProductName = #{productname,jdbcType=VARCHAR},
+      ProductSaleSpec = #{productsalespec,jdbcType=VARCHAR},
+      SaleSpecQuantity = #{salespecquantity,jdbcType=INTEGER},
+      SellUnit = #{sellunit,jdbcType=VARCHAR},
+      ProductSpec = #{productspec,jdbcType=VARCHAR},
+      SpecQuantity = #{specquantity,jdbcType=INTEGER},
+      PackageName = #{packagename,jdbcType=VARCHAR},
+      UnitName = #{unitname,jdbcType=VARCHAR},
+      SaleMode = #{salemode,jdbcType=TINYINT},
+      IsUseBonus = #{isusebonus,jdbcType=BIT},
+      IsUseCoupon = #{isusecoupon,jdbcType=BIT},
+      IsCumulative = #{iscumulative,jdbcType=BIT},
+      isAdditionalPurchase = #{isadditionalpurchase,jdbcType=BIT},
+      SupplierId = #{supplierid,jdbcType=INTEGER},
+      IsRegionPurchaseProduct = #{isregionpurchaseproduct,jdbcType=BIT},
+      OldProductID = #{oldproductid,jdbcType=BIGINT},
+      productBusinessClass = #{productbusinessclass,jdbcType=TINYINT},
+      isInOrderGive = #{isinordergive,jdbcType=BIT},
+      IsHiddenProduct = #{ishiddenproduct,jdbcType=BIT},
+      LastModifyTime = #{lastmodifytime,jdbcType=TIMESTAMP},
+      productInfoId = #{productinfoid,jdbcType=INTEGER},
+      productSpecId = #{productspecid,jdbcType=INTEGER}
+    where Id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

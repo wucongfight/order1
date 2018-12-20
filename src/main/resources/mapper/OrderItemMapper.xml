@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yijiupi.dao.OrderItemMapper" >
+  <resultMap id="BaseResultMap" type="com.yijiupi.entity.OrderItem" >
+    <id column="Id" property="id" jdbcType="BIGINT" />
+    <result column="OrderId" property="orderid" jdbcType="BIGINT" />
+    <result column="Remark" property="remark" jdbcType="VARCHAR" />
+    <result column="SourceType" property="sourcetype" jdbcType="TINYINT" />
+    <result column="Source_Id" property="sourceId" jdbcType="VARCHAR" />
+    <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="ProductType" property="producttype" jdbcType="TINYINT" />
+    <result column="LastModifyTime" property="lastmodifytime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, OrderId, Remark, SourceType, Source_Id, CreateTime, ProductType, LastModifyTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from orderitem
+    where Id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from orderitem
+    where Id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.yijiupi.entity.OrderItem" >
+    insert into orderitem (Id, OrderId, Remark, 
+      SourceType, Source_Id, CreateTime, 
+      ProductType, LastModifyTime)
+    values (#{id,jdbcType=BIGINT}, #{orderid,jdbcType=BIGINT}, #{remark,jdbcType=VARCHAR}, 
+      #{sourcetype,jdbcType=TINYINT}, #{sourceId,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{producttype,jdbcType=TINYINT}, #{lastmodifytime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yijiupi.entity.OrderItem" >
+    insert into orderitem
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        Id,
+      </if>
+      <if test="orderid != null" >
+        OrderId,
+      </if>
+      <if test="remark != null" >
+        Remark,
+      </if>
+      <if test="sourcetype != null" >
+        SourceType,
+      </if>
+      <if test="sourceId != null" >
+        Source_Id,
+      </if>
+      <if test="createtime != null" >
+        CreateTime,
+      </if>
+      <if test="producttype != null" >
+        ProductType,
+      </if>
+      <if test="lastmodifytime != null" >
+        LastModifyTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="orderid != null" >
+        #{orderid,jdbcType=BIGINT},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="sourcetype != null" >
+        #{sourcetype,jdbcType=TINYINT},
+      </if>
+      <if test="sourceId != null" >
+        #{sourceId,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="producttype != null" >
+        #{producttype,jdbcType=TINYINT},
+      </if>
+      <if test="lastmodifytime != null" >
+        #{lastmodifytime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yijiupi.entity.OrderItem" >
+    update orderitem
+    <set >
+      <if test="orderid != null" >
+        OrderId = #{orderid,jdbcType=BIGINT},
+      </if>
+      <if test="remark != null" >
+        Remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="sourcetype != null" >
+        SourceType = #{sourcetype,jdbcType=TINYINT},
+      </if>
+      <if test="sourceId != null" >
+        Source_Id = #{sourceId,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        CreateTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="producttype != null" >
+        ProductType = #{producttype,jdbcType=TINYINT},
+      </if>
+      <if test="lastmodifytime != null" >
+        LastModifyTime = #{lastmodifytime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yijiupi.entity.OrderItem" >
+    update orderitem
+    set OrderId = #{orderid,jdbcType=BIGINT},
+      Remark = #{remark,jdbcType=VARCHAR},
+      SourceType = #{sourcetype,jdbcType=TINYINT},
+      Source_Id = #{sourceId,jdbcType=VARCHAR},
+      CreateTime = #{createtime,jdbcType=TIMESTAMP},
+      ProductType = #{producttype,jdbcType=TINYINT},
+      LastModifyTime = #{lastmodifytime,jdbcType=TIMESTAMP}
+    where Id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

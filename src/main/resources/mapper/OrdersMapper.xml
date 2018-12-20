@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yijiupi.dao.OrdersMapper" >
+  <resultMap id="BaseResultMap" type="com.yijiupi.entity.Orders" >
+    <id column="Id" property="id" jdbcType="BIGINT" />
+    <result column="City_Id" property="cityId" jdbcType="INTEGER" />
+    <result column="OrderNo" property="orderno" jdbcType="VARCHAR" />
+    <result column="Verison" property="verison" jdbcType="VARCHAR" />
+    <result column="OrderType" property="ordertype" jdbcType="TINYINT" />
+    <result column="OrderClassify" property="orderclassify" jdbcType="TINYINT" />
+    <result column="State" property="state" jdbcType="SMALLINT" />
+    <result column="StateUser" property="stateuser" jdbcType="SMALLINT" />
+    <result column="GiveCouponAmount" property="givecouponamount" jdbcType="DECIMAL" />
+    <result column="SysRemark" property="sysremark" jdbcType="VARCHAR" />
+    <result column="RemarkUser" property="remarkuser" jdbcType="VARCHAR" />
+    <result column="UserCancelReason" property="usercancelreason" jdbcType="VARCHAR" />
+    <result column="RemarkService" property="remarkservice" jdbcType="VARCHAR" />
+    <result column="PayType" property="paytype" jdbcType="TINYINT" />
+    <result column="GiveWineScore" property="givewinescore" jdbcType="DECIMAL" />
+    <result column="CostWineScore" property="costwinescore" jdbcType="DECIMAL" />
+    <result column="OrderAmount" property="orderamount" jdbcType="DECIMAL" />
+    <result column="PayableAmount" property="payableamount" jdbcType="DECIMAL" />
+    <result column="ReduceAmount" property="reduceamount" jdbcType="DECIMAL" />
+    <result column="UseCouponAmount" property="usecouponamount" jdbcType="DECIMAL" />
+    <result column="GiveBonusAmount" property="givebonusamount" jdbcType="DECIMAL" />
+    <result column="UseBonusAmount" property="usebonusamount" jdbcType="DECIMAL" />
+    <result column="ProductReduceAmount" property="productreduceamount" jdbcType="DECIMAL" />
+    <result column="HasPayment" property="haspayment" jdbcType="TINYINT" />
+    <result column="Contact" property="contact" jdbcType="VARCHAR" />
+    <result column="Address_Id" property="addressId" jdbcType="INTEGER" />
+    <result column="Province" property="province" jdbcType="VARCHAR" />
+    <result column="City" property="city" jdbcType="VARCHAR" />
+    <result column="County" property="county" jdbcType="VARCHAR" />
+    <result column="Street" property="street" jdbcType="VARCHAR" />
+    <result column="DetailAddress" property="detailaddress" jdbcType="VARCHAR" />
+    <result column="Phone" property="phone" jdbcType="VARCHAR" />
+    <result column="ZipCode" property="zipcode" jdbcType="VARCHAR" />
+    <result column="IsTestOrder" property="istestorder" jdbcType="TINYINT" />
+    <result column="UserId" property="userid" jdbcType="INTEGER" />
+    <result column="SalesmanId" property="salesmanid" jdbcType="INTEGER" />
+    <result column="OrderReducationRule_Id" property="orderreducationruleId" jdbcType="INTEGER" />
+    <result column="QrCodeFileId" property="qrcodefileid" jdbcType="BIGINT" />
+    <result column="DeliveryMode" property="deliverymode" jdbcType="TINYINT" />
+    <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="CreateUserId" property="createuserid" jdbcType="INTEGER" />
+    <result column="LastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
+    <result column="LastUpdateUserId" property="lastupdateuserid" jdbcType="INTEGER" />
+    <result column="OrderCreateTime" property="ordercreatetime" jdbcType="TIMESTAMP" />
+    <result column="OrderAuditTime" property="orderaudittime" jdbcType="TIMESTAMP" />
+    <result column="OrderPrintTime" property="orderprinttime" jdbcType="TIMESTAMP" />
+    <result column="OrderDeliverTime" property="orderdelivertime" jdbcType="TIMESTAMP" />
+    <result column="OrderCancelTime" property="ordercanceltime" jdbcType="TIMESTAMP" />
+    <result column="OrderCompleteTime" property="ordercompletetime" jdbcType="TIMESTAMP" />
+    <result column="OrderSyncTime" property="ordersynctime" jdbcType="TIMESTAMP" />
+    <result column="PaymentState" property="paymentstate" jdbcType="INTEGER" />
+    <result column="OrderConfirmTime" property="orderconfirmtime" jdbcType="TIMESTAMP" />
+    <result column="OrderBatch_Id" property="orderbatchId" jdbcType="BIGINT" />
+    <result column="ExactPayAmount" property="exactpayamount" jdbcType="DECIMAL" />
+    <result column="UserName" property="username" jdbcType="VARCHAR" />
+    <result column="UserMobileNo" property="usermobileno" jdbcType="VARCHAR" />
+    <result column="UserCompanyName" property="usercompanyname" jdbcType="VARCHAR" />
+    <result column="selfPickUpReduceAmount" property="selfpickupreduceamount" jdbcType="DECIMAL" />
+    <result column="OrderAttachedGiftRule_Id" property="orderattachedgiftruleId" jdbcType="INTEGER" />
+    <result column="shop_id" property="shopId" jdbcType="BIGINT" />
+    <result column="pickup_warehouse_Id" property="pickupWarehouseId" jdbcType="INTEGER" />
+    <result column="UseAwardBonusAmount" property="useawardbonusamount" jdbcType="DECIMAL" />
+    <result column="UseRewardBonusAmount" property="userewardbonusamount" jdbcType="DECIMAL" />
+    <result column="UseCouponCodeAmount" property="usecouponcodeamount" jdbcType="DECIMAL" />
+    <result column="LastModifyTime" property="lastmodifytime" jdbcType="TIMESTAMP" />
+    <result column="orderItemCount" property="orderitemcount" jdbcType="INTEGER" />
+    <result column="salesmanDeptId" property="salesmandeptid" jdbcType="INTEGER" />
+    <result column="onlineSalesmanId" property="onlinesalesmanid" jdbcType="INTEGER" />
+    <result column="onlineSalesmanDeptId" property="onlinesalesmandeptid" jdbcType="INTEGER" />
+    <result column="area_id" property="areaId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, City_Id, OrderNo, Verison, OrderType, OrderClassify, State, StateUser, GiveCouponAmount, 
+    SysRemark, RemarkUser, UserCancelReason, RemarkService, PayType, GiveWineScore, CostWineScore, 
+    OrderAmount, PayableAmount, ReduceAmount, UseCouponAmount, GiveBonusAmount, UseBonusAmount, 
+    ProductReduceAmount, HasPayment, Contact, Address_Id, Province, City, County, Street, 
+    DetailAddress, Phone, ZipCode, IsTestOrder, UserId, SalesmanId, OrderReducationRule_Id, 
+    QrCodeFileId, DeliveryMode, CreateTime, CreateUserId, LastUpdateTime, LastUpdateUserId, 
+    OrderCreateTime, OrderAuditTime, OrderPrintTime, OrderDeliverTime, OrderCancelTime, 
+    OrderCompleteTime, OrderSyncTime, PaymentState, OrderConfirmTime, OrderBatch_Id, 
+    ExactPayAmount, UserName, UserMobileNo, UserCompanyName, selfPickUpReduceAmount, 
+    OrderAttachedGiftRule_Id, shop_id, pickup_warehouse_Id, UseAwardBonusAmount, UseRewardBonusAmount, 
+    UseCouponCodeAmount, LastModifyTime, orderItemCount, salesmanDeptId, onlineSalesmanId, 
+    onlineSalesmanDeptId, area_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from orders
+    where Id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from orders
+    where Id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.yijiupi.entity.Orders" >
+    insert into orders (Id, City_Id, OrderNo, 
+      Verison, OrderType, OrderClassify, 
+      State, StateUser, GiveCouponAmount, 
+      SysRemark, RemarkUser, UserCancelReason, 
+      RemarkService, PayType, GiveWineScore, 
+      CostWineScore, OrderAmount, PayableAmount, 
+      ReduceAmount, UseCouponAmount, GiveBonusAmount, 
+      UseBonusAmount, ProductReduceAmount, HasPayment, 
+      Contact, Address_Id, Province, 
+      City, County, Street, 
+      DetailAddress, Phone, ZipCode, 
+      IsTestOrder, UserId, SalesmanId, 
+      OrderReducationRule_Id, QrCodeFileId, DeliveryMode, 
+      CreateTime, CreateUserId, LastUpdateTime, 
+      LastUpdateUserId, OrderCreateTime, OrderAuditTime, 
+      OrderPrintTime, OrderDeliverTime, OrderCancelTime, 
+      OrderCompleteTime, OrderSyncTime, PaymentState, 
+      OrderConfirmTime, OrderBatch_Id, ExactPayAmount, 
+      UserName, UserMobileNo, UserCompanyName, 
+      selfPickUpReduceAmount, OrderAttachedGiftRule_Id, 
+      shop_id, pickup_warehouse_Id, UseAwardBonusAmount, 
+      UseRewardBonusAmount, UseCouponCodeAmount, 
+      LastModifyTime, orderItemCount, salesmanDeptId, 
+      onlineSalesmanId, onlineSalesmanDeptId, 
+      area_id)
+    values (#{id,jdbcType=BIGINT}, #{cityId,jdbcType=INTEGER}, #{orderno,jdbcType=VARCHAR}, 
+      #{verison,jdbcType=VARCHAR}, #{ordertype,jdbcType=TINYINT}, #{orderclassify,jdbcType=TINYINT}, 
+      #{state,jdbcType=SMALLINT}, #{stateuser,jdbcType=SMALLINT}, #{givecouponamount,jdbcType=DECIMAL}, 
+      #{sysremark,jdbcType=VARCHAR}, #{remarkuser,jdbcType=VARCHAR}, #{usercancelreason,jdbcType=VARCHAR}, 
+      #{remarkservice,jdbcType=VARCHAR}, #{paytype,jdbcType=TINYINT}, #{givewinescore,jdbcType=DECIMAL}, 
+      #{costwinescore,jdbcType=DECIMAL}, #{orderamount,jdbcType=DECIMAL}, #{payableamount,jdbcType=DECIMAL}, 
+      #{reduceamount,jdbcType=DECIMAL}, #{usecouponamount,jdbcType=DECIMAL}, #{givebonusamount,jdbcType=DECIMAL}, 
+      #{usebonusamount,jdbcType=DECIMAL}, #{productreduceamount,jdbcType=DECIMAL}, #{haspayment,jdbcType=TINYINT}, 
+      #{contact,jdbcType=VARCHAR}, #{addressId,jdbcType=INTEGER}, #{province,jdbcType=VARCHAR}, 
+      #{city,jdbcType=VARCHAR}, #{county,jdbcType=VARCHAR}, #{street,jdbcType=VARCHAR}, 
+      #{detailaddress,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{zipcode,jdbcType=VARCHAR}, 
+      #{istestorder,jdbcType=TINYINT}, #{userid,jdbcType=INTEGER}, #{salesmanid,jdbcType=INTEGER}, 
+      #{orderreducationruleId,jdbcType=INTEGER}, #{qrcodefileid,jdbcType=BIGINT}, #{deliverymode,jdbcType=TINYINT}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{createuserid,jdbcType=INTEGER}, #{lastupdatetime,jdbcType=TIMESTAMP}, 
+      #{lastupdateuserid,jdbcType=INTEGER}, #{ordercreatetime,jdbcType=TIMESTAMP}, #{orderaudittime,jdbcType=TIMESTAMP}, 
+      #{orderprinttime,jdbcType=TIMESTAMP}, #{orderdelivertime,jdbcType=TIMESTAMP}, #{ordercanceltime,jdbcType=TIMESTAMP}, 
+      #{ordercompletetime,jdbcType=TIMESTAMP}, #{ordersynctime,jdbcType=TIMESTAMP}, #{paymentstate,jdbcType=INTEGER}, 
+      #{orderconfirmtime,jdbcType=TIMESTAMP}, #{orderbatchId,jdbcType=BIGINT}, #{exactpayamount,jdbcType=DECIMAL}, 
+      #{username,jdbcType=VARCHAR}, #{usermobileno,jdbcType=VARCHAR}, #{usercompanyname,jdbcType=VARCHAR}, 
+      #{selfpickupreduceamount,jdbcType=DECIMAL}, #{orderattachedgiftruleId,jdbcType=INTEGER}, 
+      #{shopId,jdbcType=BIGINT}, #{pickupWarehouseId,jdbcType=INTEGER}, #{useawardbonusamount,jdbcType=DECIMAL}, 
+      #{userewardbonusamount,jdbcType=DECIMAL}, #{usecouponcodeamount,jdbcType=DECIMAL}, 
+      #{lastmodifytime,jdbcType=TIMESTAMP}, #{orderitemcount,jdbcType=INTEGER}, #{salesmandeptid,jdbcType=INTEGER}, 
+      #{onlinesalesmanid,jdbcType=INTEGER}, #{onlinesalesmandeptid,jdbcType=INTEGER}, 
+      #{areaId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yijiupi.entity.Orders" >
+    insert into orders
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        Id,
+      </if>
+      <if test="cityId != null" >
+        City_Id,
+      </if>
+      <if test="orderno != null" >
+        OrderNo,
+      </if>
+      <if test="verison != null" >
+        Verison,
+      </if>
+      <if test="ordertype != null" >
+        OrderType,
+      </if>
+      <if test="orderclassify != null" >
+        OrderClassify,
+      </if>
+      <if test="state != null" >
+        State,
+      </if>
+      <if test="stateuser != null" >
+        StateUser,
+      </if>
+      <if test="givecouponamount != null" >
+        GiveCouponAmount,
+      </if>
+      <if test="sysremark != null" >
+        SysRemark,
+      </if>
+      <if test="remarkuser != null" >
+        RemarkUser,
+      </if>
+      <if test="usercancelreason != null" >
+        UserCancelReason,
+      </if>
+      <if test="remarkservice != null" >
+        RemarkService,
+      </if>
+      <if test="paytype != null" >
+        PayType,
+      </if>
+      <if test="givewinescore != null" >
+        GiveWineScore,
+      </if>
+      <if test="costwinescore != null" >
+        CostWineScore,
+      </if>
+      <if test="orderamount != null" >
+        OrderAmount,
+      </if>
+      <if test="payableamount != null" >
+        PayableAmount,
+      </if>
+      <if test="reduceamount != null" >
+        ReduceAmount,
+      </if>
+      <if test="usecouponamount != null" >
+        UseCouponAmount,
+      </if>
+      <if test="givebonusamount != null" >
+        GiveBonusAmount,
+      </if>
+      <if test="usebonusamount != null" >
+        UseBonusAmount,
+      </if>
+      <if test="productreduceamount != null" >
+        ProductReduceAmount,
+      </if>
+      <if test="haspayment != null" >
+        HasPayment,
+      </if>
+      <if test="contact != null" >
+        Contact,
+      </if>
+      <if test="addressId != null" >
+        Address_Id,
+      </if>
+      <if test="province != null" >
+        Province,
+      </if>
+      <if test="city != null" >
+        City,
+      </if>
+      <if test="county != null" >
+        County,
+      </if>
+      <if test="street != null" >
+        Street,
+      </if>
+      <if test="detailaddress != null" >
+        DetailAddress,
+      </if>
+      <if test="phone != null" >
+        Phone,
+      </if>
+      <if test="zipcode != null" >
+        ZipCode,
+      </if>
+      <if test="istestorder != null" >
+        IsTestOrder,
+      </if>
+      <if test="userid != null" >
+        UserId,
+      </if>
+      <if test="salesmanid != null" >
+        SalesmanId,
+      </if>
+      <if test="orderreducationruleId != null" >
+        OrderReducationRule_Id,
+      </if>
+      <if test="qrcodefileid != null" >
+        QrCodeFileId,
+      </if>
+      <if test="deliverymode != null" >
+        DeliveryMode,
+      </if>
+      <if test="createtime != null" >
+        CreateTime,
+      </if>
+      <if test="createuserid != null" >
+        CreateUserId,
+      </if>
+      <if test="lastupdatetime != null" >
+        LastUpdateTime,
+      </if>
+      <if test="lastupdateuserid != null" >
+        LastUpdateUserId,
+      </if>
+      <if test="ordercreatetime != null" >
+        OrderCreateTime,
+      </if>
+      <if test="orderaudittime != null" >
+        OrderAuditTime,
+      </if>
+      <if test="orderprinttime != null" >
+        OrderPrintTime,
+      </if>
+      <if test="orderdelivertime != null" >
+        OrderDeliverTime,
+      </if>
+      <if test="ordercanceltime != null" >
+        OrderCancelTime,
+      </if>
+      <if test="ordercompletetime != null" >
+        OrderCompleteTime,
+      </if>
+      <if test="ordersynctime != null" >
+        OrderSyncTime,
+      </if>
+      <if test="paymentstate != null" >
+        PaymentState,
+      </if>
+      <if test="orderconfirmtime != null" >
+        OrderConfirmTime,
+      </if>
+      <if test="orderbatchId != null" >
+        OrderBatch_Id,
+      </if>
+      <if test="exactpayamount != null" >
+        ExactPayAmount,
+      </if>
+      <if test="username != null" >
+        UserName,
+      </if>
+      <if test="usermobileno != null" >
+        UserMobileNo,
+      </if>
+      <if test="usercompanyname != null" >
+        UserCompanyName,
+      </if>
+      <if test="selfpickupreduceamount != null" >
+        selfPickUpReduceAmount,
+      </if>
+      <if test="orderattachedgiftruleId != null" >
+        OrderAttachedGiftRule_Id,
+      </if>
+      <if test="shopId != null" >
+        shop_id,
+      </if>
+      <if test="pickupWarehouseId != null" >
+        pickup_warehouse_Id,
+      </if>
+      <if test="useawardbonusamount != null" >
+        UseAwardBonusAmount,
+      </if>
+      <if test="userewardbonusamount != null" >
+        UseRewardBonusAmount,
+      </if>
+      <if test="usecouponcodeamount != null" >
+        UseCouponCodeAmount,
+      </if>
+      <if test="lastmodifytime != null" >
+        LastModifyTime,
+      </if>
+      <if test="orderitemcount != null" >
+        orderItemCount,
+      </if>
+      <if test="salesmandeptid != null" >
+        salesmanDeptId,
+      </if>
+      <if test="onlinesalesmanid != null" >
+        onlineSalesmanId,
+      </if>
+      <if test="onlinesalesmandeptid != null" >
+        onlineSalesmanDeptId,
+      </if>
+      <if test="areaId != null" >
+        area_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="cityId != null" >
+        #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="orderno != null" >
+        #{orderno,jdbcType=VARCHAR},
+      </if>
+      <if test="verison != null" >
+        #{verison,jdbcType=VARCHAR},
+      </if>
+      <if test="ordertype != null" >
+        #{ordertype,jdbcType=TINYINT},
+      </if>
+      <if test="orderclassify != null" >
+        #{orderclassify,jdbcType=TINYINT},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=SMALLINT},
+      </if>
+      <if test="stateuser != null" >
+        #{stateuser,jdbcType=SMALLINT},
+      </if>
+      <if test="givecouponamount != null" >
+        #{givecouponamount,jdbcType=DECIMAL},
+      </if>
+      <if test="sysremark != null" >
+        #{sysremark,jdbcType=VARCHAR},
+      </if>
+      <if test="remarkuser != null" >
+        #{remarkuser,jdbcType=VARCHAR},
+      </if>
+      <if test="usercancelreason != null" >
+        #{usercancelreason,jdbcType=VARCHAR},
+      </if>
+      <if test="remarkservice != null" >
+        #{remarkservice,jdbcType=VARCHAR},
+      </if>
+      <if test="paytype != null" >
+        #{paytype,jdbcType=TINYINT},
+      </if>
+      <if test="givewinescore != null" >
+        #{givewinescore,jdbcType=DECIMAL},
+      </if>
+      <if test="costwinescore != null" >
+        #{costwinescore,jdbcType=DECIMAL},
+      </if>
+      <if test="orderamount != null" >
+        #{orderamount,jdbcType=DECIMAL},
+      </if>
+      <if test="payableamount != null" >
+        #{payableamount,jdbcType=DECIMAL},
+      </if>
+      <if test="reduceamount != null" >
+        #{reduceamount,jdbcType=DECIMAL},
+      </if>
+      <if test="usecouponamount != null" >
+        #{usecouponamount,jdbcType=DECIMAL},
+      </if>
+      <if test="givebonusamount != null" >
+        #{givebonusamount,jdbcType=DECIMAL},
+      </if>
+      <if test="usebonusamount != null" >
+        #{usebonusamount,jdbcType=DECIMAL},
+      </if>
+      <if test="productreduceamount != null" >
+        #{productreduceamount,jdbcType=DECIMAL},
+      </if>
+      <if test="haspayment != null" >
+        #{haspayment,jdbcType=TINYINT},
+      </if>
+      <if test="contact != null" >
+        #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="addressId != null" >
+        #{addressId,jdbcType=INTEGER},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="county != null" >
+        #{county,jdbcType=VARCHAR},
+      </if>
+      <if test="street != null" >
+        #{street,jdbcType=VARCHAR},
+      </if>
+      <if test="detailaddress != null" >
+        #{detailaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="zipcode != null" >
+        #{zipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="istestorder != null" >
+        #{istestorder,jdbcType=TINYINT},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="salesmanid != null" >
+        #{salesmanid,jdbcType=INTEGER},
+      </if>
+      <if test="orderreducationruleId != null" >
+        #{orderreducationruleId,jdbcType=INTEGER},
+      </if>
+      <if test="qrcodefileid != null" >
+        #{qrcodefileid,jdbcType=BIGINT},
+      </if>
+      <if test="deliverymode != null" >
+        #{deliverymode,jdbcType=TINYINT},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuserid != null" >
+        #{createuserid,jdbcType=INTEGER},
+      </if>
+      <if test="lastupdatetime != null" >
+        #{lastupdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastupdateuserid != null" >
+        #{lastupdateuserid,jdbcType=INTEGER},
+      </if>
+      <if test="ordercreatetime != null" >
+        #{ordercreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderaudittime != null" >
+        #{orderaudittime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderprinttime != null" >
+        #{orderprinttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderdelivertime != null" >
+        #{orderdelivertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ordercanceltime != null" >
+        #{ordercanceltime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ordercompletetime != null" >
+        #{ordercompletetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ordersynctime != null" >
+        #{ordersynctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="paymentstate != null" >
+        #{paymentstate,jdbcType=INTEGER},
+      </if>
+      <if test="orderconfirmtime != null" >
+        #{orderconfirmtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderbatchId != null" >
+        #{orderbatchId,jdbcType=BIGINT},
+      </if>
+      <if test="exactpayamount != null" >
+        #{exactpayamount,jdbcType=DECIMAL},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usermobileno != null" >
+        #{usermobileno,jdbcType=VARCHAR},
+      </if>
+      <if test="usercompanyname != null" >
+        #{usercompanyname,jdbcType=VARCHAR},
+      </if>
+      <if test="selfpickupreduceamount != null" >
+        #{selfpickupreduceamount,jdbcType=DECIMAL},
+      </if>
+      <if test="orderattachedgiftruleId != null" >
+        #{orderattachedgiftruleId,jdbcType=INTEGER},
+      </if>
+      <if test="shopId != null" >
+        #{shopId,jdbcType=BIGINT},
+      </if>
+      <if test="pickupWarehouseId != null" >
+        #{pickupWarehouseId,jdbcType=INTEGER},
+      </if>
+      <if test="useawardbonusamount != null" >
+        #{useawardbonusamount,jdbcType=DECIMAL},
+      </if>
+      <if test="userewardbonusamount != null" >
+        #{userewardbonusamount,jdbcType=DECIMAL},
+      </if>
+      <if test="usecouponcodeamount != null" >
+        #{usecouponcodeamount,jdbcType=DECIMAL},
+      </if>
+      <if test="lastmodifytime != null" >
+        #{lastmodifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderitemcount != null" >
+        #{orderitemcount,jdbcType=INTEGER},
+      </if>
+      <if test="salesmandeptid != null" >
+        #{salesmandeptid,jdbcType=INTEGER},
+      </if>
+      <if test="onlinesalesmanid != null" >
+        #{onlinesalesmanid,jdbcType=INTEGER},
+      </if>
+      <if test="onlinesalesmandeptid != null" >
+        #{onlinesalesmandeptid,jdbcType=INTEGER},
+      </if>
+      <if test="areaId != null" >
+        #{areaId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yijiupi.entity.Orders" >
+    update orders
+    <set >
+      <if test="cityId != null" >
+        City_Id = #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="orderno != null" >
+        OrderNo = #{orderno,jdbcType=VARCHAR},
+      </if>
+      <if test="verison != null" >
+        Verison = #{verison,jdbcType=VARCHAR},
+      </if>
+      <if test="ordertype != null" >
+        OrderType = #{ordertype,jdbcType=TINYINT},
+      </if>
+      <if test="orderclassify != null" >
+        OrderClassify = #{orderclassify,jdbcType=TINYINT},
+      </if>
+      <if test="state != null" >
+        State = #{state,jdbcType=SMALLINT},
+      </if>
+      <if test="stateuser != null" >
+        StateUser = #{stateuser,jdbcType=SMALLINT},
+      </if>
+      <if test="givecouponamount != null" >
+        GiveCouponAmount = #{givecouponamount,jdbcType=DECIMAL},
+      </if>
+      <if test="sysremark != null" >
+        SysRemark = #{sysremark,jdbcType=VARCHAR},
+      </if>
+      <if test="remarkuser != null" >
+        RemarkUser = #{remarkuser,jdbcType=VARCHAR},
+      </if>
+      <if test="usercancelreason != null" >
+        UserCancelReason = #{usercancelreason,jdbcType=VARCHAR},
+      </if>
+      <if test="remarkservice != null" >
+        RemarkService = #{remarkservice,jdbcType=VARCHAR},
+      </if>
+      <if test="paytype != null" >
+        PayType = #{paytype,jdbcType=TINYINT},
+      </if>
+      <if test="givewinescore != null" >
+        GiveWineScore = #{givewinescore,jdbcType=DECIMAL},
+      </if>
+      <if test="costwinescore != null" >
+        CostWineScore = #{costwinescore,jdbcType=DECIMAL},
+      </if>
+      <if test="orderamount != null" >
+        OrderAmount = #{orderamount,jdbcType=DECIMAL},
+      </if>
+      <if test="payableamount != null" >
+        PayableAmount = #{payableamount,jdbcType=DECIMAL},
+      </if>
+      <if test="reduceamount != null" >
+        ReduceAmount = #{reduceamount,jdbcType=DECIMAL},
+      </if>
+      <if test="usecouponamount != null" >
+        UseCouponAmount = #{usecouponamount,jdbcType=DECIMAL},
+      </if>
+      <if test="givebonusamount != null" >
+        GiveBonusAmount = #{givebonusamount,jdbcType=DECIMAL},
+      </if>
+      <if test="usebonusamount != null" >
+        UseBonusAmount = #{usebonusamount,jdbcType=DECIMAL},
+      </if>
+      <if test="productreduceamount != null" >
+        ProductReduceAmount = #{productreduceamount,jdbcType=DECIMAL},
+      </if>
+      <if test="haspayment != null" >
+        HasPayment = #{haspayment,jdbcType=TINYINT},
+      </if>
+      <if test="contact != null" >
+        Contact = #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="addressId != null" >
+        Address_Id = #{addressId,jdbcType=INTEGER},
+      </if>
+      <if test="province != null" >
+        Province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        City = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="county != null" >
+        County = #{county,jdbcType=VARCHAR},
+      </if>
+      <if test="street != null" >
+        Street = #{street,jdbcType=VARCHAR},
+      </if>
+      <if test="detailaddress != null" >
+        DetailAddress = #{detailaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        Phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="zipcode != null" >
+        ZipCode = #{zipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="istestorder != null" >
+        IsTestOrder = #{istestorder,jdbcType=TINYINT},
+      </if>
+      <if test="userid != null" >
+        UserId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="salesmanid != null" >
+        SalesmanId = #{salesmanid,jdbcType=INTEGER},
+      </if>
+      <if test="orderreducationruleId != null" >
+        OrderReducationRule_Id = #{orderreducationruleId,jdbcType=INTEGER},
+      </if>
+      <if test="qrcodefileid != null" >
+        QrCodeFileId = #{qrcodefileid,jdbcType=BIGINT},
+      </if>
+      <if test="deliverymode != null" >
+        DeliveryMode = #{deliverymode,jdbcType=TINYINT},
+      </if>
+      <if test="createtime != null" >
+        CreateTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuserid != null" >
+        CreateUserId = #{createuserid,jdbcType=INTEGER},
+      </if>
+      <if test="lastupdatetime != null" >
+        LastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastupdateuserid != null" >
+        LastUpdateUserId = #{lastupdateuserid,jdbcType=INTEGER},
+      </if>
+      <if test="ordercreatetime != null" >
+        OrderCreateTime = #{ordercreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderaudittime != null" >
+        OrderAuditTime = #{orderaudittime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderprinttime != null" >
+        OrderPrintTime = #{orderprinttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderdelivertime != null" >
+        OrderDeliverTime = #{orderdelivertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ordercanceltime != null" >
+        OrderCancelTime = #{ordercanceltime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ordercompletetime != null" >
+        OrderCompleteTime = #{ordercompletetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ordersynctime != null" >
+        OrderSyncTime = #{ordersynctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="paymentstate != null" >
+        PaymentState = #{paymentstate,jdbcType=INTEGER},
+      </if>
+      <if test="orderconfirmtime != null" >
+        OrderConfirmTime = #{orderconfirmtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderbatchId != null" >
+        OrderBatch_Id = #{orderbatchId,jdbcType=BIGINT},
+      </if>
+      <if test="exactpayamount != null" >
+        ExactPayAmount = #{exactpayamount,jdbcType=DECIMAL},
+      </if>
+      <if test="username != null" >
+        UserName = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usermobileno != null" >
+        UserMobileNo = #{usermobileno,jdbcType=VARCHAR},
+      </if>
+      <if test="usercompanyname != null" >
+        UserCompanyName = #{usercompanyname,jdbcType=VARCHAR},
+      </if>
+      <if test="selfpickupreduceamount != null" >
+        selfPickUpReduceAmount = #{selfpickupreduceamount,jdbcType=DECIMAL},
+      </if>
+      <if test="orderattachedgiftruleId != null" >
+        OrderAttachedGiftRule_Id = #{orderattachedgiftruleId,jdbcType=INTEGER},
+      </if>
+      <if test="shopId != null" >
+        shop_id = #{shopId,jdbcType=BIGINT},
+      </if>
+      <if test="pickupWarehouseId != null" >
+        pickup_warehouse_Id = #{pickupWarehouseId,jdbcType=INTEGER},
+      </if>
+      <if test="useawardbonusamount != null" >
+        UseAwardBonusAmount = #{useawardbonusamount,jdbcType=DECIMAL},
+      </if>
+      <if test="userewardbonusamount != null" >
+        UseRewardBonusAmount = #{userewardbonusamount,jdbcType=DECIMAL},
+      </if>
+      <if test="usecouponcodeamount != null" >
+        UseCouponCodeAmount = #{usecouponcodeamount,jdbcType=DECIMAL},
+      </if>
+      <if test="lastmodifytime != null" >
+        LastModifyTime = #{lastmodifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderitemcount != null" >
+        orderItemCount = #{orderitemcount,jdbcType=INTEGER},
+      </if>
+      <if test="salesmandeptid != null" >
+        salesmanDeptId = #{salesmandeptid,jdbcType=INTEGER},
+      </if>
+      <if test="onlinesalesmanid != null" >
+        onlineSalesmanId = #{onlinesalesmanid,jdbcType=INTEGER},
+      </if>
+      <if test="onlinesalesmandeptid != null" >
+        onlineSalesmanDeptId = #{onlinesalesmandeptid,jdbcType=INTEGER},
+      </if>
+      <if test="areaId != null" >
+        area_id = #{areaId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yijiupi.entity.Orders" >
+    update orders
+    set City_Id = #{cityId,jdbcType=INTEGER},
+      OrderNo = #{orderno,jdbcType=VARCHAR},
+      Verison = #{verison,jdbcType=VARCHAR},
+      OrderType = #{ordertype,jdbcType=TINYINT},
+      OrderClassify = #{orderclassify,jdbcType=TINYINT},
+      State = #{state,jdbcType=SMALLINT},
+      StateUser = #{stateuser,jdbcType=SMALLINT},
+      GiveCouponAmount = #{givecouponamount,jdbcType=DECIMAL},
+      SysRemark = #{sysremark,jdbcType=VARCHAR},
+      RemarkUser = #{remarkuser,jdbcType=VARCHAR},
+      UserCancelReason = #{usercancelreason,jdbcType=VARCHAR},
+      RemarkService = #{remarkservice,jdbcType=VARCHAR},
+      PayType = #{paytype,jdbcType=TINYINT},
+      GiveWineScore = #{givewinescore,jdbcType=DECIMAL},
+      CostWineScore = #{costwinescore,jdbcType=DECIMAL},
+      OrderAmount = #{orderamount,jdbcType=DECIMAL},
+      PayableAmount = #{payableamount,jdbcType=DECIMAL},
+      ReduceAmount = #{reduceamount,jdbcType=DECIMAL},
+      UseCouponAmount = #{usecouponamount,jdbcType=DECIMAL},
+      GiveBonusAmount = #{givebonusamount,jdbcType=DECIMAL},
+      UseBonusAmount = #{usebonusamount,jdbcType=DECIMAL},
+      ProductReduceAmount = #{productreduceamount,jdbcType=DECIMAL},
+      HasPayment = #{haspayment,jdbcType=TINYINT},
+      Contact = #{contact,jdbcType=VARCHAR},
+      Address_Id = #{addressId,jdbcType=INTEGER},
+      Province = #{province,jdbcType=VARCHAR},
+      City = #{city,jdbcType=VARCHAR},
+      County = #{county,jdbcType=VARCHAR},
+      Street = #{street,jdbcType=VARCHAR},
+      DetailAddress = #{detailaddress,jdbcType=VARCHAR},
+      Phone = #{phone,jdbcType=VARCHAR},
+      ZipCode = #{zipcode,jdbcType=VARCHAR},
+      IsTestOrder = #{istestorder,jdbcType=TINYINT},
+      UserId = #{userid,jdbcType=INTEGER},
+      SalesmanId = #{salesmanid,jdbcType=INTEGER},
+      OrderReducationRule_Id = #{orderreducationruleId,jdbcType=INTEGER},
+      QrCodeFileId = #{qrcodefileid,jdbcType=BIGINT},
+      DeliveryMode = #{deliverymode,jdbcType=TINYINT},
+      CreateTime = #{createtime,jdbcType=TIMESTAMP},
+      CreateUserId = #{createuserid,jdbcType=INTEGER},
+      LastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      LastUpdateUserId = #{lastupdateuserid,jdbcType=INTEGER},
+      OrderCreateTime = #{ordercreatetime,jdbcType=TIMESTAMP},
+      OrderAuditTime = #{orderaudittime,jdbcType=TIMESTAMP},
+      OrderPrintTime = #{orderprinttime,jdbcType=TIMESTAMP},
+      OrderDeliverTime = #{orderdelivertime,jdbcType=TIMESTAMP},
+      OrderCancelTime = #{ordercanceltime,jdbcType=TIMESTAMP},
+      OrderCompleteTime = #{ordercompletetime,jdbcType=TIMESTAMP},
+      OrderSyncTime = #{ordersynctime,jdbcType=TIMESTAMP},
+      PaymentState = #{paymentstate,jdbcType=INTEGER},
+      OrderConfirmTime = #{orderconfirmtime,jdbcType=TIMESTAMP},
+      OrderBatch_Id = #{orderbatchId,jdbcType=BIGINT},
+      ExactPayAmount = #{exactpayamount,jdbcType=DECIMAL},
+      UserName = #{username,jdbcType=VARCHAR},
+      UserMobileNo = #{usermobileno,jdbcType=VARCHAR},
+      UserCompanyName = #{usercompanyname,jdbcType=VARCHAR},
+      selfPickUpReduceAmount = #{selfpickupreduceamount,jdbcType=DECIMAL},
+      OrderAttachedGiftRule_Id = #{orderattachedgiftruleId,jdbcType=INTEGER},
+      shop_id = #{shopId,jdbcType=BIGINT},
+      pickup_warehouse_Id = #{pickupWarehouseId,jdbcType=INTEGER},
+      UseAwardBonusAmount = #{useawardbonusamount,jdbcType=DECIMAL},
+      UseRewardBonusAmount = #{userewardbonusamount,jdbcType=DECIMAL},
+      UseCouponCodeAmount = #{usecouponcodeamount,jdbcType=DECIMAL},
+      LastModifyTime = #{lastmodifytime,jdbcType=TIMESTAMP},
+      orderItemCount = #{orderitemcount,jdbcType=INTEGER},
+      salesmanDeptId = #{salesmandeptid,jdbcType=INTEGER},
+      onlineSalesmanId = #{onlinesalesmanid,jdbcType=INTEGER},
+      onlineSalesmanDeptId = #{onlinesalesmandeptid,jdbcType=INTEGER},
+      area_id = #{areaId,jdbcType=BIGINT}
+    where Id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

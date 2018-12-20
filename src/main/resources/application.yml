@@ -1,0 +1,26 @@
+
+#配置数据源
+spring:
+  datasource:
+    druid:
+      username: root
+      password:  yijiupi
+      url: jdbc:mysql://Mysql-Trading.yjp.com:3312/yjp_order_1
+      initial-size: 5
+      min-idle: 1
+      max-active: 30
+      test-on-borrow: true
+      stat-view-servlet:
+        allow: true
+
+#配置mybatis
+mybatis:
+  type-aliases-package: com.yijiupi.entity
+  mapper-locations: classpath:mapper/*.xml
+#配置pagehelper
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+#设置日志的级别
+
+
