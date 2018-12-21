@@ -272,4 +272,37 @@ public class OrderItemProduct {
     public void setProductspecid(Integer productspecid) {
         this.productspecid = productspecid;
     }
+
+    @Override
+    public String toString() {
+        return "OrderItemProduct{" +
+                "id=" + id +
+                ", orderid=" + orderid +
+                ", productid=" + productid +
+                ", productversion='" + productversion + '\'' +
+                ", productsalespecId=" + productsalespecId +
+                ", productname='" + productname + '\'' +
+                ", productsalespec='" + productsalespec + '\'' +
+                ", salespecquantity=" + salespecquantity +
+                ", sellunit='" + sellunit + '\'' +
+                ", productspec='" + productspec + '\'' +
+                ", specquantity=" + specquantity +
+                ", packagename='" + packagename + '\'' +
+                ", unitname='" + unitname + '\'' +
+                ", salemode=" + salemode +
+                ", isusebonus=" + isusebonus +
+                ", isusecoupon=" + isusecoupon +
+                ", iscumulative=" + iscumulative +
+                ", isadditionalpurchase=" + isadditionalpurchase +
+                ", supplierid=" + supplierid +
+                ", isregionpurchaseproduct=" + isregionpurchaseproduct +
+                ", oldproductid=" + oldproductid +
+                ", productbusinessclass=" + productbusinessclass +
+                ", isinordergive=" + isinordergive +
+                ", ishiddenproduct=" + ishiddenproduct +
+                ", lastmodifytime=" + lastmodifytime +
+                ", productinfoid=" + productinfoid +
+                ", productspecid=" + productspecid +
+                '}';
+    }
 }

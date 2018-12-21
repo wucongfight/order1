@@ -1,37 +1,73 @@
 package com.yijiupi;
 
+import com.github.pagehelper.PageInfo;
 import com.yijiupi.controller.OrderItemController;
+import com.yijiupi.entity.OrderDetail;
 import com.yijiupi.entity.OrderItem;
+import com.yijiupi.entity.Orders;
+import com.yijiupi.service.OrderItemService;
+import com.yijiupi.service.OrderService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.annotation.Resource;
 import java.util.Date;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class YijiupiApplicationTests {
 
+    @Autowired
+    private OrderItemController orderItemController;
+    @Autowired
+    private OrderService orderService;
+    @Autowired
+    private OrderItemService orderItemService;
+
     @Test
     public void contextLoads() {
-        OrderItemController orderItemController = new OrderItemController();
-        Byte i =1;
-        Byte q =2;
+        System.out.println("对象：" + orderItemController);
+        Byte i = 1;
+        Byte q = 2;
         OrderItem orderItem = new OrderItem();
         orderItem.setProducttype(i);
         orderItem.setLastmodifytime(new Date());
         orderItem.setRemark("order");
         orderItem.setCreatetime(new Date());
         orderItem.setOrderid(123L);
-        orderItem.setId(1L);
+        orderItem.setId(2L);
         orderItem.setSourceId("1242");
         orderItem.setSourcetype(q);
         orderItemController.insterOrderItem(orderItem);
+
+    }
+
+
+    @Test
+    public void OrdersShow() {
+        System.out.println("对象是：" + orderService);
+        PageInfo<Orders> orders = orderService.selectOrderByCityId(1, 2, 1);
+        for (int i = 0; i < orders.getList().size(); i++) {
+            orders.getList().get(i).setCityId(1000);
+            orderService.updateByPrimaryKey(orders.getList().get(i));
+            System.out.println(orders.getList().get(i));
+        }
+
+    }
+
+    @Test
+    public void OrderItemShow(){
+        OrderDetail orderDetail = orderItemService.selectByPrimaryKey(1L);
+        System.out.println("对象："+orderDetail.getOrderItemAmount());
+        System.out.println("对象："+orderDetail.getOrderItemPrice());
+        System.out.println("对象："+orderDetail.getOrderItemProduct());
+        System.out.println("对象："+orderDetail.getOrderItem());
 
 
     }
 
 }
+
 

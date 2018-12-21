@@ -213,4 +213,31 @@ public class OrderItemAmount {
     public void setGivebonusamount(BigDecimal givebonusamount) {
         this.givebonusamount = givebonusamount;
     }
+
+    @Override
+    public String toString() {
+        return "OrderItemAmount{" +
+                "id=" + id +
+                ", orderid=" + orderid +
+                ", reduceproductamount=" + reduceproductamount +
+                ", reducecouponamount=" + reducecouponamount +
+                ", reducebonusamount=" + reducebonusamount +
+                ", reduceorderamount=" + reduceorderamount +
+                ", discount=" + discount +
+                ", totalamount=" + totalamount +
+                ", payamount=" + payamount +
+                ", winescore=" + winescore +
+                ", deliveryamount=" + deliveryamount +
+                ", salecount=" + salecount +
+                ", minunittotalcount=" + minunittotalcount +
+                ", sourceCount=" + sourceCount +
+                ", sysremark='" + sysremark + '\'' +
+                ", lastupdatetime=" + lastupdatetime +
+                ", selfpickupreduceamount=" + selfpickupreduceamount +
+                ", reducerewardbonusamount=" + reducerewardbonusamount +
+                ", reducecouponcodeamount=" + reducecouponcodeamount +
+                ", lastmodifytime=" + lastmodifytime +
+                ", givebonusamount=" + givebonusamount +
+                '}';
+    }
 }

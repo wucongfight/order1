@@ -703,4 +703,80 @@ public class Orders {
     public void setAreaId(Long areaId) {
         this.areaId = areaId;
     }
+
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "id=" + id +
+                ", cityId=" + cityId +
+                ", orderno='" + orderno + '\'' +
+                ", verison='" + verison + '\'' +
+                ", ordertype=" + ordertype +
+                ", orderclassify=" + orderclassify +
+                ", state=" + state +
+                ", stateuser=" + stateuser +
+                ", givecouponamount=" + givecouponamount +
+                ", sysremark='" + sysremark + '\'' +
+                ", remarkuser='" + remarkuser + '\'' +
+                ", usercancelreason='" + usercancelreason + '\'' +
+                ", remarkservice='" + remarkservice + '\'' +
+                ", paytype=" + paytype +
+                ", givewinescore=" + givewinescore +
+                ", costwinescore=" + costwinescore +
+                ", orderamount=" + orderamount +
+                ", payableamount=" + payableamount +
+                ", reduceamount=" + reduceamount +
+                ", usecouponamount=" + usecouponamount +
+                ", givebonusamount=" + givebonusamount +
+                ", usebonusamount=" + usebonusamount +
+                ", productreduceamount=" + productreduceamount +
+                ", haspayment=" + haspayment +
+                ", contact='" + contact + '\'' +
+                ", addressId=" + addressId +
+                ", province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                ", county='" + county + '\'' +
+                ", street='" + street + '\'' +
+                ", detailaddress='" + detailaddress + '\'' +
+                ", phone='" + phone + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                ", istestorder=" + istestorder +
+                ", userid=" + userid +
+                ", salesmanid=" + salesmanid +
+                ", orderreducationruleId=" + orderreducationruleId +
+                ", qrcodefileid=" + qrcodefileid +
+                ", deliverymode=" + deliverymode +
+                ", createtime=" + createtime +
+                ", createuserid=" + createuserid +
+                ", lastupdatetime=" + lastupdatetime +
+                ", lastupdateuserid=" + lastupdateuserid +
+                ", ordercreatetime=" + ordercreatetime +
+                ", orderaudittime=" + orderaudittime +
+                ", orderprinttime=" + orderprinttime +
+                ", orderdelivertime=" + orderdelivertime +
+                ", ordercanceltime=" + ordercanceltime +
+                ", ordercompletetime=" + ordercompletetime +
+                ", ordersynctime=" + ordersynctime +
+                ", paymentstate=" + paymentstate +
+                ", orderconfirmtime=" + orderconfirmtime +
+                ", orderbatchId=" + orderbatchId +
+                ", exactpayamount=" + exactpayamount +
+                ", username='" + username + '\'' +
+                ", usermobileno='" + usermobileno + '\'' +
+                ", usercompanyname='" + usercompanyname + '\'' +
+                ", selfpickupreduceamount=" + selfpickupreduceamount +
+                ", orderattachedgiftruleId=" + orderattachedgiftruleId +
+                ", shopId=" + shopId +
+                ", pickupWarehouseId=" + pickupWarehouseId +
+                ", useawardbonusamount=" + useawardbonusamount +
+                ", userewardbonusamount=" + userewardbonusamount +
+                ", usecouponcodeamount=" + usecouponcodeamount +
+                ", lastmodifytime=" + lastmodifytime +
+                ", orderitemcount=" + orderitemcount +
+                ", salesmandeptid=" + salesmandeptid +
+                ", onlinesalesmanid=" + onlinesalesmanid +
+                ", onlinesalesmandeptid=" + onlinesalesmandeptid +
+                ", areaId=" + areaId +
+                '}';
+    }
 }

@@ -1,8 +1,12 @@
 package com.yijiupi.mapper;
 
 
+import com.github.pagehelper.PageInfo;
 import com.yijiupi.entity.OrderItem;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
+
 @Mapper
 public interface OrderItemMapper {
     int deleteByPrimaryKey(Long id);
@@ -16,4 +20,6 @@ public interface OrderItemMapper {
     int updateByPrimaryKeySelective(OrderItem record);
 
     int updateByPrimaryKey(OrderItem record);
+
+
 }

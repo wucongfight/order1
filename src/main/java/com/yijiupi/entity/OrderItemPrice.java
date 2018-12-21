@@ -183,4 +183,28 @@ public class OrderItemPrice {
     public void setLastmodifytime(Date lastmodifytime) {
         this.lastmodifytime = lastmodifytime;
     }
+
+    @Override
+    public String toString() {
+        return "OrderItemPrice{" +
+                "id=" + id +
+                ", orderid=" + orderid +
+                ", originalprice=" + originalprice +
+                ", originalpriceunit='" + originalpriceunit + '\'' +
+                ", costprice=" + costprice +
+                ", costpriceunit='" + costpriceunit + '\'' +
+                ", sellprice=" + sellprice +
+                ", sellunit='" + sellunit + '\'' +
+                ", minunitprice=" + minunitprice +
+                ", minunitname='" + minunitname + '\'' +
+                ", reduceproductprice=" + reduceproductprice +
+                ", reduceproductpriceunit='" + reduceproductpriceunit + '\'' +
+                ", selltominunitquantity=" + selltominunitquantity +
+                ", maxtominunitquantity=" + maxtominunitquantity +
+                ", winescore=" + winescore +
+                ", defaultspecprice=" + defaultspecprice +
+                ", selfpickupreduceprice=" + selfpickupreduceprice +
+                ", lastmodifytime=" + lastmodifytime +
+                '}';
+    }
 }
