@@ -32,6 +32,7 @@ public class OrderServiceImpl implements OrderService {
     public int deleteByPrimaryKey(Long id) {
 
         int index1 = orderItemMapper.deleteByPrimaryKey(id);
+
         int index2 = ordersMapper.deleteByPrimaryKey(id);
 
         return index1*index2;

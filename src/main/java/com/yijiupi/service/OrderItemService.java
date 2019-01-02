@@ -10,4 +10,5 @@ public interface OrderItemService {
     int deleteByPrimaryKey(Long id);
 
     OrderDetail selectByPrimaryKey(Long id);
+
 }

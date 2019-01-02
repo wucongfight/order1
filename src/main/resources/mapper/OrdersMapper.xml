@@ -99,7 +99,7 @@
     <include refid="Base_Column_List" />
     from orders
     <where>
-      <if test="cityId != null">
+      <if test="cityId != 0">
         and  City_Id = #{cityId}
       </if>
     </where>

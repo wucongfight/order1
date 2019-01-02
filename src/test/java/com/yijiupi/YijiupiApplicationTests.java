@@ -40,7 +40,7 @@ public class YijiupiApplicationTests {
         orderItem.setId(2L);
         orderItem.setSourceId("1242");
         orderItem.setSourcetype(q);
-        orderItemController.insterOrderItem(orderItem);
+
 
     }
 
@@ -48,11 +48,17 @@ public class YijiupiApplicationTests {
     @Test
     public void OrdersShow() {
         System.out.println("对象是：" + orderService);
-        PageInfo<Orders> orders = orderService.selectOrderByCityId(1, 2, 1);
+        PageInfo<Orders> orders = orderService.selectOrderByCityId(1, 2, 1000);
+        System.out.println("集合长度："+ orders.getList().size());
+        Long num = 4L ;
         for (int i = 0; i < orders.getList().size(); i++) {
+            System.out.println("增加："+ num);
+            orders.getList().get(i).setId(num );
             orders.getList().get(i).setCityId(1000);
-            orderService.updateByPrimaryKey(orders.getList().get(i));
+            orders.getList().get(i).setOrderno(num.toString() );
+            orderService.insert(orders.getList().get(i));
             System.out.println(orders.getList().get(i));
+            num++;
         }
 
     }

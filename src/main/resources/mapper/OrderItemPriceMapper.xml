@@ -31,11 +31,11 @@
     select 
     <include refid="Base_Column_List" />
     from orderitemprice
-    where Id = #{id,jdbcType=BIGINT}
+    where OrderId = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from orderitemprice
-    where Id = #{id,jdbcType=BIGINT}
+    where OrderId = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.yijiupi.entity.OrderItemPrice" >
     insert into orderitemprice (Id, OrderId, OriginalPrice, 

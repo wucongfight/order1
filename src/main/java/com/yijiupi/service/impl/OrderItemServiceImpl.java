@@ -23,21 +23,50 @@ public class OrderItemServiceImpl implements OrderItemService {
     private OrderItemProductMapper orderItemProductMapper;
 
     @Override
-    public int insert(OrderItem record) {
-        return orderItemMapper.insert(record);
+    public int insert(OrderItem orderItem) {
+        OrderItem orderItem1 = orderItemMapper.selectByPrimaryKey(orderItem.getId());
+        if( orderItem1 != null ){
+            return orderItemMapper.updateByPrimaryKey(orderItem);
+        }else {
+            return orderItemMapper.insert(orderItem);
+        }
     }
+
 
     @Transactional
     @Override
     public int deleteByPrimaryKey(Long id) {
+        int index1 = 1;
+        int index2 = 1;
+        int index3 = 1;
+        int index4 = 1;
 
-        int index1 = orderItemAmountMapper.deleteByPrimaryKey(id);
+        OrderItem orderItem = orderItemMapper.selectByPrimaryKey(id);
 
-        int index2 = orderItemPriceMapper.deleteByPrimaryKey(id);
+        OrderItemAmount orderItemAmount = orderItemAmountMapper.selectByPrimaryKey(id);
 
-        int index3 = orderItemProductMapper.deleteByPrimaryKey(id);
+        OrderItemPrice orderItemPrice = orderItemPriceMapper.selectByPrimaryKey(id);
 
-        int index4 = orderItemMapper.deleteByPrimaryKey(id);
+        OrderItemProduct orderItemProduct = orderItemProductMapper.selectByPrimaryKey(id);
+        if( orderItemAmount != null){
+            index1 = orderItemAmountMapper.deleteByPrimaryKey(id);
+        }
+
+        if( orderItemPrice != null){
+
+            index2 = orderItemPriceMapper.deleteByPrimaryKey(id);
+        }
+
+        if(  orderItemProduct != null){
+
+            index3 = orderItemProductMapper.deleteByPrimaryKey(id);
+        }
+
+
+        if (orderItem != null){
+            index4 = orderItemMapper.deleteByPrimaryKey(id);
+        }
+
 
         return index1*index2*index3*index4;
     }
@@ -56,4 +85,5 @@ public class OrderItemServiceImpl implements OrderItemService {
        return new OrderDetail(orderItem,orderItemPrice,orderItemAmount,orderItemProduct);
 
     }
+
 }
