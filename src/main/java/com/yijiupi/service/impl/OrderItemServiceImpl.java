@@ -86,4 +86,9 @@ public class OrderItemServiceImpl implements OrderItemService {
 
     }
 
+    @Override
+    public OrderItem selectById(Long id) {
+        return orderItemMapper.selectByPrimaryKey(id);
+    }
+
 }

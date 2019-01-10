@@ -11,4 +11,6 @@ public interface OrderItemService {
 
     OrderDetail selectByPrimaryKey(Long id);
 
+    OrderItem selectById(Long id);
+
 }

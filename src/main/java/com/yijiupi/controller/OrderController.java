@@ -30,7 +30,6 @@ public ResponseEntity<PageInfo> queryOrderByCityId(@PathVariable (value = "pageN
     if( cityId == null){
         cityId = 0;
     }
-
     PageInfo<Orders> ordersPageInfo = this.orderService.selectOrderByCityId(pageNum, pageSize, cityId);
     System.out.println(ordersPageInfo);
     if (ordersPageInfo == null || ordersPageInfo.getList().size() == 0) {
