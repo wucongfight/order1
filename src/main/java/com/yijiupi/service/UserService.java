@@ -1,5 +1,6 @@
 package com.yijiupi.service;
 
+import com.yijiupi.entity.TemporaryUser;
 import com.yijiupi.entity.User;
 
 public interface UserService {
@@ -7,5 +8,5 @@ public interface UserService {
 
     Boolean selectByPrimaryKey(User user);
 
-    int updateByPrimaryKey(User record);
+    Boolean updateByPrimaryKey(TemporaryUser record);
 }

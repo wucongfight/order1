@@ -47,4 +47,9 @@ public class OrderServiceImpl implements OrderService {
     public int insert(Orders record) {
         return ordersMapper.insert(record);
     }
+
+    @Override
+    public List<Orders> selectOrders(Integer cityId, Byte orderType) {
+        return ordersMapper.selectOrder(cityId,orderType);
+    }
 }

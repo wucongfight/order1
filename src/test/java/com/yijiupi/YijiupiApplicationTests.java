@@ -48,17 +48,18 @@ public class YijiupiApplicationTests {
     @Test
     public void OrdersShow() {
         System.out.println("对象是：" + orderService);
-        PageInfo<Orders> orders = orderService.selectOrderByCityId(1, 2, 1000);
+        PageInfo<Orders> orders = orderService.selectOrderByCityId(1, 15, 1000);
         System.out.println("集合长度：" + orders.getList().size());
-        Long num = 4L;
+        Long num = 28L;
         for (int i = 0; i < orders.getList().size(); i++) {
             System.out.println("增加：" + num);
-            orders.getList().get(i).setId(num);
+            orders.getList().get(i).setId(num );
             orders.getList().get(i).setCityId(1000);
             orders.getList().get(i).setOrderno(num.toString());
             orderService.insert(orders.getList().get(i));
             System.out.println(orders.getList().get(i));
             num++;
+            System.out.println("num为："+num);
         }
 
     }

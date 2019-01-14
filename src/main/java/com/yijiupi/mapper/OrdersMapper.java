@@ -4,7 +4,6 @@ package com.yijiupi.mapper;
 import com.yijiupi.entity.Orders;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.beans.factory.annotation.Value;
 
 import java.util.List;
 
@@ -27,4 +26,7 @@ public interface OrdersMapper {
      * @return 订单基本信息
      */
     List<Orders> selectOrderByCityId(@Param(value = "cityId") Integer cityId);
+
+
+    List<Orders> selectOrder(@Param(value = "cityId") Integer cityId,@Param(value = "ordertype") Byte ordertype);
 }
