@@ -18,7 +18,6 @@ public class OrderItemController {
 
     /**
      * 根据订单id查询订单项的详细信息（订单金额，产品，单价）
-     *
      * @param
      * @return
      */
@@ -29,15 +28,11 @@ public class OrderItemController {
         System.out.println("进来了123....");
         OrderDetail orderDetail = this.orderItemService.selectByPrimaryKey(id);
         System.out.println(orderDetail);
-        if (orderDetail == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
         return ResponseEntity.ok(orderDetail);
     }
 
     /**
      * 增加订单基本信息
-     *
      * @param orderItem
      * @return
      */
@@ -57,9 +52,6 @@ public class OrderItemController {
         System.out.println("进来了123....");
         OrderItem orderItem = this.orderItemService.selectById(id);
         System.out.println(orderItem);
-        if (orderItem == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
         return ResponseEntity.ok(orderItem);
     }
 }
