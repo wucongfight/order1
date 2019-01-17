@@ -3,247 +3,39 @@
 <mapper namespace="com.yijiupi.mapper.OrderItemPriceMapper" >
   <resultMap id="BaseResultMap" type="com.yijiupi.entity.OrderItemPrice" >
     <id column="Id" property="id" jdbcType="BIGINT" />
-    <result column="OrderId" property="orderid" jdbcType="BIGINT" />
-    <result column="OriginalPrice" property="originalprice" jdbcType="DECIMAL" />
-    <result column="OriginalPriceUnit" property="originalpriceunit" jdbcType="VARCHAR" />
-    <result column="CostPrice" property="costprice" jdbcType="DECIMAL" />
-    <result column="CostPriceUnit" property="costpriceunit" jdbcType="VARCHAR" />
-    <result column="SellPrice" property="sellprice" jdbcType="DECIMAL" />
-    <result column="SellUnit" property="sellunit" jdbcType="VARCHAR" />
-    <result column="MinUnitPrice" property="minunitprice" jdbcType="DECIMAL" />
-    <result column="MinUnitName" property="minunitname" jdbcType="VARCHAR" />
-    <result column="ReduceProductPrice" property="reduceproductprice" jdbcType="DECIMAL" />
-    <result column="ReduceProductPriceUnit" property="reduceproductpriceunit" jdbcType="VARCHAR" />
-    <result column="SellToMinUnitQuantity" property="selltominunitquantity" jdbcType="INTEGER" />
-    <result column="MaxToMinUnitQuantity" property="maxtominunitquantity" jdbcType="INTEGER" />
-    <result column="WineScore" property="winescore" jdbcType="INTEGER" />
-    <result column="DefaultSpecPrice" property="defaultspecprice" jdbcType="DECIMAL" />
-    <result column="selfPickUpReducePrice" property="selfpickupreduceprice" jdbcType="DECIMAL" />
-    <result column="LastModifyTime" property="lastmodifytime" jdbcType="TIMESTAMP" />
+    <result column="orderId" property="orderId" jdbcType="BIGINT" />
+    <result column="originalPrice" property="originalPrice" jdbcType="DECIMAL" />
+    <result column="originalPriceUnit" property="originalPriceUnit" jdbcType="VARCHAR" />
+    <result column="costPrice" property="costPrice" jdbcType="DECIMAL" />
+    <result column="costPriceUnit" property="costPriceUnit" jdbcType="VARCHAR" />
+    <result column="sellPrice" property="sellPrice" jdbcType="DECIMAL" />
+    <result column="sellUnit" property="sellUnit" jdbcType="VARCHAR" />
+    <result column="minUnitPrice" property="minUnitPrice" jdbcType="DECIMAL" />
+    <result column="minUnitName" property="minUnitName" jdbcType="VARCHAR" />
+    <result column="reduceProductPrice" property="reduceProductPrice" jdbcType="DECIMAL" />
+    <result column="reduceProductPriceUnit" property="reduceProductPriceUnit" jdbcType="VARCHAR" />
+    <result column="sellToMinUnitQuantity" property="sellToMinUnitQuantity" jdbcType="INTEGER" />
+    <result column="maxToMinUnitQuantity" property="maxToMinUnitQuantity" jdbcType="INTEGER" />
+    <result column="wineScore" property="wineScore" jdbcType="INTEGER" />
+    <result column="defaultSpecPrice" property="defaultSpecPrice" jdbcType="DECIMAL" />
+    <result column="selfPickUpReducePrice" property="selfPickUpReducePrice" jdbcType="DECIMAL" />
+    <result column="lastModifyTime" property="lastModifyTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    Id, OrderId, OriginalPrice, OriginalPriceUnit, CostPrice, CostPriceUnit, SellPrice, 
-    SellUnit, MinUnitPrice, MinUnitName, ReduceProductPrice, ReduceProductPriceUnit, 
-    SellToMinUnitQuantity, MaxToMinUnitQuantity, WineScore, DefaultSpecPrice, selfPickUpReducePrice, 
-    LastModifyTime
+    Id, orderId, originalPrice, originalPriceUnit, costPrice, costPriceUnit, sellPrice,
+    sellUnit, minUnitPrice, minUnitName, reduceProductPrice, reduceProductPriceUnit,
+    sellToMinUnitQuantity, maxToMinUnitQuantity, wineScore, defaultSpecPrice, selfPickUpReducePrice,
+    lastModifyTime
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from orderitemprice
-    where OrderId = #{id,jdbcType=BIGINT}
+    where orderId = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from orderitemprice
-    where OrderId = #{id,jdbcType=BIGINT}
+    where orderId = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.yijiupi.entity.OrderItemPrice" >
-    insert into orderitemprice (Id, OrderId, OriginalPrice, 
-      OriginalPriceUnit, CostPrice, CostPriceUnit, 
-      SellPrice, SellUnit, MinUnitPrice, 
-      MinUnitName, ReduceProductPrice, ReduceProductPriceUnit, 
-      SellToMinUnitQuantity, MaxToMinUnitQuantity, 
-      WineScore, DefaultSpecPrice, selfPickUpReducePrice, 
-      LastModifyTime)
-    values (#{id,jdbcType=BIGINT}, #{orderid,jdbcType=BIGINT}, #{originalprice,jdbcType=DECIMAL}, 
-      #{originalpriceunit,jdbcType=VARCHAR}, #{costprice,jdbcType=DECIMAL}, #{costpriceunit,jdbcType=VARCHAR}, 
-      #{sellprice,jdbcType=DECIMAL}, #{sellunit,jdbcType=VARCHAR}, #{minunitprice,jdbcType=DECIMAL}, 
-      #{minunitname,jdbcType=VARCHAR}, #{reduceproductprice,jdbcType=DECIMAL}, #{reduceproductpriceunit,jdbcType=VARCHAR}, 
-      #{selltominunitquantity,jdbcType=INTEGER}, #{maxtominunitquantity,jdbcType=INTEGER}, 
-      #{winescore,jdbcType=INTEGER}, #{defaultspecprice,jdbcType=DECIMAL}, #{selfpickupreduceprice,jdbcType=DECIMAL}, 
-      #{lastmodifytime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="com.yijiupi.entity.OrderItemPrice" >
-    insert into orderitemprice
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        Id,
-      </if>
-      <if test="orderid != null" >
-        OrderId,
-      </if>
-      <if test="originalprice != null" >
-        OriginalPrice,
-      </if>
-      <if test="originalpriceunit != null" >
-        OriginalPriceUnit,
-      </if>
-      <if test="costprice != null" >
-        CostPrice,
-      </if>
-      <if test="costpriceunit != null" >
-        CostPriceUnit,
-      </if>
-      <if test="sellprice != null" >
-        SellPrice,
-      </if>
-      <if test="sellunit != null" >
-        SellUnit,
-      </if>
-      <if test="minunitprice != null" >
-        MinUnitPrice,
-      </if>
-      <if test="minunitname != null" >
-        MinUnitName,
-      </if>
-      <if test="reduceproductprice != null" >
-        ReduceProductPrice,
-      </if>
-      <if test="reduceproductpriceunit != null" >
-        ReduceProductPriceUnit,
-      </if>
-      <if test="selltominunitquantity != null" >
-        SellToMinUnitQuantity,
-      </if>
-      <if test="maxtominunitquantity != null" >
-        MaxToMinUnitQuantity,
-      </if>
-      <if test="winescore != null" >
-        WineScore,
-      </if>
-      <if test="defaultspecprice != null" >
-        DefaultSpecPrice,
-      </if>
-      <if test="selfpickupreduceprice != null" >
-        selfPickUpReducePrice,
-      </if>
-      <if test="lastmodifytime != null" >
-        LastModifyTime,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=BIGINT},
-      </if>
-      <if test="orderid != null" >
-        #{orderid,jdbcType=BIGINT},
-      </if>
-      <if test="originalprice != null" >
-        #{originalprice,jdbcType=DECIMAL},
-      </if>
-      <if test="originalpriceunit != null" >
-        #{originalpriceunit,jdbcType=VARCHAR},
-      </if>
-      <if test="costprice != null" >
-        #{costprice,jdbcType=DECIMAL},
-      </if>
-      <if test="costpriceunit != null" >
-        #{costpriceunit,jdbcType=VARCHAR},
-      </if>
-      <if test="sellprice != null" >
-        #{sellprice,jdbcType=DECIMAL},
-      </if>
-      <if test="sellunit != null" >
-        #{sellunit,jdbcType=VARCHAR},
-      </if>
-      <if test="minunitprice != null" >
-        #{minunitprice,jdbcType=DECIMAL},
-      </if>
-      <if test="minunitname != null" >
-        #{minunitname,jdbcType=VARCHAR},
-      </if>
-      <if test="reduceproductprice != null" >
-        #{reduceproductprice,jdbcType=DECIMAL},
-      </if>
-      <if test="reduceproductpriceunit != null" >
-        #{reduceproductpriceunit,jdbcType=VARCHAR},
-      </if>
-      <if test="selltominunitquantity != null" >
-        #{selltominunitquantity,jdbcType=INTEGER},
-      </if>
-      <if test="maxtominunitquantity != null" >
-        #{maxtominunitquantity,jdbcType=INTEGER},
-      </if>
-      <if test="winescore != null" >
-        #{winescore,jdbcType=INTEGER},
-      </if>
-      <if test="defaultspecprice != null" >
-        #{defaultspecprice,jdbcType=DECIMAL},
-      </if>
-      <if test="selfpickupreduceprice != null" >
-        #{selfpickupreduceprice,jdbcType=DECIMAL},
-      </if>
-      <if test="lastmodifytime != null" >
-        #{lastmodifytime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yijiupi.entity.OrderItemPrice" >
-    update orderitemprice
-    <set >
-      <if test="orderid != null" >
-        OrderId = #{orderid,jdbcType=BIGINT},
-      </if>
-      <if test="originalprice != null" >
-        OriginalPrice = #{originalprice,jdbcType=DECIMAL},
-      </if>
-      <if test="originalpriceunit != null" >
-        OriginalPriceUnit = #{originalpriceunit,jdbcType=VARCHAR},
-      </if>
-      <if test="costprice != null" >
-        CostPrice = #{costprice,jdbcType=DECIMAL},
-      </if>
-      <if test="costpriceunit != null" >
-        CostPriceUnit = #{costpriceunit,jdbcType=VARCHAR},
-      </if>
-      <if test="sellprice != null" >
-        SellPrice = #{sellprice,jdbcType=DECIMAL},
-      </if>
-      <if test="sellunit != null" >
-        SellUnit = #{sellunit,jdbcType=VARCHAR},
-      </if>
-      <if test="minunitprice != null" >
-        MinUnitPrice = #{minunitprice,jdbcType=DECIMAL},
-      </if>
-      <if test="minunitname != null" >
-        MinUnitName = #{minunitname,jdbcType=VARCHAR},
-      </if>
-      <if test="reduceproductprice != null" >
-        ReduceProductPrice = #{reduceproductprice,jdbcType=DECIMAL},
-      </if>
-      <if test="reduceproductpriceunit != null" >
-        ReduceProductPriceUnit = #{reduceproductpriceunit,jdbcType=VARCHAR},
-      </if>
-      <if test="selltominunitquantity != null" >
-        SellToMinUnitQuantity = #{selltominunitquantity,jdbcType=INTEGER},
-      </if>
-      <if test="maxtominunitquantity != null" >
-        MaxToMinUnitQuantity = #{maxtominunitquantity,jdbcType=INTEGER},
-      </if>
-      <if test="winescore != null" >
-        WineScore = #{winescore,jdbcType=INTEGER},
-      </if>
-      <if test="defaultspecprice != null" >
-        DefaultSpecPrice = #{defaultspecprice,jdbcType=DECIMAL},
-      </if>
-      <if test="selfpickupreduceprice != null" >
-        selfPickUpReducePrice = #{selfpickupreduceprice,jdbcType=DECIMAL},
-      </if>
-      <if test="lastmodifytime != null" >
-        LastModifyTime = #{lastmodifytime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where Id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.yijiupi.entity.OrderItemPrice" >
-    update orderitemprice
-    set OrderId = #{orderid,jdbcType=BIGINT},
-      OriginalPrice = #{originalprice,jdbcType=DECIMAL},
-      OriginalPriceUnit = #{originalpriceunit,jdbcType=VARCHAR},
-      CostPrice = #{costprice,jdbcType=DECIMAL},
-      CostPriceUnit = #{costpriceunit,jdbcType=VARCHAR},
-      SellPrice = #{sellprice,jdbcType=DECIMAL},
-      SellUnit = #{sellunit,jdbcType=VARCHAR},
-      MinUnitPrice = #{minunitprice,jdbcType=DECIMAL},
-      MinUnitName = #{minunitname,jdbcType=VARCHAR},
-      ReduceProductPrice = #{reduceproductprice,jdbcType=DECIMAL},
-      ReduceProductPriceUnit = #{reduceproductpriceunit,jdbcType=VARCHAR},
-      SellToMinUnitQuantity = #{selltominunitquantity,jdbcType=INTEGER},
-      MaxToMinUnitQuantity = #{maxtominunitquantity,jdbcType=INTEGER},
-      WineScore = #{winescore,jdbcType=INTEGER},
-      DefaultSpecPrice = #{defaultspecprice,jdbcType=DECIMAL},
-      selfPickUpReducePrice = #{selfpickupreduceprice,jdbcType=DECIMAL},
-      LastModifyTime = #{lastmodifytime,jdbcType=TIMESTAMP}
-    where Id = #{id,jdbcType=BIGINT}
-  </update>
+
 </mapper>

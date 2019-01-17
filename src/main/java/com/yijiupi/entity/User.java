@@ -1,5 +1,8 @@
 package com.yijiupi.entity;
-
+/**
+ * @Author: WuCong
+ * @Date: 2019/1/17 11:11
+ */
 public class User {
     private String username;
 
@@ -21,4 +24,11 @@ public class User {
         this.password = password == null ? null : password.trim();
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

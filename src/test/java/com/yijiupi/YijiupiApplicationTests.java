@@ -2,12 +2,11 @@ package com.yijiupi;
 
 import com.github.pagehelper.PageInfo;
 import com.yijiupi.controller.OrderItemController;
+import com.yijiupi.entity.Order;
 import com.yijiupi.entity.OrderDetail;
 import com.yijiupi.entity.OrderItem;
-import com.yijiupi.entity.Orders;
 import com.yijiupi.service.OrderItemService;
-import com.yijiupi.service.OrderService;
-import com.yijiupi.unit.MD5;
+import com.yijiupi.service.Orderervice;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +21,7 @@ public class YijiupiApplicationTests {
     @Autowired
     private OrderItemController orderItemController;
     @Autowired
-    private OrderService orderService;
+    private Orderervice Orderervice;
     @Autowired
     private OrderItemService orderItemService;
 
@@ -32,32 +31,32 @@ public class YijiupiApplicationTests {
         Byte i = 1;
         Byte q = 2;
         OrderItem orderItem = new OrderItem();
-        orderItem.setProducttype(i);
-        orderItem.setLastmodifytime(new Date());
+        orderItem.setproductType(i);
+        orderItem.setlastModifyTime(new Date());
         orderItem.setRemark("order");
-        orderItem.setCreatetime(new Date());
-        orderItem.setOrderid(123L);
+        orderItem.setcreateTime(new Date());
+        orderItem.setorderId(123L);
         orderItem.setId(2L);
         orderItem.setSourceId("1242");
-        orderItem.setSourcetype(q);
+        orderItem.setsourceType(q);
 
 
     }
 
 
     @Test
-    public void OrdersShow() {
-        System.out.println("对象是：" + orderService);
-        PageInfo<Orders> orders = orderService.selectOrderByCityId(1, 15, 1000);
-        System.out.println("集合长度：" + orders.getList().size());
+    public void OrderShow() {
+        System.out.println("对象是：" + Orderervice);
+        PageInfo<Order> Order = Orderervice.selectOrderByCityId(1, 15, 1000);
+        System.out.println("集合长度：" + Order.getList().size());
         Long num = 28L;
-        for (int i = 0; i < orders.getList().size(); i++) {
+        for (int i = 0; i < Order.getList().size(); i++) {
             System.out.println("增加：" + num);
-            orders.getList().get(i).setId(num );
-            orders.getList().get(i).setCityId(1000);
-            orders.getList().get(i).setOrderno(num.toString());
-            orderService.insert(orders.getList().get(i));
-            System.out.println(orders.getList().get(i));
+            Order.getList().get(i).setId(num );
+            Order.getList().get(i).setCityId(1000);
+            Order.getList().get(i).setorderNo(num.toString());
+            Orderervice.insert(Order.getList().get(i));
+            System.out.println(Order.getList().get(i));
             num++;
             System.out.println("num为："+num);
         }
@@ -73,10 +72,7 @@ public class YijiupiApplicationTests {
         System.out.println("对象：" + orderDetail.getOrderItem());
 
     }
-@Test
-    public void md5() {
-        MD5.stringMD5("");
-    }
+
 }
 
 

@@ -1,6 +1,13 @@
 package com.yijiupi.entity;
 
-public class OrderDetail  {
+
+/**
+ * @Author: WuCong
+ * @Date: 2019/1/17 11:11
+ */
+
+
+public class OrderDetail {
 
 
     public OrderDetail() {
@@ -13,11 +20,11 @@ public class OrderDetail  {
         this.orderItemProduct = orderItemProduct;
     }
 
-    private  OrderItem orderItem;
+    private OrderItem orderItem;
 
-    private  OrderItemPrice orderItemPrice;
+    private OrderItemPrice orderItemPrice;
 
-    private  OrderItemAmount orderItemAmount;
+    private OrderItemAmount orderItemAmount;
 
     private OrderItemProduct orderItemProduct;
 

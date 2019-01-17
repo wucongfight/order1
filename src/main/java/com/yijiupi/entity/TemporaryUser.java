@@ -1,11 +1,15 @@
 package com.yijiupi.entity;
 
+/**
+ * @Author: WuCong
+ * @Date: 2019/1/17 11:11
+ */
 public class TemporaryUser {
     private String username;
 
-    private String password; //老密码
+    private String password;
 
-    private String nowPassword; // 新密码
+    private String nowPassword;
 
     public String getUsername() {
         return username;

@@ -2,60 +2,64 @@ package com.yijiupi.entity;
 
 import java.util.Date;
 
+/**
+ * @Author: WuCong
+ * @Date: 2019/1/17 11:11
+ */
 public class OrderItemProduct {
     private Long id;
 
-    private Long orderid;
+    private Long orderId;
 
-    private Long productid;
+    private Long productId;
 
-    private String productversion;
+    private String productVersion;
 
-    private Long productsalespecId;
+    private Long productSaleSpecId;
 
-    private String productname;
+    private String productName;
 
-    private String productsalespec;
+    private String productSaleSpec;
 
-    private Integer salespecquantity;
+    private Integer saleSpecQuantity;
 
-    private String sellunit;
+    private String sellUnit;
 
-    private String productspec;
+    private String productSpec;
 
-    private Integer specquantity;
+    private Integer specQuantity;
 
-    private String packagename;
+    private String packageName;
 
-    private String unitname;
+    private String unitName;
 
-    private Byte salemode;
+    private Byte saleMode;
 
-    private Boolean isusebonus;
+    private Boolean isUseBonus;
 
-    private Boolean isusecoupon;
+    private Boolean isUseCoupOn;
 
-    private Boolean iscumulative;
+    private Boolean isCumulative;
 
-    private Boolean isadditionalpurchase;
+    private Boolean isAdditionalPurchase;
 
-    private Integer supplierid;
+    private Integer supplierId;
 
-    private Boolean isregionpurchaseproduct;
+    private Boolean isRegionPurchaseProduct;
 
-    private Long oldproductid;
+    private Long oldProductId;
 
-    private Byte productbusinessclass;
+    private Byte productBusinessClass;
 
-    private Boolean isinordergive;
+    private Boolean isInorderGive;
 
-    private Boolean ishiddenproduct;
+    private Boolean isHiddenProduct;
 
-    private Date lastmodifytime;
+    private Date lastModifyTime;
 
-    private Integer productinfoid;
+    private Integer productInfoId;
 
-    private Integer productspecid;
+    private Integer productSpecId;
 
     public Long getId() {
         return id;
@@ -65,244 +69,244 @@ public class OrderItemProduct {
         this.id = id;
     }
 
-    public Long getOrderid() {
-        return orderid;
+    public Long getOrderId() {
+        return orderId;
     }
 
-    public void setOrderid(Long orderid) {
-        this.orderid = orderid;
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
-    public Long getProductid() {
-        return productid;
+    public Long getProductId() {
+        return productId;
     }
 
-    public void setProductid(Long productid) {
-        this.productid = productid;
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 
-    public String getProductversion() {
-        return productversion;
+    public String getProductVersion() {
+        return productVersion;
     }
 
-    public void setProductversion(String productversion) {
-        this.productversion = productversion == null ? null : productversion.trim();
+    public void setProductVersion(String productVersion) {
+        this.productVersion = productVersion;
     }
 
-    public Long getProductsalespecId() {
-        return productsalespecId;
+    public Long getProductSaleSpecId() {
+        return productSaleSpecId;
     }
 
-    public void setProductsalespecId(Long productsalespecId) {
-        this.productsalespecId = productsalespecId;
+    public void setProductSaleSpecId(Long productSaleSpecId) {
+        this.productSaleSpecId = productSaleSpecId;
     }
 
-    public String getProductname() {
-        return productname;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProductname(String productname) {
-        this.productname = productname == null ? null : productname.trim();
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public String getProductsalespec() {
-        return productsalespec;
+    public String getProductSaleSpec() {
+        return productSaleSpec;
     }
 
-    public void setProductsalespec(String productsalespec) {
-        this.productsalespec = productsalespec == null ? null : productsalespec.trim();
+    public void setProductSaleSpec(String productSaleSpec) {
+        this.productSaleSpec = productSaleSpec;
     }
 
-    public Integer getSalespecquantity() {
-        return salespecquantity;
+    public Integer getSaleSpecQuantity() {
+        return saleSpecQuantity;
     }
 
-    public void setSalespecquantity(Integer salespecquantity) {
-        this.salespecquantity = salespecquantity;
+    public void setSaleSpecQuantity(Integer saleSpecQuantity) {
+        this.saleSpecQuantity = saleSpecQuantity;
     }
 
-    public String getSellunit() {
-        return sellunit;
+    public String getSellUnit() {
+        return sellUnit;
     }
 
-    public void setSellunit(String sellunit) {
-        this.sellunit = sellunit == null ? null : sellunit.trim();
+    public void setSellUnit(String sellUnit) {
+        this.sellUnit = sellUnit;
     }
 
-    public String getProductspec() {
-        return productspec;
+    public String getProductSpec() {
+        return productSpec;
     }
 
-    public void setProductspec(String productspec) {
-        this.productspec = productspec == null ? null : productspec.trim();
+    public void setProductSpec(String productSpec) {
+        this.productSpec = productSpec;
     }
 
-    public Integer getSpecquantity() {
-        return specquantity;
+    public Integer getSpecQuantity() {
+        return specQuantity;
     }
 
-    public void setSpecquantity(Integer specquantity) {
-        this.specquantity = specquantity;
+    public void setSpecQuantity(Integer specQuantity) {
+        this.specQuantity = specQuantity;
     }
 
-    public String getPackagename() {
-        return packagename;
+    public String getPackageName() {
+        return packageName;
     }
 
-    public void setPackagename(String packagename) {
-        this.packagename = packagename == null ? null : packagename.trim();
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
     }
 
-    public String getUnitname() {
-        return unitname;
+    public String getUnitName() {
+        return unitName;
     }
 
-    public void setUnitname(String unitname) {
-        this.unitname = unitname == null ? null : unitname.trim();
+    public void setUnitName(String unitName) {
+        this.unitName = unitName;
     }
 
-    public Byte getSalemode() {
-        return salemode;
+    public Byte getSaleMode() {
+        return saleMode;
     }
 
-    public void setSalemode(Byte salemode) {
-        this.salemode = salemode;
+    public void setSaleMode(Byte saleMode) {
+        this.saleMode = saleMode;
     }
 
-    public Boolean getIsusebonus() {
-        return isusebonus;
+    public Boolean getUseBonus() {
+        return isUseBonus;
     }
 
-    public void setIsusebonus(Boolean isusebonus) {
-        this.isusebonus = isusebonus;
+    public void setUseBonus(Boolean useBonus) {
+        isUseBonus = useBonus;
     }
 
-    public Boolean getIsusecoupon() {
-        return isusecoupon;
+    public Boolean getUseCoupOn() {
+        return isUseCoupOn;
     }
 
-    public void setIsusecoupon(Boolean isusecoupon) {
-        this.isusecoupon = isusecoupon;
+    public void setUseCoupOn(Boolean useCoupOn) {
+        isUseCoupOn = useCoupOn;
     }
 
-    public Boolean getIscumulative() {
-        return iscumulative;
+    public Boolean getCumulative() {
+        return isCumulative;
     }
 
-    public void setIscumulative(Boolean iscumulative) {
-        this.iscumulative = iscumulative;
+    public void setCumulative(Boolean cumulative) {
+        isCumulative = cumulative;
     }
 
-    public Boolean getIsadditionalpurchase() {
-        return isadditionalpurchase;
+    public Boolean getAdditionalPurchase() {
+        return isAdditionalPurchase;
     }
 
-    public void setIsadditionalpurchase(Boolean isadditionalpurchase) {
-        this.isadditionalpurchase = isadditionalpurchase;
+    public void setAdditionalPurchase(Boolean additionalPurchase) {
+        isAdditionalPurchase = additionalPurchase;
     }
 
-    public Integer getSupplierid() {
-        return supplierid;
+    public Integer getSupplierId() {
+        return supplierId;
     }
 
-    public void setSupplierid(Integer supplierid) {
-        this.supplierid = supplierid;
+    public void setSupplierId(Integer supplierId) {
+        this.supplierId = supplierId;
     }
 
-    public Boolean getIsregionpurchaseproduct() {
-        return isregionpurchaseproduct;
+    public Boolean getRegionPurchaseProduct() {
+        return isRegionPurchaseProduct;
     }
 
-    public void setIsregionpurchaseproduct(Boolean isregionpurchaseproduct) {
-        this.isregionpurchaseproduct = isregionpurchaseproduct;
+    public void setRegionPurchaseProduct(Boolean regionPurchaseProduct) {
+        isRegionPurchaseProduct = regionPurchaseProduct;
     }
 
-    public Long getOldproductid() {
-        return oldproductid;
+    public Long getOldProductId() {
+        return oldProductId;
     }
 
-    public void setOldproductid(Long oldproductid) {
-        this.oldproductid = oldproductid;
+    public void setOldProductId(Long oldProductId) {
+        this.oldProductId = oldProductId;
     }
 
-    public Byte getProductbusinessclass() {
-        return productbusinessclass;
+    public Byte getProductBusinessClass() {
+        return productBusinessClass;
     }
 
-    public void setProductbusinessclass(Byte productbusinessclass) {
-        this.productbusinessclass = productbusinessclass;
+    public void setProductBusinessClass(Byte productBusinessClass) {
+        this.productBusinessClass = productBusinessClass;
     }
 
-    public Boolean getIsinordergive() {
-        return isinordergive;
+    public Boolean getInorderGive() {
+        return isInorderGive;
     }
 
-    public void setIsinordergive(Boolean isinordergive) {
-        this.isinordergive = isinordergive;
+    public void setInorderGive(Boolean inorderGive) {
+        isInorderGive = inorderGive;
     }
 
-    public Boolean getIshiddenproduct() {
-        return ishiddenproduct;
+    public Boolean getHiddenProduct() {
+        return isHiddenProduct;
     }
 
-    public void setIshiddenproduct(Boolean ishiddenproduct) {
-        this.ishiddenproduct = ishiddenproduct;
+    public void setHiddenProduct(Boolean hiddenProduct) {
+        isHiddenProduct = hiddenProduct;
     }
 
-    public Date getLastmodifytime() {
-        return lastmodifytime;
+    public Date getLastModifyTime() {
+        return lastModifyTime;
     }
 
-    public void setLastmodifytime(Date lastmodifytime) {
-        this.lastmodifytime = lastmodifytime;
+    public void setLastModifyTime(Date lastModifyTime) {
+        this.lastModifyTime = lastModifyTime;
     }
 
-    public Integer getProductinfoid() {
-        return productinfoid;
+    public Integer getProductInfoId() {
+        return productInfoId;
     }
 
-    public void setProductinfoid(Integer productinfoid) {
-        this.productinfoid = productinfoid;
+    public void setProductInfoId(Integer productInfoId) {
+        this.productInfoId = productInfoId;
     }
 
-    public Integer getProductspecid() {
-        return productspecid;
+    public Integer getProductSpecId() {
+        return productSpecId;
     }
 
-    public void setProductspecid(Integer productspecid) {
-        this.productspecid = productspecid;
+    public void setProductSpecId(Integer productSpecId) {
+        this.productSpecId = productSpecId;
     }
 
     @Override
     public String toString() {
         return "OrderItemProduct{" +
                 "id=" + id +
-                ", orderid=" + orderid +
-                ", productid=" + productid +
-                ", productversion='" + productversion + '\'' +
-                ", productsalespecId=" + productsalespecId +
-                ", productname='" + productname + '\'' +
-                ", productsalespec='" + productsalespec + '\'' +
-                ", salespecquantity=" + salespecquantity +
-                ", sellunit='" + sellunit + '\'' +
-                ", productspec='" + productspec + '\'' +
-                ", specquantity=" + specquantity +
-                ", packagename='" + packagename + '\'' +
-                ", unitname='" + unitname + '\'' +
-                ", salemode=" + salemode +
-                ", isusebonus=" + isusebonus +
-                ", isusecoupon=" + isusecoupon +
-                ", iscumulative=" + iscumulative +
-                ", isadditionalpurchase=" + isadditionalpurchase +
-                ", supplierid=" + supplierid +
-                ", isregionpurchaseproduct=" + isregionpurchaseproduct +
-                ", oldproductid=" + oldproductid +
-                ", productbusinessclass=" + productbusinessclass +
-                ", isinordergive=" + isinordergive +
-                ", ishiddenproduct=" + ishiddenproduct +
-                ", lastmodifytime=" + lastmodifytime +
-                ", productinfoid=" + productinfoid +
-                ", productspecid=" + productspecid +
+                ", orderId=" + orderId +
+                ", productId=" + productId +
+                ", productVersion='" + productVersion + '\'' +
+                ", productSaleSpecId=" + productSaleSpecId +
+                ", productName='" + productName + '\'' +
+                ", productSaleSpec='" + productSaleSpec + '\'' +
+                ", saleSpecQuantity=" + saleSpecQuantity +
+                ", sellUnit='" + sellUnit + '\'' +
+                ", productSpec='" + productSpec + '\'' +
+                ", specQuantity=" + specQuantity +
+                ", packageName='" + packageName + '\'' +
+                ", unitName='" + unitName + '\'' +
+                ", saleMode=" + saleMode +
+                ", isUseBonus=" + isUseBonus +
+                ", isUseCoupOn=" + isUseCoupOn +
+                ", isCumulative=" + isCumulative +
+                ", isAdditionalPurchase=" + isAdditionalPurchase +
+                ", supplierId=" + supplierId +
+                ", isRegionPurchaseProduct=" + isRegionPurchaseProduct +
+                ", oldProductId=" + oldProductId +
+                ", productBusinessClass=" + productBusinessClass +
+                ", isInorderGive=" + isInorderGive +
+                ", isHiddenProduct=" + isHiddenProduct +
+                ", lastModifyTime=" + lastModifyTime +
+                ", productInfoId=" + productInfoId +
+                ", productSpecId=" + productSpecId +
                 '}';
     }
 }

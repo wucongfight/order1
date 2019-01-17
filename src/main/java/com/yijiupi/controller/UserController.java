@@ -12,48 +12,53 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * @Author: WuCong
+ * @Date: 2019/1/17 11:11
+ */
+
 @RequestMapping("user")
 @Controller
 public class UserController {
-     @Autowired
+    @Autowired
     private UserService userService;
 
 
     /**
      * 用户注册
-     * @param user
+     *
+     * @param user 用户
      * @return
      */
-    @PostMapping
+    @PostMapping("/register")
     public ResponseEntity<Void> register(@RequestBody User user) {
-        System.out.println(user);
         this.userService.insert(user);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
 
     /**
-     *用户登录校验
-     * @param user
+     * 用户登录校验
+     *
+     * @param user 用户
      * @return
      */
     @PostMapping("/login")
     public ResponseEntity<Boolean> queryUser(@RequestBody User user) {
         Boolean flag = this.userService.selectByPrimaryKey(user);
-        System.out.println("flag："+ flag);
         return ResponseEntity.ok(flag);
     }
 
 
     /**
-     *用户修改密码
-     * @param temporaryUser
+     * 用户修改密码
+     *
+     * @param temporaryUser 临时用户
      * @return
      */
     @PutMapping
-    public ResponseEntity<Boolean> update(@RequestBody TemporaryUser temporaryUser){
+    public ResponseEntity<Boolean> update(@RequestBody TemporaryUser temporaryUser) {
         Boolean flag = this.userService.updateByPrimaryKey(temporaryUser);
-        System.out.println("flag："+ flag);
         return ResponseEntity.ok(flag);
     }
 }

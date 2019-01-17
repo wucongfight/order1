@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yijiupi.mapper.OrderMapper" >
+  <resultMap id="BaseResultMap" type="com.yijiupi.entity.Order" >
+    <id column="Id" property="id" jdbcType="BIGINT" />
+    <result column="City_Id" property="cityId" jdbcType="INTEGER" />
+    <result column="orderNo" property="orderNo" jdbcType="VARCHAR" />
+    <result column="verison" property="verison" jdbcType="VARCHAR" />
+    <result column="orderType" property="orderType" jdbcType="TINYINT" />
+    <result column="orderClassify" property="orderClassify" jdbcType="TINYINT" />
+    <result column="State" property="state" jdbcType="SMALLINT" />
+    <result column="stateUser" property="stateUser" jdbcType="SMALLINT" />
+    <result column="giveCoupOnAmount" property="giveCoupOnAmount" jdbcType="DECIMAL" />
+    <result column="sysRemark" property="sysRemark" jdbcType="VARCHAR" />
+    <result column="remarkUser" property="remarkUser" jdbcType="VARCHAR" />
+    <result column="userCancelReason" property="userCancelReason" jdbcType="VARCHAR" />
+    <result column="remarkService" property="remarkService" jdbcType="VARCHAR" />
+    <result column="payType" property="payType" jdbcType="TINYINT" />
+    <result column="giveWineScore" property="giveWineScore" jdbcType="DECIMAL" />
+    <result column="costWineScore" property="costWineScore" jdbcType="DECIMAL" />
+    <result column="orderAmount" property="orderAmount" jdbcType="DECIMAL" />
+    <result column="payAbleAmount" property="payAbleAmount" jdbcType="DECIMAL" />
+    <result column="reduceAmount" property="reduceAmount" jdbcType="DECIMAL" />
+    <result column="useCoupOnAmount" property="useCoupOnAmount" jdbcType="DECIMAL" />
+    <result column="giveBonusAmount" property="giveBonusAmount" jdbcType="DECIMAL" />
+    <result column="useBonusAmount" property="useBonusAmount" jdbcType="DECIMAL" />
+    <result column="productReduceAmount" property="productReduceAmount" jdbcType="DECIMAL" />
+    <result column="hasPayment" property="hasPayment" jdbcType="TINYINT" />
+    <result column="Contact" property="contact" jdbcType="VARCHAR" />
+    <result column="Address_Id" property="addressId" jdbcType="INTEGER" />
+    <result column="Province" property="province" jdbcType="VARCHAR" />
+    <result column="City" property="city" jdbcType="VARCHAR" />
+    <result column="County" property="county" jdbcType="VARCHAR" />
+    <result column="Street" property="street" jdbcType="VARCHAR" />
+    <result column="detailAddress" property="detailAddress" jdbcType="VARCHAR" />
+    <result column="Phone" property="phone" jdbcType="VARCHAR" />
+    <result column="zipCode" property="zipCode" jdbcType="VARCHAR" />
+    <result column="isTestOrder" property="isTestOrder" jdbcType="TINYINT" />
+    <result column="userId" property="userId" jdbcType="INTEGER" />
+    <result column="salesManId" property="salesManId" jdbcType="INTEGER" />
+    <result column="OrderReducationRule_Id" property="orderReductionRuleId" jdbcType="INTEGER" />
+    <result column="qrCodeFileId" property="qrCodeFileId" jdbcType="BIGINT" />
+    <result column="deliveryMode" property="deliveryMode" jdbcType="TINYINT" />
+    <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="createUserId" property="createUserId" jdbcType="INTEGER" />
+    <result column="lastUpDateTime" property="lastUpDateTime" jdbcType="TIMESTAMP" />
+    <result column="lastUpDateUserId" property="lastUpDateUserId" jdbcType="INTEGER" />
+    <result column="orderCreateTime" property="orderCreateTime" jdbcType="TIMESTAMP" />
+    <result column="orderAuditTime" property="orderAuditTime" jdbcType="TIMESTAMP" />
+    <result column="orderPrintTime" property="orderPrintTime" jdbcType="TIMESTAMP" />
+    <result column="orderDeliverTime" property="orderDeliverTime" jdbcType="TIMESTAMP" />
+    <result column="orderCancelTime" property="orderCancelTime" jdbcType="TIMESTAMP" />
+    <result column="orderCompleteTime" property="orderCompleteTime" jdbcType="TIMESTAMP" />
+    <result column="orderSyncTime" property="orderSyncTime" jdbcType="TIMESTAMP" />
+    <result column="paymentState" property="paymentState" jdbcType="INTEGER" />
+    <result column="orderConfirmTime" property="orderConfirmTime" jdbcType="TIMESTAMP" />
+    <result column="OrderBatch_Id" property="orderBatchId" jdbcType="BIGINT" />
+    <result column="exactPayAmount" property="exactPayAmount" jdbcType="DECIMAL" />
+    <result column="UserName" property="username" jdbcType="VARCHAR" />
+    <result column="userMobileNo" property="userMobileNo" jdbcType="VARCHAR" />
+    <result column="userCompanyName" property="userCompanyName" jdbcType="VARCHAR" />
+    <result column="selfPickUpReduceAmount" property="selfPickUpReduceAmount" jdbcType="DECIMAL" />
+    <result column="OrderAttachedGiftRule_Id" property="orderAttachedGiftRuleId" jdbcType="INTEGER" />
+    <result column="shop_id" property="shopId" jdbcType="BIGINT" />
+    <result column="pickup_warehouse_Id" property="pickupWarehouseId" jdbcType="INTEGER" />
+    <result column="useAwardBonusAmount" property="useAwardBonusAmount" jdbcType="DECIMAL" />
+    <result column="userEwardBonusAmount" property="userEwardBonusAmount" jdbcType="DECIMAL" />
+    <result column="useCouponCodeAmount" property="useCouponCodeAmount" jdbcType="DECIMAL" />
+    <result column="lastModifyTime" property="lastModifyTime" jdbcType="TIMESTAMP" />
+    <result column="orderItemCount" property="orderItemCount" jdbcType="INTEGER" />
+    <result column="salesManDeptId" property="salesManDeptId" jdbcType="INTEGER" />
+    <result column="onLineSalesManId" property="onLineSalesManId" jdbcType="INTEGER" />
+    <result column="onlineSalesManDeptId" property="onlineSalesManDeptId" jdbcType="INTEGER" />
+    <result column="area_id" property="areaId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, City_Id, orderNo, verison, orderType, orderClassify, State, stateUser, giveCoupOnAmount,
+    sysRemark, remarkUser, userCancelReason, remarkService, payType, giveWineScore, costWineScore,
+    orderAmount, payAbleAmount, reduceAmount, useCoupOnAmount, giveBonusAmount, useBonusAmount,
+    productReduceAmount, hasPayment, Contact, Address_Id, Province, City, County, Street,
+    detailAddress, Phone, zipCode, isTestOrder, userId, salesManId, OrderReducationRule_Id,
+    qrCodeFileId, deliveryMode, createTime, createUserId, lastUpDateTime, lastUpDateUserId,
+    orderCreateTime, orderAuditTime, orderPrintTime, orderDeliverTime, orderCancelTime,
+    orderCompleteTime, orderSyncTime, paymentState, orderConfirmTime, OrderBatch_Id,
+    exactPayAmount, UserName, userMobileNo, userCompanyName, selfPickUpReduceAmount,
+    OrderAttachedGiftRule_Id, shop_id, pickup_warehouse_Id, useAwardBonusAmount, userEwardBonusAmount,
+    useCouponCodeAmount, lastModifyTime, orderItemCount, salesManDeptId, onLineSalesManId,
+    onlineSalesManDeptId, area_id
+  </sql>
+
+  <select id="selectOrderByCityId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from Orders
+    <where>
+      <if test="cityId != 0">
+        and  City_Id = #{cityId}
+      </if>
+    </where>
+
+  </select>
+
+
+  <select id="selectOrder" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from Orders
+    <where>
+      <if test="cityId != 0">
+        and  City_Id = #{cityId}
+      </if>
+      <if test="orderType != 0">
+        and orderType = #{orderType}
+      </if>
+    </where>
+
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from Orders
+    where Id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.yijiupi.entity.Order" >
+    insert into Orders (Id, City_Id, orderNo,
+      verison, orderType, orderClassify,
+      State, stateUser, giveCoupOnAmount,
+      sysRemark, remarkUser, userCancelReason,
+      remarkService, payType, giveWineScore,
+      costWineScore, orderAmount, payAbleAmount,
+      reduceAmount, useCoupOnAmount, giveBonusAmount,
+      useBonusAmount, productReduceAmount, hasPayment,
+      Contact, Address_Id, Province, 
+      City, County, Street, 
+      detailAddress, Phone, zipCode,
+      isTestOrder, userId, salesManId,
+      OrderReducationRule_Id, qrCodeFileId, deliveryMode,
+      createTime, createUserId, lastUpDateTime,
+      lastUpDateUserId, orderCreateTime, orderAuditTime,
+      orderPrintTime, orderDeliverTime, orderCancelTime,
+      orderCompleteTime, orderSyncTime, paymentState,
+      orderConfirmTime, OrderBatch_Id, exactPayAmount,
+      UserName, userMobileNo, userCompanyName,
+      selfPickUpReduceAmount, OrderAttachedGiftRule_Id,
+      shop_id, pickup_warehouse_Id, useAwardBonusAmount,
+      userEwardBonusAmount, useCouponCodeAmount,
+      lastModifyTime, orderItemCount, salesManDeptId,
+      onLineSalesManId, onlineSalesManDeptId,
+      area_id)
+    values (#{id,jdbcType=BIGINT}, #{cityId,jdbcType=INTEGER}, #{orderNo,jdbcType=VARCHAR},
+      #{verison,jdbcType=VARCHAR}, #{orderType,jdbcType=TINYINT}, #{orderClassify,jdbcType=TINYINT},
+      #{state,jdbcType=SMALLINT}, #{stateUser,jdbcType=SMALLINT}, #{giveCoupOnAmount,jdbcType=DECIMAL},
+      #{sysRemark,jdbcType=VARCHAR}, #{remarkUser,jdbcType=VARCHAR}, #{userCancelReason,jdbcType=VARCHAR},
+      #{remarkService,jdbcType=VARCHAR}, #{payType,jdbcType=TINYINT}, #{giveWineScore,jdbcType=DECIMAL},
+      #{costWineScore,jdbcType=DECIMAL}, #{orderAmount,jdbcType=DECIMAL}, #{payAbleAmount,jdbcType=DECIMAL},
+      #{reduceAmount,jdbcType=DECIMAL}, #{useCoupOnAmount,jdbcType=DECIMAL}, #{giveBonusAmount,jdbcType=DECIMAL},
+      #{useBonusAmount,jdbcType=DECIMAL}, #{productReduceAmount,jdbcType=DECIMAL}, #{hasPayment,jdbcType=TINYINT},
+      #{contact,jdbcType=VARCHAR}, #{addressId,jdbcType=INTEGER}, #{province,jdbcType=VARCHAR}, 
+      #{city,jdbcType=VARCHAR}, #{county,jdbcType=VARCHAR}, #{street,jdbcType=VARCHAR}, 
+      #{detailAddress,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{zipCode,jdbcType=VARCHAR},
+      #{isTestOrder,jdbcType=TINYINT}, #{userId,jdbcType=INTEGER}, #{salesManId,jdbcType=INTEGER},
+      #{orderReductionRuleId,jdbcType=INTEGER}, #{qrCodeFileId,jdbcType=BIGINT}, #{deliveryMode,jdbcType=TINYINT},
+      #{createTime,jdbcType=TIMESTAMP}, #{createUserId,jdbcType=INTEGER}, #{lastUpDateTime,jdbcType=TIMESTAMP},
+      #{lastUpDateUserId,jdbcType=INTEGER}, #{orderCreateTime,jdbcType=TIMESTAMP}, #{orderAuditTime,jdbcType=TIMESTAMP},
+      #{orderPrintTime,jdbcType=TIMESTAMP}, #{orderDeliverTime,jdbcType=TIMESTAMP}, #{orderCancelTime,jdbcType=TIMESTAMP},
+      #{orderCompleteTime,jdbcType=TIMESTAMP}, #{orderSyncTime,jdbcType=TIMESTAMP}, #{paymentState,jdbcType=INTEGER},
+      #{orderConfirmTime,jdbcType=TIMESTAMP}, #{orderBatchId,jdbcType=BIGINT}, #{exactPayAmount,jdbcType=DECIMAL},
+      #{username,jdbcType=VARCHAR}, #{userMobileNo,jdbcType=VARCHAR}, #{userCompanyName,jdbcType=VARCHAR},
+      #{selfPickUpReduceAmount,jdbcType=DECIMAL}, #{orderAttachedGiftRuleId,jdbcType=INTEGER},
+      #{shopId,jdbcType=BIGINT}, #{pickupWarehouseId,jdbcType=INTEGER}, #{useAwardBonusAmount,jdbcType=DECIMAL},
+      #{userEwardBonusAmount,jdbcType=DECIMAL}, #{useCouponCodeAmount,jdbcType=DECIMAL},
+      #{lastModifyTime,jdbcType=TIMESTAMP}, #{orderItemCount,jdbcType=INTEGER}, #{salesManDeptId,jdbcType=INTEGER},
+      #{onLineSalesManId,jdbcType=INTEGER}, #{onlineSalesManDeptId,jdbcType=INTEGER},
+      #{areaId,jdbcType=BIGINT})
+  </insert>
+
+  <update id="updateByPrimaryKey" parameterType="com.yijiupi.entity.Order" >
+    update Orders
+    set City_Id = #{cityId,jdbcType=INTEGER},
+      orderNo = #{orderNo,jdbcType=VARCHAR},
+      verison = #{verison,jdbcType=VARCHAR},
+      orderType = #{orderType,jdbcType=TINYINT},
+      orderClassify = #{orderClassify,jdbcType=TINYINT},
+      State = #{state,jdbcType=SMALLINT},
+      stateUser = #{stateUser,jdbcType=SMALLINT},
+      giveCoupOnAmount = #{giveCoupOnAmount,jdbcType=DECIMAL},
+      sysRemark = #{sysRemark,jdbcType=VARCHAR},
+      remarkUser = #{remarkUser,jdbcType=VARCHAR},
+      userCancelReason = #{userCancelReason,jdbcType=VARCHAR},
+      remarkService = #{remarkService,jdbcType=VARCHAR},
+      payType = #{payType,jdbcType=TINYINT},
+      giveWineScore = #{giveWineScore,jdbcType=DECIMAL},
+      costWineScore = #{costWineScore,jdbcType=DECIMAL},
+      orderAmount = #{orderAmount,jdbcType=DECIMAL},
+      payAbleAmount = #{payAbleAmount,jdbcType=DECIMAL},
+      reduceAmount = #{reduceAmount,jdbcType=DECIMAL},
+      useCoupOnAmount = #{useCoupOnAmount,jdbcType=DECIMAL},
+      giveBonusAmount = #{giveBonusAmount,jdbcType=DECIMAL},
+      useBonusAmount = #{useBonusAmount,jdbcType=DECIMAL},
+      productReduceAmount = #{productReduceAmount,jdbcType=DECIMAL},
+      hasPayment = #{hasPayment,jdbcType=TINYINT},
+      Contact = #{contact,jdbcType=VARCHAR},
+      Address_Id = #{addressId,jdbcType=INTEGER},
+      Province = #{province,jdbcType=VARCHAR},
+      City = #{city,jdbcType=VARCHAR},
+      County = #{county,jdbcType=VARCHAR},
+      Street = #{street,jdbcType=VARCHAR},
+      detailAddress = #{detailAddress,jdbcType=VARCHAR},
+      Phone = #{phone,jdbcType=VARCHAR},
+      zipCode = #{zipCode,jdbcType=VARCHAR},
+      isTestOrder = #{isTestOrder,jdbcType=TINYINT},
+      userId = #{userId,jdbcType=INTEGER},
+      salesManId = #{salesManId,jdbcType=INTEGER},
+      OrderReducationRule_Id = #{orderReductionRuleId,jdbcType=INTEGER},
+      qrCodeFileId = #{qrCodeFileId,jdbcType=BIGINT},
+      deliveryMode = #{deliveryMode,jdbcType=TINYINT},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      createUserId = #{createUserId,jdbcType=INTEGER},
+      lastUpDateTime = #{lastUpDateTime,jdbcType=TIMESTAMP},
+      lastUpDateUserId = #{lastUpDateUserId,jdbcType=INTEGER},
+      orderCreateTime = #{orderCreateTime,jdbcType=TIMESTAMP},
+      orderAuditTime = #{orderAuditTime,jdbcType=TIMESTAMP},
+      orderPrintTime = #{orderPrintTime,jdbcType=TIMESTAMP},
+      orderDeliverTime = #{orderDeliverTime,jdbcType=TIMESTAMP},
+      orderCancelTime = #{orderCancelTime,jdbcType=TIMESTAMP},
+      orderCompleteTime = #{orderCompleteTime,jdbcType=TIMESTAMP},
+      orderSyncTime = #{orderSyncTime,jdbcType=TIMESTAMP},
+      paymentState = #{paymentState,jdbcType=INTEGER},
+      orderConfirmTime = #{orderConfirmTime,jdbcType=TIMESTAMP},
+      OrderBatch_Id = #{orderBatchId,jdbcType=BIGINT},
+      exactPayAmount = #{exactPayAmount,jdbcType=DECIMAL},
+      UserName = #{username,jdbcType=VARCHAR},
+      userMobileNo = #{userMobileNo,jdbcType=VARCHAR},
+      userCompanyName = #{userCompanyName,jdbcType=VARCHAR},
+      selfPickUpReduceAmount = #{selfPickUpReduceAmount,jdbcType=DECIMAL},
+      OrderAttachedGiftRule_Id = #{orderAttachedGiftRuleId,jdbcType=INTEGER},
+      shop_id = #{shopId,jdbcType=BIGINT},
+      pickup_warehouse_Id = #{pickupWarehouseId,jdbcType=INTEGER},
+      useAwardBonusAmount = #{useAwardBonusAmount,jdbcType=DECIMAL},
+      userEwardBonusAmount = #{userEwardBonusAmount,jdbcType=DECIMAL},
+      useCouponCodeAmount = #{useCouponCodeAmount,jdbcType=DECIMAL},
+      lastModifyTime = #{lastModifyTime,jdbcType=TIMESTAMP},
+      orderItemCount = #{orderItemCount,jdbcType=INTEGER},
+      salesManDeptId = #{salesManDeptId,jdbcType=INTEGER},
+      onLineSalesManId = #{onLineSalesManId,jdbcType=INTEGER},
+      onlineSalesManDeptId = #{onlineSalesManDeptId,jdbcType=INTEGER},
+      area_id = #{areaId,jdbcType=BIGINT}
+    where Id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

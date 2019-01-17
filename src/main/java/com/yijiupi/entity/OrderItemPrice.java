@@ -3,42 +3,46 @@ package com.yijiupi.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * @Author: WuCong
+ * @Date: 2019/1/17 11:11
+ */
 public class OrderItemPrice {
     private Long id;
 
-    private Long orderid;
+    private Long orderId;
 
-    private BigDecimal originalprice;
+    private BigDecimal originalPrice;
 
-    private String originalpriceunit;
+    private String originalPriceUnit;
 
-    private BigDecimal costprice;
+    private BigDecimal costPrice;
 
-    private String costpriceunit;
+    private String costPriceUnit;
 
-    private BigDecimal sellprice;
+    private BigDecimal sellPrice;
 
-    private String sellunit;
+    private String sellUnit;
 
-    private BigDecimal minunitprice;
+    private BigDecimal minUnitPrice;
 
-    private String minunitname;
+    private String minUnitName;
 
-    private BigDecimal reduceproductprice;
+    private BigDecimal reduceProductPrice;
 
-    private String reduceproductpriceunit;
+    private String reduceProductPriceUnit;
 
-    private Integer selltominunitquantity;
+    private Integer sellToMinUnitQuantity;
 
-    private Integer maxtominunitquantity;
+    private Integer maxToMinUnitQuantity;
 
-    private Integer winescore;
+    private Integer wineScore;
 
-    private BigDecimal defaultspecprice;
+    private BigDecimal defaultSpecPrice;
 
-    private BigDecimal selfpickupreduceprice;
+    private BigDecimal selfPickUpReducePrice;
 
-    private Date lastmodifytime;
+    private Date lastModifyTime;
 
     public Long getId() {
         return id;
@@ -48,163 +52,163 @@ public class OrderItemPrice {
         this.id = id;
     }
 
-    public Long getOrderid() {
-        return orderid;
+    public Long getOrderId() {
+        return orderId;
     }
 
-    public void setOrderid(Long orderid) {
-        this.orderid = orderid;
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
-    public BigDecimal getOriginalprice() {
-        return originalprice;
+    public BigDecimal getOriginalPrice() {
+        return originalPrice;
     }
 
-    public void setOriginalprice(BigDecimal originalprice) {
-        this.originalprice = originalprice;
+    public void setOriginalPrice(BigDecimal originalPrice) {
+        this.originalPrice = originalPrice;
     }
 
-    public String getOriginalpriceunit() {
-        return originalpriceunit;
+    public String getOriginalPriceUnit() {
+        return originalPriceUnit;
     }
 
-    public void setOriginalpriceunit(String originalpriceunit) {
-        this.originalpriceunit = originalpriceunit == null ? null : originalpriceunit.trim();
+    public void setOriginalPriceUnit(String originalPriceUnit) {
+        this.originalPriceUnit = originalPriceUnit;
     }
 
-    public BigDecimal getCostprice() {
-        return costprice;
+    public BigDecimal getCostPrice() {
+        return costPrice;
     }
 
-    public void setCostprice(BigDecimal costprice) {
-        this.costprice = costprice;
+    public void setCostPrice(BigDecimal costPrice) {
+        this.costPrice = costPrice;
     }
 
-    public String getCostpriceunit() {
-        return costpriceunit;
+    public String getCostPriceUnit() {
+        return costPriceUnit;
     }
 
-    public void setCostpriceunit(String costpriceunit) {
-        this.costpriceunit = costpriceunit == null ? null : costpriceunit.trim();
+    public void setCostPriceUnit(String costPriceUnit) {
+        this.costPriceUnit = costPriceUnit;
     }
 
-    public BigDecimal getSellprice() {
-        return sellprice;
+    public BigDecimal getSellPrice() {
+        return sellPrice;
     }
 
-    public void setSellprice(BigDecimal sellprice) {
-        this.sellprice = sellprice;
+    public void setSellPrice(BigDecimal sellPrice) {
+        this.sellPrice = sellPrice;
     }
 
-    public String getSellunit() {
-        return sellunit;
+    public String getSellUnit() {
+        return sellUnit;
     }
 
-    public void setSellunit(String sellunit) {
-        this.sellunit = sellunit == null ? null : sellunit.trim();
+    public void setSellUnit(String sellUnit) {
+        this.sellUnit = sellUnit;
     }
 
-    public BigDecimal getMinunitprice() {
-        return minunitprice;
+    public BigDecimal getMinUnitPrice() {
+        return minUnitPrice;
     }
 
-    public void setMinunitprice(BigDecimal minunitprice) {
-        this.minunitprice = minunitprice;
+    public void setMinUnitPrice(BigDecimal minUnitPrice) {
+        this.minUnitPrice = minUnitPrice;
     }
 
-    public String getMinunitname() {
-        return minunitname;
+    public String getMinUnitName() {
+        return minUnitName;
     }
 
-    public void setMinunitname(String minunitname) {
-        this.minunitname = minunitname == null ? null : minunitname.trim();
+    public void setMinUnitName(String minUnitName) {
+        this.minUnitName = minUnitName;
     }
 
-    public BigDecimal getReduceproductprice() {
-        return reduceproductprice;
+    public BigDecimal getReduceProductPrice() {
+        return reduceProductPrice;
     }
 
-    public void setReduceproductprice(BigDecimal reduceproductprice) {
-        this.reduceproductprice = reduceproductprice;
+    public void setReduceProductPrice(BigDecimal reduceProductPrice) {
+        this.reduceProductPrice = reduceProductPrice;
     }
 
-    public String getReduceproductpriceunit() {
-        return reduceproductpriceunit;
+    public String getReduceProductPriceUnit() {
+        return reduceProductPriceUnit;
     }
 
-    public void setReduceproductpriceunit(String reduceproductpriceunit) {
-        this.reduceproductpriceunit = reduceproductpriceunit == null ? null : reduceproductpriceunit.trim();
+    public void setReduceProductPriceUnit(String reduceProductPriceUnit) {
+        this.reduceProductPriceUnit = reduceProductPriceUnit;
     }
 
-    public Integer getSelltominunitquantity() {
-        return selltominunitquantity;
+    public Integer getSellToMinUnitQuantity() {
+        return sellToMinUnitQuantity;
     }
 
-    public void setSelltominunitquantity(Integer selltominunitquantity) {
-        this.selltominunitquantity = selltominunitquantity;
+    public void setSellToMinUnitQuantity(Integer sellToMinUnitQuantity) {
+        this.sellToMinUnitQuantity = sellToMinUnitQuantity;
     }
 
-    public Integer getMaxtominunitquantity() {
-        return maxtominunitquantity;
+    public Integer getMaxToMinUnitQuantity() {
+        return maxToMinUnitQuantity;
     }
 
-    public void setMaxtominunitquantity(Integer maxtominunitquantity) {
-        this.maxtominunitquantity = maxtominunitquantity;
+    public void setMaxToMinUnitQuantity(Integer maxToMinUnitQuantity) {
+        this.maxToMinUnitQuantity = maxToMinUnitQuantity;
     }
 
-    public Integer getWinescore() {
-        return winescore;
+    public Integer getWineScore() {
+        return wineScore;
     }
 
-    public void setWinescore(Integer winescore) {
-        this.winescore = winescore;
+    public void setWineScore(Integer wineScore) {
+        this.wineScore = wineScore;
     }
 
-    public BigDecimal getDefaultspecprice() {
-        return defaultspecprice;
+    public BigDecimal getDefaultSpecPrice() {
+        return defaultSpecPrice;
     }
 
-    public void setDefaultspecprice(BigDecimal defaultspecprice) {
-        this.defaultspecprice = defaultspecprice;
+    public void setDefaultSpecPrice(BigDecimal defaultSpecPrice) {
+        this.defaultSpecPrice = defaultSpecPrice;
     }
 
-    public BigDecimal getSelfpickupreduceprice() {
-        return selfpickupreduceprice;
+    public BigDecimal getSelfPickUpReducePrice() {
+        return selfPickUpReducePrice;
     }
 
-    public void setSelfpickupreduceprice(BigDecimal selfpickupreduceprice) {
-        this.selfpickupreduceprice = selfpickupreduceprice;
+    public void setSelfPickUpReducePrice(BigDecimal selfPickUpReducePrice) {
+        this.selfPickUpReducePrice = selfPickUpReducePrice;
     }
 
-    public Date getLastmodifytime() {
-        return lastmodifytime;
+    public Date getLastModifyTime() {
+        return lastModifyTime;
     }
 
-    public void setLastmodifytime(Date lastmodifytime) {
-        this.lastmodifytime = lastmodifytime;
+    public void setLastModifyTime(Date lastModifyTime) {
+        this.lastModifyTime = lastModifyTime;
     }
 
     @Override
     public String toString() {
         return "OrderItemPrice{" +
                 "id=" + id +
-                ", orderid=" + orderid +
-                ", originalprice=" + originalprice +
-                ", originalpriceunit='" + originalpriceunit + '\'' +
-                ", costprice=" + costprice +
-                ", costpriceunit='" + costpriceunit + '\'' +
-                ", sellprice=" + sellprice +
-                ", sellunit='" + sellunit + '\'' +
-                ", minunitprice=" + minunitprice +
-                ", minunitname='" + minunitname + '\'' +
-                ", reduceproductprice=" + reduceproductprice +
-                ", reduceproductpriceunit='" + reduceproductpriceunit + '\'' +
-                ", selltominunitquantity=" + selltominunitquantity +
-                ", maxtominunitquantity=" + maxtominunitquantity +
-                ", winescore=" + winescore +
-                ", defaultspecprice=" + defaultspecprice +
-                ", selfpickupreduceprice=" + selfpickupreduceprice +
-                ", lastmodifytime=" + lastmodifytime +
+                ", orderId=" + orderId +
+                ", originalPrice=" + originalPrice +
+                ", originalPriceUnit='" + originalPriceUnit + '\'' +
+                ", costPrice=" + costPrice +
+                ", costPriceUnit='" + costPriceUnit + '\'' +
+                ", sellPrice=" + sellPrice +
+                ", sellUnit='" + sellUnit + '\'' +
+                ", minUnitPrice=" + minUnitPrice +
+                ", minUnitName='" + minUnitName + '\'' +
+                ", reduceProductPrice=" + reduceProductPrice +
+                ", reduceProductPriceUnit='" + reduceProductPriceUnit + '\'' +
+                ", sellToMinUnitQuantity=" + sellToMinUnitQuantity +
+                ", maxToMinUnitQuantity=" + maxToMinUnitQuantity +
+                ", wineScore=" + wineScore +
+                ", defaultSpecPrice=" + defaultSpecPrice +
+                ", selfPickUpReducePrice=" + selfPickUpReducePrice +
+                ", lastModifyTime=" + lastModifyTime +
                 '}';
     }
 }

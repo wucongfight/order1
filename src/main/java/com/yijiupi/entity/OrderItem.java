@@ -2,22 +2,26 @@ package com.yijiupi.entity;
 
 import java.util.Date;
 
+/**
+ * @Author: WuCong
+ * @Date: 2019/1/17 11:11
+ */
 public class OrderItem {
     private Long id;
 
-    private Long orderid;
+    private Long orderId;
 
     private String remark;
 
-    private Byte sourcetype;
+    private Byte sourceType;
 
     private String sourceId;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Byte producttype;
+    private Byte productType;
 
-    private Date lastmodifytime;
+    private Date lastModifyTime;
 
     public Long getId() {
         return id;
@@ -27,12 +31,12 @@ public class OrderItem {
         this.id = id;
     }
 
-    public Long getOrderid() {
-        return orderid;
+    public Long getOrderId() {
+        return orderId;
     }
 
-    public void setOrderid(Long orderid) {
-        this.orderid = orderid;
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
     public String getRemark() {
@@ -40,15 +44,15 @@ public class OrderItem {
     }
 
     public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
+        this.remark = remark;
     }
 
-    public Byte getSourcetype() {
-        return sourcetype;
+    public Byte getSourceType() {
+        return sourceType;
     }
 
-    public void setSourcetype(Byte sourcetype) {
-        this.sourcetype = sourcetype;
+    public void setSourceType(Byte sourceType) {
+        this.sourceType = sourceType;
     }
 
     public String getSourceId() {
@@ -56,44 +60,44 @@ public class OrderItem {
     }
 
     public void setSourceId(String sourceId) {
-        this.sourceId = sourceId == null ? null : sourceId.trim();
+        this.sourceId = sourceId;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Byte getProducttype() {
-        return producttype;
+    public Byte getProductType() {
+        return productType;
     }
 
-    public void setProducttype(Byte producttype) {
-        this.producttype = producttype;
+    public void setProductType(Byte productType) {
+        this.productType = productType;
     }
 
-    public Date getLastmodifytime() {
-        return lastmodifytime;
+    public Date getLastModifyTime() {
+        return lastModifyTime;
     }
 
-    public void setLastmodifytime(Date lastmodifytime) {
-        this.lastmodifytime = lastmodifytime;
+    public void setLastModifyTime(Date lastModifyTime) {
+        this.lastModifyTime = lastModifyTime;
     }
 
     @Override
     public String toString() {
         return "OrderItem{" +
                 "id=" + id +
-                ", orderid=" + orderid +
+                ", orderId=" + orderId +
                 ", remark='" + remark + '\'' +
-                ", sourcetype=" + sourcetype +
+                ", sourceType=" + sourceType +
                 ", sourceId='" + sourceId + '\'' +
-                ", createtime=" + createtime +
-                ", producttype=" + producttype +
-                ", lastmodifytime=" + lastmodifytime +
+                ", createTime=" + createTime +
+                ", productType=" + productType +
+                ", lastModifyTime=" + lastModifyTime +
                 '}';
     }
 }

@@ -22,34 +22,7 @@
     insert into user (userName, password)
     values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.yijiupi.entity.User" >
-    insert into user
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="username != null" >
-        userName,
-      </if>
-      <if test="password != null" >
-        password,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="username != null" >
-        #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null" >
-        #{password,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yijiupi.entity.User" >
-    update user
-    <set >
-      <if test="password != null" >
-        password = #{password,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where userName = #{username,jdbcType=VARCHAR}
-  </update>
+
   <update id="updateByPrimaryKey" parameterType="com.yijiupi.entity.User" >
     update user
     set password = #{password,jdbcType=VARCHAR}

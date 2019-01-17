@@ -3,282 +3,43 @@
 <mapper namespace="com.yijiupi.mapper.OrderItemAmountMapper" >
   <resultMap id="BaseResultMap" type="com.yijiupi.entity.OrderItemAmount" >
     <id column="Id" property="id" jdbcType="BIGINT" />
-    <result column="OrderId" property="orderid" jdbcType="BIGINT" />
-    <result column="ReduceProductAmount" property="reduceproductamount" jdbcType="DECIMAL" />
-    <result column="ReduceCouponAmount" property="reducecouponamount" jdbcType="DECIMAL" />
-    <result column="ReduceBonusAmount" property="reducebonusamount" jdbcType="DECIMAL" />
-    <result column="ReduceOrderAmount" property="reduceorderamount" jdbcType="DECIMAL" />
+    <result column="orderId" property="orderId" jdbcType="BIGINT" />
+    <result column="reduceProductAmount" property="reduceProductAmount" jdbcType="DECIMAL" />
+    <result column="reduceCouponAmount" property="reduceCouponAmount" jdbcType="DECIMAL" />
+    <result column="reduceBonusAmount" property="reduceBonusAmount" jdbcType="DECIMAL" />
+    <result column="reduceOrderAmount" property="reduceOrderAmount" jdbcType="DECIMAL" />
     <result column="Discount" property="discount" jdbcType="DECIMAL" />
-    <result column="TotalAmount" property="totalamount" jdbcType="DECIMAL" />
-    <result column="PayAmount" property="payamount" jdbcType="DECIMAL" />
-    <result column="WineScore" property="winescore" jdbcType="INTEGER" />
-    <result column="DeliveryAmount" property="deliveryamount" jdbcType="DECIMAL" />
-    <result column="SaleCount" property="salecount" jdbcType="INTEGER" />
-    <result column="MinUnitTotalCount" property="minunittotalcount" jdbcType="INTEGER" />
+    <result column="totalAmount" property="totalAmount" jdbcType="DECIMAL" />
+    <result column="payAmount" property="payAmount" jdbcType="DECIMAL" />
+    <result column="wineScore" property="wineScore" jdbcType="INTEGER" />
+    <result column="deliveryAmount" property="deliveryAmount" jdbcType="DECIMAL" />
+    <result column="saleCount" property="saleCount" jdbcType="INTEGER" />
+    <result column="minUnitTotalCount" property="minUnitTotalCount" jdbcType="INTEGER" />
     <result column="Source_Count" property="sourceCount" jdbcType="INTEGER" />
-    <result column="SysRemark" property="sysremark" jdbcType="VARCHAR" />
-    <result column="LastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
-    <result column="selfPickUpReduceAmount" property="selfpickupreduceamount" jdbcType="DECIMAL" />
-    <result column="ReduceRewardBonusAmount" property="reducerewardbonusamount" jdbcType="DECIMAL" />
-    <result column="ReduceCouponCodeAmount" property="reducecouponcodeamount" jdbcType="DECIMAL" />
-    <result column="LastModifyTime" property="lastmodifytime" jdbcType="TIMESTAMP" />
-    <result column="giveBonusAmount" property="givebonusamount" jdbcType="DECIMAL" />
+    <result column="sysRemark" property="sysRemark" jdbcType="VARCHAR" />
+    <result column="lastUpDateTime" property="lastUpDateTime" jdbcType="TIMESTAMP" />
+    <result column="selfPickUpReduceAmount" property="selfPickUpReduceAmount" jdbcType="DECIMAL" />
+    <result column="reduceRewardBonusAmount" property="reduceRewardBonusAmount" jdbcType="DECIMAL" />
+    <result column="reduceCoupOnCodeAmount" property="reduceCoupOnCodeAmount" jdbcType="DECIMAL" />
+    <result column="lastModifyTime" property="lastModifyTime" jdbcType="TIMESTAMP" />
+    <result column="giveBonusAmount" property="giveBonusAmount" jdbcType="DECIMAL" />
   </resultMap>
   <sql id="Base_Column_List" >
-    Id, OrderId, ReduceProductAmount, ReduceCouponAmount, ReduceBonusAmount, ReduceOrderAmount, 
-    Discount, TotalAmount, PayAmount, WineScore, DeliveryAmount, SaleCount, MinUnitTotalCount, 
-    Source_Count, SysRemark, LastUpdateTime, selfPickUpReduceAmount, ReduceRewardBonusAmount, 
-    ReduceCouponCodeAmount, LastModifyTime, giveBonusAmount
+    Id, orderId, reduceProductAmount, reduceCouponAmount, reduceBonusAmount, reduceOrderAmount,
+    Discount, totalAmount, payAmount, wineScore, deliveryAmount, saleCount, minUnitTotalCount,
+    Source_Count, sysRemark, lastUpDateTime, selfPickUpReduceAmount, reduceRewardBonusAmount,
+    reduceCoupOnCodeAmount, lastModifyTime, giveBonusAmount
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from orderitemamount
-    where OrderId = #{id,jdbcType=BIGINT}
+    where orderId = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from orderitemamount
-    where OrderId = #{id,jdbcType=BIGINT}
+    where orderId = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.yijiupi.entity.OrderItemAmount" >
-    insert into orderitemamount (Id, OrderId, ReduceProductAmount, 
-      ReduceCouponAmount, ReduceBonusAmount, 
-      ReduceOrderAmount, Discount, TotalAmount, 
-      PayAmount, WineScore, DeliveryAmount, 
-      SaleCount, MinUnitTotalCount, Source_Count, 
-      SysRemark, LastUpdateTime, selfPickUpReduceAmount, 
-      ReduceRewardBonusAmount, ReduceCouponCodeAmount, 
-      LastModifyTime, giveBonusAmount)
-    values (#{id,jdbcType=BIGINT}, #{orderid,jdbcType=BIGINT}, #{reduceproductamount,jdbcType=DECIMAL}, 
-      #{reducecouponamount,jdbcType=DECIMAL}, #{reducebonusamount,jdbcType=DECIMAL}, 
-      #{reduceorderamount,jdbcType=DECIMAL}, #{discount,jdbcType=DECIMAL}, #{totalamount,jdbcType=DECIMAL}, 
-      #{payamount,jdbcType=DECIMAL}, #{winescore,jdbcType=INTEGER}, #{deliveryamount,jdbcType=DECIMAL}, 
-      #{salecount,jdbcType=INTEGER}, #{minunittotalcount,jdbcType=INTEGER}, #{sourceCount,jdbcType=INTEGER}, 
-      #{sysremark,jdbcType=VARCHAR}, #{lastupdatetime,jdbcType=TIMESTAMP}, #{selfpickupreduceamount,jdbcType=DECIMAL}, 
-      #{reducerewardbonusamount,jdbcType=DECIMAL}, #{reducecouponcodeamount,jdbcType=DECIMAL}, 
-      #{lastmodifytime,jdbcType=TIMESTAMP}, #{givebonusamount,jdbcType=DECIMAL})
-  </insert>
-  <insert id="insertSelective" parameterType="com.yijiupi.entity.OrderItemAmount" >
-    insert into orderitemamount
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        Id,
-      </if>
-      <if test="orderid != null" >
-        OrderId,
-      </if>
-      <if test="reduceproductamount != null" >
-        ReduceProductAmount,
-      </if>
-      <if test="reducecouponamount != null" >
-        ReduceCouponAmount,
-      </if>
-      <if test="reducebonusamount != null" >
-        ReduceBonusAmount,
-      </if>
-      <if test="reduceorderamount != null" >
-        ReduceOrderAmount,
-      </if>
-      <if test="discount != null" >
-        Discount,
-      </if>
-      <if test="totalamount != null" >
-        TotalAmount,
-      </if>
-      <if test="payamount != null" >
-        PayAmount,
-      </if>
-      <if test="winescore != null" >
-        WineScore,
-      </if>
-      <if test="deliveryamount != null" >
-        DeliveryAmount,
-      </if>
-      <if test="salecount != null" >
-        SaleCount,
-      </if>
-      <if test="minunittotalcount != null" >
-        MinUnitTotalCount,
-      </if>
-      <if test="sourceCount != null" >
-        Source_Count,
-      </if>
-      <if test="sysremark != null" >
-        SysRemark,
-      </if>
-      <if test="lastupdatetime != null" >
-        LastUpdateTime,
-      </if>
-      <if test="selfpickupreduceamount != null" >
-        selfPickUpReduceAmount,
-      </if>
-      <if test="reducerewardbonusamount != null" >
-        ReduceRewardBonusAmount,
-      </if>
-      <if test="reducecouponcodeamount != null" >
-        ReduceCouponCodeAmount,
-      </if>
-      <if test="lastmodifytime != null" >
-        LastModifyTime,
-      </if>
-      <if test="givebonusamount != null" >
-        giveBonusAmount,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=BIGINT},
-      </if>
-      <if test="orderid != null" >
-        #{orderid,jdbcType=BIGINT},
-      </if>
-      <if test="reduceproductamount != null" >
-        #{reduceproductamount,jdbcType=DECIMAL},
-      </if>
-      <if test="reducecouponamount != null" >
-        #{reducecouponamount,jdbcType=DECIMAL},
-      </if>
-      <if test="reducebonusamount != null" >
-        #{reducebonusamount,jdbcType=DECIMAL},
-      </if>
-      <if test="reduceorderamount != null" >
-        #{reduceorderamount,jdbcType=DECIMAL},
-      </if>
-      <if test="discount != null" >
-        #{discount,jdbcType=DECIMAL},
-      </if>
-      <if test="totalamount != null" >
-        #{totalamount,jdbcType=DECIMAL},
-      </if>
-      <if test="payamount != null" >
-        #{payamount,jdbcType=DECIMAL},
-      </if>
-      <if test="winescore != null" >
-        #{winescore,jdbcType=INTEGER},
-      </if>
-      <if test="deliveryamount != null" >
-        #{deliveryamount,jdbcType=DECIMAL},
-      </if>
-      <if test="salecount != null" >
-        #{salecount,jdbcType=INTEGER},
-      </if>
-      <if test="minunittotalcount != null" >
-        #{minunittotalcount,jdbcType=INTEGER},
-      </if>
-      <if test="sourceCount != null" >
-        #{sourceCount,jdbcType=INTEGER},
-      </if>
-      <if test="sysremark != null" >
-        #{sysremark,jdbcType=VARCHAR},
-      </if>
-      <if test="lastupdatetime != null" >
-        #{lastupdatetime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="selfpickupreduceamount != null" >
-        #{selfpickupreduceamount,jdbcType=DECIMAL},
-      </if>
-      <if test="reducerewardbonusamount != null" >
-        #{reducerewardbonusamount,jdbcType=DECIMAL},
-      </if>
-      <if test="reducecouponcodeamount != null" >
-        #{reducecouponcodeamount,jdbcType=DECIMAL},
-      </if>
-      <if test="lastmodifytime != null" >
-        #{lastmodifytime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="givebonusamount != null" >
-        #{givebonusamount,jdbcType=DECIMAL},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yijiupi.entity.OrderItemAmount" >
-    update orderitemamount
-    <set >
-      <if test="orderid != null" >
-        OrderId = #{orderid,jdbcType=BIGINT},
-      </if>
-      <if test="reduceproductamount != null" >
-        ReduceProductAmount = #{reduceproductamount,jdbcType=DECIMAL},
-      </if>
-      <if test="reducecouponamount != null" >
-        ReduceCouponAmount = #{reducecouponamount,jdbcType=DECIMAL},
-      </if>
-      <if test="reducebonusamount != null" >
-        ReduceBonusAmount = #{reducebonusamount,jdbcType=DECIMAL},
-      </if>
-      <if test="reduceorderamount != null" >
-        ReduceOrderAmount = #{reduceorderamount,jdbcType=DECIMAL},
-      </if>
-      <if test="discount != null" >
-        Discount = #{discount,jdbcType=DECIMAL},
-      </if>
-      <if test="totalamount != null" >
-        TotalAmount = #{totalamount,jdbcType=DECIMAL},
-      </if>
-      <if test="payamount != null" >
-        PayAmount = #{payamount,jdbcType=DECIMAL},
-      </if>
-      <if test="winescore != null" >
-        WineScore = #{winescore,jdbcType=INTEGER},
-      </if>
-      <if test="deliveryamount != null" >
-        DeliveryAmount = #{deliveryamount,jdbcType=DECIMAL},
-      </if>
-      <if test="salecount != null" >
-        SaleCount = #{salecount,jdbcType=INTEGER},
-      </if>
-      <if test="minunittotalcount != null" >
-        MinUnitTotalCount = #{minunittotalcount,jdbcType=INTEGER},
-      </if>
-      <if test="sourceCount != null" >
-        Source_Count = #{sourceCount,jdbcType=INTEGER},
-      </if>
-      <if test="sysremark != null" >
-        SysRemark = #{sysremark,jdbcType=VARCHAR},
-      </if>
-      <if test="lastupdatetime != null" >
-        LastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="selfpickupreduceamount != null" >
-        selfPickUpReduceAmount = #{selfpickupreduceamount,jdbcType=DECIMAL},
-      </if>
-      <if test="reducerewardbonusamount != null" >
-        ReduceRewardBonusAmount = #{reducerewardbonusamount,jdbcType=DECIMAL},
-      </if>
-      <if test="reducecouponcodeamount != null" >
-        ReduceCouponCodeAmount = #{reducecouponcodeamount,jdbcType=DECIMAL},
-      </if>
-      <if test="lastmodifytime != null" >
-        LastModifyTime = #{lastmodifytime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="givebonusamount != null" >
-        giveBonusAmount = #{givebonusamount,jdbcType=DECIMAL},
-      </if>
-    </set>
-    where Id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.yijiupi.entity.OrderItemAmount" >
-    update orderitemamount
-    set OrderId = #{orderid,jdbcType=BIGINT},
-      ReduceProductAmount = #{reduceproductamount,jdbcType=DECIMAL},
-      ReduceCouponAmount = #{reducecouponamount,jdbcType=DECIMAL},
-      ReduceBonusAmount = #{reducebonusamount,jdbcType=DECIMAL},
-      ReduceOrderAmount = #{reduceorderamount,jdbcType=DECIMAL},
-      Discount = #{discount,jdbcType=DECIMAL},
-      TotalAmount = #{totalamount,jdbcType=DECIMAL},
-      PayAmount = #{payamount,jdbcType=DECIMAL},
-      WineScore = #{winescore,jdbcType=INTEGER},
-      DeliveryAmount = #{deliveryamount,jdbcType=DECIMAL},
-      SaleCount = #{salecount,jdbcType=INTEGER},
-      MinUnitTotalCount = #{minunittotalcount,jdbcType=INTEGER},
-      Source_Count = #{sourceCount,jdbcType=INTEGER},
-      SysRemark = #{sysremark,jdbcType=VARCHAR},
-      LastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
-      selfPickUpReduceAmount = #{selfpickupreduceamount,jdbcType=DECIMAL},
-      ReduceRewardBonusAmount = #{reducerewardbonusamount,jdbcType=DECIMAL},
-      ReduceCouponCodeAmount = #{reducecouponcodeamount,jdbcType=DECIMAL},
-      LastModifyTime = #{lastmodifytime,jdbcType=TIMESTAMP},
-      giveBonusAmount = #{givebonusamount,jdbcType=DECIMAL}
-    where Id = #{id,jdbcType=BIGINT}
-  </update>
+
+
 </mapper>

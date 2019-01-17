@@ -4,17 +4,27 @@ package com.yijiupi.mapper;
 import com.yijiupi.entity.OrderItemProduct;
 import org.apache.ibatis.annotations.Mapper;
 
+/**
+ * @Author: WuCong
+ * @Date: 2019/1/17 11:11
+ */
 @Mapper
 public interface OrderItemProductMapper {
+    /**
+     * 根据订单id删除订单产品信息
+     *
+     * @param id
+     * @return
+     */
     int deleteByPrimaryKey(Long id);
 
-    int insert(OrderItemProduct record);
-
-    int insertSelective(OrderItemProduct record);
-
+    /**
+     * 根据订单id删除订单产品信息
+     *
+     * @param id
+     * @return
+     */
     OrderItemProduct selectByPrimaryKey(Long id);
 
-    int updateByPrimaryKeySelective(OrderItemProduct record);
 
-    int updateByPrimaryKey(OrderItemProduct record);
 }

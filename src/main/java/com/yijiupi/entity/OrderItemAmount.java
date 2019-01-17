@@ -3,48 +3,52 @@ package com.yijiupi.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * @Author: WuCong
+ * @Date: 2019/1/17 11:11
+ */
 public class OrderItemAmount {
     private Long id;
 
-    private Long orderid;
+    private Long orderId;
 
-    private BigDecimal reduceproductamount;
+    private BigDecimal reduceProductAmount;
 
-    private BigDecimal reducecouponamount;
+    private BigDecimal reduceCouponAmount;
 
-    private BigDecimal reducebonusamount;
+    private BigDecimal reduceBonusAmount;
 
-    private BigDecimal reduceorderamount;
+    private BigDecimal reduceOrderAmount;
 
     private BigDecimal discount;
 
-    private BigDecimal totalamount;
+    private BigDecimal totalAmount;
 
-    private BigDecimal payamount;
+    private BigDecimal payAmount;
 
-    private Integer winescore;
+    private Integer wineScore;
 
-    private BigDecimal deliveryamount;
+    private BigDecimal deliveryAmount;
 
-    private Integer salecount;
+    private Integer saleCount;
 
-    private Integer minunittotalcount;
+    private Integer minUnitTotalCount;
 
     private Integer sourceCount;
 
-    private String sysremark;
+    private String sysRemark;
 
-    private Date lastupdatetime;
+    private Date lastUpDateTime;
 
-    private BigDecimal selfpickupreduceamount;
+    private BigDecimal selfPickUpReduceAmount;
 
-    private BigDecimal reducerewardbonusamount;
+    private BigDecimal reduceRewardBonusAmount;
 
-    private BigDecimal reducecouponcodeamount;
+    private BigDecimal reduceCoupOnCodeAmount;
 
-    private Date lastmodifytime;
+    private Date lastModifyTime;
 
-    private BigDecimal givebonusamount;
+    private BigDecimal giveBonusAmount;
 
     public Long getId() {
         return id;
@@ -54,44 +58,44 @@ public class OrderItemAmount {
         this.id = id;
     }
 
-    public Long getOrderid() {
-        return orderid;
+    public Long getOrderId() {
+        return orderId;
     }
 
-    public void setOrderid(Long orderid) {
-        this.orderid = orderid;
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
-    public BigDecimal getReduceproductamount() {
-        return reduceproductamount;
+    public BigDecimal getReduceProductAmount() {
+        return reduceProductAmount;
     }
 
-    public void setReduceproductamount(BigDecimal reduceproductamount) {
-        this.reduceproductamount = reduceproductamount;
+    public void setReduceProductAmount(BigDecimal reduceProductAmount) {
+        this.reduceProductAmount = reduceProductAmount;
     }
 
-    public BigDecimal getReducecouponamount() {
-        return reducecouponamount;
+    public BigDecimal getReduceCouponAmount() {
+        return reduceCouponAmount;
     }
 
-    public void setReducecouponamount(BigDecimal reducecouponamount) {
-        this.reducecouponamount = reducecouponamount;
+    public void setReduceCouponAmount(BigDecimal reduceCouponAmount) {
+        this.reduceCouponAmount = reduceCouponAmount;
     }
 
-    public BigDecimal getReducebonusamount() {
-        return reducebonusamount;
+    public BigDecimal getReduceBonusAmount() {
+        return reduceBonusAmount;
     }
 
-    public void setReducebonusamount(BigDecimal reducebonusamount) {
-        this.reducebonusamount = reducebonusamount;
+    public void setReduceBonusAmount(BigDecimal reduceBonusAmount) {
+        this.reduceBonusAmount = reduceBonusAmount;
     }
 
-    public BigDecimal getReduceorderamount() {
-        return reduceorderamount;
+    public BigDecimal getReduceOrderAmount() {
+        return reduceOrderAmount;
     }
 
-    public void setReduceorderamount(BigDecimal reduceorderamount) {
-        this.reduceorderamount = reduceorderamount;
+    public void setReduceOrderAmount(BigDecimal reduceOrderAmount) {
+        this.reduceOrderAmount = reduceOrderAmount;
     }
 
     public BigDecimal getDiscount() {
@@ -102,52 +106,52 @@ public class OrderItemAmount {
         this.discount = discount;
     }
 
-    public BigDecimal getTotalamount() {
-        return totalamount;
+    public BigDecimal getTotalAmount() {
+        return totalAmount;
     }
 
-    public void setTotalamount(BigDecimal totalamount) {
-        this.totalamount = totalamount;
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
-    public BigDecimal getPayamount() {
-        return payamount;
+    public BigDecimal getPayAmount() {
+        return payAmount;
     }
 
-    public void setPayamount(BigDecimal payamount) {
-        this.payamount = payamount;
+    public void setPayAmount(BigDecimal payAmount) {
+        this.payAmount = payAmount;
     }
 
-    public Integer getWinescore() {
-        return winescore;
+    public Integer getWineScore() {
+        return wineScore;
     }
 
-    public void setWinescore(Integer winescore) {
-        this.winescore = winescore;
+    public void setWineScore(Integer wineScore) {
+        this.wineScore = wineScore;
     }
 
-    public BigDecimal getDeliveryamount() {
-        return deliveryamount;
+    public BigDecimal getDeliveryAmount() {
+        return deliveryAmount;
     }
 
-    public void setDeliveryamount(BigDecimal deliveryamount) {
-        this.deliveryamount = deliveryamount;
+    public void setDeliveryAmount(BigDecimal deliveryAmount) {
+        this.deliveryAmount = deliveryAmount;
     }
 
-    public Integer getSalecount() {
-        return salecount;
+    public Integer getSaleCount() {
+        return saleCount;
     }
 
-    public void setSalecount(Integer salecount) {
-        this.salecount = salecount;
+    public void setSaleCount(Integer saleCount) {
+        this.saleCount = saleCount;
     }
 
-    public Integer getMinunittotalcount() {
-        return minunittotalcount;
+    public Integer getMinUnitTotalCount() {
+        return minUnitTotalCount;
     }
 
-    public void setMinunittotalcount(Integer minunittotalcount) {
-        this.minunittotalcount = minunittotalcount;
+    public void setMinUnitTotalCount(Integer minUnitTotalCount) {
+        this.minUnitTotalCount = minUnitTotalCount;
     }
 
     public Integer getSourceCount() {
@@ -158,86 +162,86 @@ public class OrderItemAmount {
         this.sourceCount = sourceCount;
     }
 
-    public String getSysremark() {
-        return sysremark;
+    public String getSysRemark() {
+        return sysRemark;
     }
 
-    public void setSysremark(String sysremark) {
-        this.sysremark = sysremark == null ? null : sysremark.trim();
+    public void setSysRemark(String sysRemark) {
+        this.sysRemark = sysRemark;
     }
 
-    public Date getLastupdatetime() {
-        return lastupdatetime;
+    public Date getLastUpDateTime() {
+        return lastUpDateTime;
     }
 
-    public void setLastupdatetime(Date lastupdatetime) {
-        this.lastupdatetime = lastupdatetime;
+    public void setLastUpDateTime(Date lastUpDateTime) {
+        this.lastUpDateTime = lastUpDateTime;
     }
 
-    public BigDecimal getSelfpickupreduceamount() {
-        return selfpickupreduceamount;
+    public BigDecimal getSelfPickUpReduceAmount() {
+        return selfPickUpReduceAmount;
     }
 
-    public void setSelfpickupreduceamount(BigDecimal selfpickupreduceamount) {
-        this.selfpickupreduceamount = selfpickupreduceamount;
+    public void setSelfPickUpReduceAmount(BigDecimal selfPickUpReduceAmount) {
+        this.selfPickUpReduceAmount = selfPickUpReduceAmount;
     }
 
-    public BigDecimal getReducerewardbonusamount() {
-        return reducerewardbonusamount;
+    public BigDecimal getReduceRewardBonusAmount() {
+        return reduceRewardBonusAmount;
     }
 
-    public void setReducerewardbonusamount(BigDecimal reducerewardbonusamount) {
-        this.reducerewardbonusamount = reducerewardbonusamount;
+    public void setReduceRewardBonusAmount(BigDecimal reduceRewardBonusAmount) {
+        this.reduceRewardBonusAmount = reduceRewardBonusAmount;
     }
 
-    public BigDecimal getReducecouponcodeamount() {
-        return reducecouponcodeamount;
+    public BigDecimal getReduceCoupOnCodeAmount() {
+        return reduceCoupOnCodeAmount;
     }
 
-    public void setReducecouponcodeamount(BigDecimal reducecouponcodeamount) {
-        this.reducecouponcodeamount = reducecouponcodeamount;
+    public void setReduceCoupOnCodeAmount(BigDecimal reduceCoupOnCodeAmount) {
+        this.reduceCoupOnCodeAmount = reduceCoupOnCodeAmount;
     }
 
-    public Date getLastmodifytime() {
-        return lastmodifytime;
+    public Date getLastModifyTime() {
+        return lastModifyTime;
     }
 
-    public void setLastmodifytime(Date lastmodifytime) {
-        this.lastmodifytime = lastmodifytime;
+    public void setLastModifyTime(Date lastModifyTime) {
+        this.lastModifyTime = lastModifyTime;
     }
 
-    public BigDecimal getGivebonusamount() {
-        return givebonusamount;
+    public BigDecimal getGiveBonusAmount() {
+        return giveBonusAmount;
     }
 
-    public void setGivebonusamount(BigDecimal givebonusamount) {
-        this.givebonusamount = givebonusamount;
+    public void setGiveBonusAmount(BigDecimal giveBonusAmount) {
+        this.giveBonusAmount = giveBonusAmount;
     }
 
     @Override
     public String toString() {
         return "OrderItemAmount{" +
                 "id=" + id +
-                ", orderid=" + orderid +
-                ", reduceproductamount=" + reduceproductamount +
-                ", reducecouponamount=" + reducecouponamount +
-                ", reducebonusamount=" + reducebonusamount +
-                ", reduceorderamount=" + reduceorderamount +
+                ", orderId=" + orderId +
+                ", reduceProductAmount=" + reduceProductAmount +
+                ", reduceCouponAmount=" + reduceCouponAmount +
+                ", reduceBonusAmount=" + reduceBonusAmount +
+                ", reduceOrderAmount=" + reduceOrderAmount +
                 ", discount=" + discount +
-                ", totalamount=" + totalamount +
-                ", payamount=" + payamount +
-                ", winescore=" + winescore +
-                ", deliveryamount=" + deliveryamount +
-                ", salecount=" + salecount +
-                ", minunittotalcount=" + minunittotalcount +
+                ", totalAmount=" + totalAmount +
+                ", payAmount=" + payAmount +
+                ", wineScore=" + wineScore +
+                ", deliveryAmount=" + deliveryAmount +
+                ", saleCount=" + saleCount +
+                ", minUnitTotalCount=" + minUnitTotalCount +
                 ", sourceCount=" + sourceCount +
-                ", sysremark='" + sysremark + '\'' +
-                ", lastupdatetime=" + lastupdatetime +
-                ", selfpickupreduceamount=" + selfpickupreduceamount +
-                ", reducerewardbonusamount=" + reducerewardbonusamount +
-                ", reducecouponcodeamount=" + reducecouponcodeamount +
-                ", lastmodifytime=" + lastmodifytime +
-                ", givebonusamount=" + givebonusamount +
+                ", sysRemark='" + sysRemark + '\'' +
+                ", lastUpDateTime=" + lastUpDateTime +
+                ", selfPickUpReduceAmount=" + selfPickUpReduceAmount +
+                ", reduceRewardBonusAmount=" + reduceRewardBonusAmount +
+                ", reduceCoupOnCodeAmount=" + reduceCoupOnCodeAmount +
+                ", lastModifyTime=" + lastModifyTime +
+                ", giveBonusAmount=" + giveBonusAmount +
                 '}';
     }
 }
