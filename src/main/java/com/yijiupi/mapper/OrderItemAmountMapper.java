@@ -11,9 +11,9 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface OrderItemAmountMapper {
     /**
-     * 根据主键删除优惠的产品
+     * 根据订单id删除优惠的产品
      *
-     * @param id
+     * @param id 订单id
      * @return
      */
     int deleteByPrimaryKey(Long id);
@@ -22,7 +22,7 @@ public interface OrderItemAmountMapper {
     /**
      * 根据订单id查询优惠产品的信息
      *
-     * @param id
+     * @param id 订单id
      * @return
      */
     OrderItemAmount selectByPrimaryKey(Long id);

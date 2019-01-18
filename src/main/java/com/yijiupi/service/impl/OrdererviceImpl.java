@@ -36,9 +36,9 @@ public class OrdererviceImpl implements Orderervice {
     @Override
     public PageInfo<Order> selectOrderByCityId(Integer pageNum, Integer pageSize, Integer cityId) {
         PageHelper.startPage(pageNum, pageSize);
-        List<Order> OrderList = orderMapper.selectOrderByCityId(cityId);
-        PageInfo<Order> OrderPageInfo = new PageInfo<>(OrderList);
-        return OrderPageInfo;
+        List<Order> orderList = orderMapper.selectOrderByCityId(cityId);
+        PageInfo<Order> orderPageInfo = new PageInfo<>(orderList);
+        return orderPageInfo;
     }
 
     @Override

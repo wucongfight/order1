@@ -18,8 +18,13 @@ import javax.annotation.Resource;
 @Controller
 @RequestMapping("/orderItem")
 public class OrderItemController {
-    @Resource
+
     private OrderItemService orderItemService;
+
+    @Resource
+    public void setOrderItemService(OrderItemService orderItemService) {
+        this.orderItemService = orderItemService;
+    }
 
     /**
      * 根据订单id查询订单项的详细信息（订单金额，产品，单价）

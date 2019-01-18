@@ -13,7 +13,7 @@ public interface OrderItemProductMapper {
     /**
      * 根据订单id删除订单产品信息
      *
-     * @param id
+     * @param id 订单id
      * @return
      */
     int deleteByPrimaryKey(Long id);
@@ -21,7 +21,7 @@ public interface OrderItemProductMapper {
     /**
      * 根据订单id删除订单产品信息
      *
-     * @param id
+     * @param id 订单id
      * @return
      */
     OrderItemProduct selectByPrimaryKey(Long id);

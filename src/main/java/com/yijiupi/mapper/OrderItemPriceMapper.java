@@ -12,7 +12,7 @@ public interface OrderItemPriceMapper {
     /**
      * 根据订单id删除订单金额
      *
-     * @param id
+     * @param id 订单id
      * @return
      */
     int deleteByPrimaryKey(Long id);
@@ -20,7 +20,7 @@ public interface OrderItemPriceMapper {
     /**
      * 根据id查询订单金额信息
      *
-     * @param id
+     * @param id 订单id
      * @return
      */
     OrderItemPrice selectByPrimaryKey(Long id);

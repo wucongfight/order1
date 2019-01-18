@@ -13,7 +13,7 @@ public interface UserMapper {
     /**
      * 根据用户id删除用户
      *
-     * @param username
+     * @param username 用户名
      * @return
      */
     int deleteByPrimaryKey(String username);
@@ -21,7 +21,7 @@ public interface UserMapper {
     /**
      * 新增用户
      *
-     * @param record
+     * @param record 用户
      * @return
      */
     int insert(User record);
@@ -29,7 +29,7 @@ public interface UserMapper {
     /**
      * 根据用户名查询用户信息
      *
-     * @param username
+     * @param username 用户名
      * @return
      */
     User selectByPrimaryKey(String username);
@@ -37,7 +37,7 @@ public interface UserMapper {
     /**
      * 更新用户信息
      *
-     * @param record
+     * @param record 用户
      * @return
      */
     int updateByPrimaryKey(User record);

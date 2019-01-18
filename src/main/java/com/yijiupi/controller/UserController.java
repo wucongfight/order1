@@ -3,7 +3,6 @@ package com.yijiupi.controller;
 import com.yijiupi.entity.TemporaryUser;
 import com.yijiupi.entity.User;
 import com.yijiupi.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -11,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.annotation.Resource;
 
 /**
  * @Author: WuCong
@@ -20,9 +21,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("user")
 @Controller
 public class UserController {
-    @Autowired
+
     private UserService userService;
 
+    @Resource
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
 
     /**
      * 用户注册

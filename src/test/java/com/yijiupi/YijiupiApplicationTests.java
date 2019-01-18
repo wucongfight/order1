@@ -31,14 +31,15 @@ public class YijiupiApplicationTests {
         Byte i = 1;
         Byte q = 2;
         OrderItem orderItem = new OrderItem();
-        orderItem.setproductType(i);
-        orderItem.setlastModifyTime(new Date());
+        orderItem.setProductType(i);
+
+        orderItem.setLastModifyTime(new Date());
         orderItem.setRemark("order");
-        orderItem.setcreateTime(new Date());
-        orderItem.setorderId(123L);
+        orderItem.setCreateTime(new Date());
+        orderItem.setOrderId(123L);
         orderItem.setId(2L);
         orderItem.setSourceId("1242");
-        orderItem.setsourceType(q);
+        orderItem.setSourceType(q);
 
 
     }
@@ -46,19 +47,15 @@ public class YijiupiApplicationTests {
 
     @Test
     public void OrderShow() {
-        System.out.println("对象是：" + Orderervice);
         PageInfo<Order> Order = Orderervice.selectOrderByCityId(1, 15, 1000);
-        System.out.println("集合长度：" + Order.getList().size());
-        Long num = 28L;
+        Long num = 60L;
         for (int i = 0; i < Order.getList().size(); i++) {
-            System.out.println("增加：" + num);
-            Order.getList().get(i).setId(num );
+            Order.getList().get(i).setId(num);
             Order.getList().get(i).setCityId(1000);
-            Order.getList().get(i).setorderNo(num.toString());
+            Order.getList().get(i).setOrderNo(num.toString());
             Orderervice.insert(Order.getList().get(i));
             System.out.println(Order.getList().get(i));
             num++;
-            System.out.println("num为："+num);
         }
 
     }

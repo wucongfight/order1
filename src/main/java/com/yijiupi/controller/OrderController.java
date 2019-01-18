@@ -3,12 +3,12 @@ package com.yijiupi.controller;
 import com.github.pagehelper.PageInfo;
 import com.yijiupi.entity.Order;
 import com.yijiupi.service.Orderervice;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -19,8 +19,13 @@ import java.util.List;
 @Controller
 @RequestMapping("/orderItem")
 public class OrderController {
-    @Autowired
-    private Orderervice orderervice;
+
+    private Orderervice orderService;
+
+    @Resource
+    public void setOrderService(Orderervice orderService) {
+        this.orderService = orderService;
+    }
 
     /**
      * 条件查询
@@ -31,31 +36,26 @@ public class OrderController {
      */
     @GetMapping("/orders/{orderType}/{cityId}")
     public ResponseEntity<List> queryOrder(@PathVariable(value = "orderType") Byte orderType, @PathVariable(value = "cityId") Integer cityId) {
-        System.out.println("进来了");
-        System.out.println("orderType" + orderType);
-        System.out.println("cityId" + cityId);
         if (cityId == null) {
             cityId = 0;
         }
         if (orderType == null) {
             orderType = 0;
         }
-        List<Order> Order = this.orderervice.selectOrder(cityId, orderType);
-        System.out.println(Order);
-        return ResponseEntity.ok(Order);
+        List<Order> order = this.orderService.selectOrder(cityId, orderType);
+        return ResponseEntity.ok(order);
     }
 
 
     /**
      * 增加订单基本信息
      *
-     * @param Order 订单
+     * @param order 订单
      * @return
      */
     @PostMapping("/order")
-    public ResponseEntity<Void> saveOrder(@RequestBody Order Order) {
-        System.out.println(Order);
-        this.orderervice.insert(Order);
+    public ResponseEntity<Void> saveOrder(@RequestBody Order order) {
+        this.orderService.insert(order);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
@@ -63,13 +63,12 @@ public class OrderController {
     /**
      * 修改订单基本信息
      *
-     * @param Order 订单
+     * @param order 订单
      * @return
      */
     @PutMapping("/order")
-    public ResponseEntity<Void> updateOrder(@RequestBody Order Order) {
-        System.out.println(Order);
-        this.orderervice.updateByPrimaryKey(Order);
+    public ResponseEntity<Void> updateOrder(@RequestBody Order order) {
+        this.orderService.updateByPrimaryKey(order);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
@@ -77,13 +76,12 @@ public class OrderController {
     /**
      * 根据id 删除订单基本信息
      *
-     * @param id
+     * @param id 主键
      * @return
      */
     @DeleteMapping("/order/delete/{id}")
     public ResponseEntity<Void> deleteOrder(@PathVariable(value = "id") Long id) {
-        System.out.println("删除了" + id);
-        this.orderervice.deleteByPrimaryKey(id);
+        this.orderService.deleteByPrimaryKey(id);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
@@ -101,11 +99,11 @@ public class OrderController {
         if (cityId == null) {
             cityId = 0;
         }
-        PageInfo<Order> OrderPageInfo = this.orderervice.selectOrderByCityId(pageNum, pageSize, cityId);
-        if (OrderPageInfo == null || OrderPageInfo.getList().size() == 0) {
+        PageInfo<Order> orderPageInfo = this.orderService.selectOrderByCityId(pageNum, pageSize, cityId);
+        if (orderPageInfo == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return ResponseEntity.ok(OrderPageInfo);
+        return ResponseEntity.ok(orderPageInfo);
     }
 
 }

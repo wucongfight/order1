@@ -16,7 +16,7 @@ public interface OrderMapper {
     /**
      * 根据订单id删除订单基本信息
      *
-     * @param id
+     * @param id 订单id
      * @return
      */
     int deleteByPrimaryKey(Long id);
@@ -24,7 +24,7 @@ public interface OrderMapper {
     /**
      * 增加订单基本信息
      *
-     * @param record
+     * @param record 订单
      * @return
      */
     int insert(Order record);
@@ -32,7 +32,7 @@ public interface OrderMapper {
     /**
      * 修改订单基本信息
      *
-     * @param record
+     * @param record 订单
      * @return
      */
     int updateByPrimaryKey(Order record);
@@ -40,7 +40,7 @@ public interface OrderMapper {
     /**
      * 根据城市id查询订单基本信息
      *
-     * @param cityId
+     * @param cityId 城市id
      * @return
      */
     List<Order> selectOrderByCityId(@Param(value = "cityId") Integer cityId);
@@ -48,8 +48,8 @@ public interface OrderMapper {
     /**
      * 根据城市id，订单类型查询订单基本信息
      *
-     * @param cityId
-     * @param orderType
+     * @param cityId 城市id
+     * @param orderType 订单类型
      * @return
      */
     List<Order> selectOrder(@Param(value = "cityId") Integer cityId, @Param(value = "orderType") Byte orderType);

@@ -12,7 +12,7 @@ public interface OrderItemMapper {
     /**
      * 根据订单id删除订单项
      *
-     * @param id
+     * @param id 订单id
      * @return
      */
     int deleteByPrimaryKey(Long id);
@@ -20,7 +20,7 @@ public interface OrderItemMapper {
     /**
      * 增加订单项
      *
-     * @param record
+     * @param record 订单项
      * @return
      */
     int insert(OrderItem record);
@@ -28,7 +28,7 @@ public interface OrderItemMapper {
     /**
      * 根据订单id查询订单项信息
      *
-     * @param id
+     * @param id 订单id
      * @return
      */
     OrderItem selectByPrimaryKey(Long id);
@@ -36,7 +36,7 @@ public interface OrderItemMapper {
     /**
      * 修改订单项信息
      *
-     * @param record
+     * @param record 订单项
      * @return
      */
     int updateByPrimaryKey(OrderItem record);
