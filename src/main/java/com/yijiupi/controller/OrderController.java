@@ -31,7 +31,7 @@ public class OrderController {
      * 条件查询
      *
      * @param orderType 订单类型
-     * @param cityId    城市
+     * @param cityId    城市id
      * @return
      */
     @GetMapping("/orders/{orderType}/{cityId}")
