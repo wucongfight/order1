@@ -56,7 +56,7 @@
     <result column="orderConfirmTime" property="orderConfirmTime" jdbcType="TIMESTAMP" />
     <result column="OrderBatch_Id" property="orderBatchId" jdbcType="BIGINT" />
     <result column="exactPayAmount" property="exactPayAmount" jdbcType="DECIMAL" />
-    <result column="UserName" property="username" jdbcType="VARCHAR" />
+    <result column="userName" property="userName" jdbcType="VARCHAR" />
     <result column="userMobileNo" property="userMobileNo" jdbcType="VARCHAR" />
     <result column="userCompanyName" property="userCompanyName" jdbcType="VARCHAR" />
     <result column="selfPickUpReduceAmount" property="selfPickUpReduceAmount" jdbcType="DECIMAL" />
@@ -82,11 +82,18 @@
     qrCodeFileId, deliveryMode, createTime, createUserId, lastUpDateTime, lastUpDateUserId,
     orderCreateTime, orderAuditTime, orderPrintTime, orderDeliverTime, orderCancelTime,
     orderCompleteTime, orderSyncTime, paymentState, orderConfirmTime, OrderBatch_Id,
-    exactPayAmount, UserName, userMobileNo, userCompanyName, selfPickUpReduceAmount,
+    exactPayAmount, userName, userMobileNo, userCompanyName, selfPickUpReduceAmount,
     OrderAttachedGiftRule_Id, shop_id, pickup_warehouse_Id, useAwardBonusAmount, userEwardBonusAmount,
     useCouponCodeAmount, lastModifyTime, orderItemCount, salesManDeptId, onLineSalesManId,
     onlineSalesManDeptId, area_id
   </sql>
+
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from Orders
+    where Id = #{id,jdbcType=BIGINT}
+  </select>
 
   <select id="selectOrderByCityId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select
@@ -109,7 +116,7 @@
       <if test="cityId != 0">
         and  City_Id = #{cityId}
       </if>
-      <if test="orderType != 0">
+      <if test="orderType != -1">
         and orderType = #{orderType}
       </if>
     </where>
@@ -139,7 +146,7 @@
       orderPrintTime, orderDeliverTime, orderCancelTime,
       orderCompleteTime, orderSyncTime, paymentState,
       orderConfirmTime, OrderBatch_Id, exactPayAmount,
-      UserName, userMobileNo, userCompanyName,
+      userName, userMobileNo, userCompanyName,
       selfPickUpReduceAmount, OrderAttachedGiftRule_Id,
       shop_id, pickup_warehouse_Id, useAwardBonusAmount,
       userEwardBonusAmount, useCouponCodeAmount,
@@ -164,7 +171,7 @@
       #{orderPrintTime,jdbcType=TIMESTAMP}, #{orderDeliverTime,jdbcType=TIMESTAMP}, #{orderCancelTime,jdbcType=TIMESTAMP},
       #{orderCompleteTime,jdbcType=TIMESTAMP}, #{orderSyncTime,jdbcType=TIMESTAMP}, #{paymentState,jdbcType=INTEGER},
       #{orderConfirmTime,jdbcType=TIMESTAMP}, #{orderBatchId,jdbcType=BIGINT}, #{exactPayAmount,jdbcType=DECIMAL},
-      #{username,jdbcType=VARCHAR}, #{userMobileNo,jdbcType=VARCHAR}, #{userCompanyName,jdbcType=VARCHAR},
+      #{userName,jdbcType=VARCHAR}, #{userMobileNo,jdbcType=VARCHAR}, #{userCompanyName,jdbcType=VARCHAR},
       #{selfPickUpReduceAmount,jdbcType=DECIMAL}, #{orderAttachedGiftRuleId,jdbcType=INTEGER},
       #{shopId,jdbcType=BIGINT}, #{pickupWarehouseId,jdbcType=INTEGER}, #{useAwardBonusAmount,jdbcType=DECIMAL},
       #{userEwardBonusAmount,jdbcType=DECIMAL}, #{useCouponCodeAmount,jdbcType=DECIMAL},
@@ -228,7 +235,7 @@
       orderConfirmTime = #{orderConfirmTime,jdbcType=TIMESTAMP},
       OrderBatch_Id = #{orderBatchId,jdbcType=BIGINT},
       exactPayAmount = #{exactPayAmount,jdbcType=DECIMAL},
-      UserName = #{username,jdbcType=VARCHAR},
+      userName = #{userName,jdbcType=VARCHAR},
       userMobileNo = #{userMobileNo,jdbcType=VARCHAR},
       userCompanyName = #{userCompanyName,jdbcType=VARCHAR},
       selfPickUpReduceAmount = #{selfPickUpReduceAmount,jdbcType=DECIMAL},

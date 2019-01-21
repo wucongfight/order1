@@ -2,9 +2,9 @@
 spring:
   datasource:
     druid:
-      username: root
+      userName: root
       password:  yijiupi
-      url: jdbc:mysql://Mysql-Trading.yjp.com:3312/yjp_order_1
+      url: jdbc:mysql://Mysql-Trading.yjp.com:3312/yjp_order_3
       initial-size: 5
       min-idle: 1
       max-active: 30

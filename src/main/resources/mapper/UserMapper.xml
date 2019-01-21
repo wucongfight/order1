@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yijiupi.mapper.UserMapper" >
   <resultMap id="BaseResultMap" type="com.yijiupi.entity.User" >
-    <id column="userName" property="username" jdbcType="VARCHAR" />
+    <id column="userName" property="userName" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -12,20 +12,20 @@
     select 
     <include refid="Base_Column_List" />
     from user
-    where userName = #{username,jdbcType=VARCHAR}
+    where userName = #{userName,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from user
-    where userName = #{username,jdbcType=VARCHAR}
+    where userName = #{userName,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.yijiupi.entity.User" >
     insert into user (userName, password)
-    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
+    values (#{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
   </insert>
 
   <update id="updateByPrimaryKey" parameterType="com.yijiupi.entity.User" >
     update user
     set password = #{password,jdbcType=VARCHAR}
-    where userName = #{username,jdbcType=VARCHAR}
+    where userName = #{userName,jdbcType=VARCHAR}
   </update>
 </mapper>

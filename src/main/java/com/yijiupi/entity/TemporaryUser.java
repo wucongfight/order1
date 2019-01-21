@@ -5,18 +5,18 @@ package com.yijiupi.entity;
  * @Date: 2019/1/17 11:11
  */
 public class TemporaryUser {
-    private String username;
+    private String userName;
 
     private String password;
 
     private String nowPassword;
 
-    public String getUsername() {
-        return username;
+    public String getuserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setuserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 
     public String getPassword() {

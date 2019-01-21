@@ -1,6 +1,9 @@
 package com.yijiupi.service.impl;
 
-import com.yijiupi.entity.*;
+import com.yijiupi.entity.OrderItem;
+import com.yijiupi.entity.OrderItemAmount;
+import com.yijiupi.entity.OrderItemPrice;
+import com.yijiupi.entity.OrderItemProduct;
 import com.yijiupi.mapper.OrderItemAmountMapper;
 import com.yijiupi.mapper.OrderItemMapper;
 import com.yijiupi.mapper.OrderItemPriceMapper;
@@ -10,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Author: WuCong
@@ -48,8 +52,8 @@ public class OrderItemServiceImpl implements OrderItemService {
 
     @Override
     public int insert(OrderItem orderItem) {
-        OrderItem orderItem1 = orderItemMapper.selectByPrimaryKey(orderItem.getId());
-        if (orderItem1 != null) {
+        List<OrderItem> orderItemList = orderItemMapper.selectByPrimaryKey(orderItem.getId());
+        if (orderItemList != null) {
             return orderItemMapper.updateByPrimaryKey(orderItem);
         } else {
             return orderItemMapper.insert(orderItem);
@@ -64,37 +68,43 @@ public class OrderItemServiceImpl implements OrderItemService {
         int index2 = 1;
         int index3 = 1;
         int index4 = 1;
-        OrderItem orderItem = orderItemMapper.selectByPrimaryKey(id);
-        OrderItemAmount orderItemAmount = orderItemAmountMapper.selectByPrimaryKey(id);
-        OrderItemPrice orderItemPrice = orderItemPriceMapper.selectByPrimaryKey(id);
-        OrderItemProduct orderItemProduct = orderItemProductMapper.selectByPrimaryKey(id);
-        if (orderItemAmount != null) {
+        List<OrderItem> orderItemList = orderItemMapper.selectByPrimaryKey(id);
+        List<OrderItemProduct> orderItemProductList = orderItemProductMapper.selectByPrimaryKey(id);
+        List<OrderItemPrice> orderItemPriceList = orderItemPriceMapper.selectByPrimaryKey(id);
+        List<OrderItemAmount> orderItemAmountList = orderItemAmountMapper.selectByPrimaryKey(id);
+        if (orderItemAmountList != null) {
             index1 = orderItemAmountMapper.deleteByPrimaryKey(id);
         }
-        if (orderItemPrice != null) {
+        if (orderItemPriceList != null) {
             index2 = orderItemPriceMapper.deleteByPrimaryKey(id);
         }
-        if (orderItemProduct != null) {
+        if (orderItemProductList != null) {
             index3 = orderItemProductMapper.deleteByPrimaryKey(id);
         }
-        if (orderItem != null) {
+        if (orderItemList != null) {
             index4 = orderItemMapper.deleteByPrimaryKey(id);
         }
         return index1 * index2 * index3 * index4;
     }
 
     @Override
-    public OrderDetail selectByPrimaryKey(Long id) {
-        OrderItem orderItem = orderItemMapper.selectByPrimaryKey(id);
-        OrderItemProduct orderItemProduct = orderItemProductMapper.selectByPrimaryKey(id);
-        OrderItemPrice orderItemPrice = orderItemPriceMapper.selectByPrimaryKey(id);
-        OrderItemAmount orderItemAmount = orderItemAmountMapper.selectByPrimaryKey(id);
-        return new OrderDetail(orderItem, orderItemPrice, orderItemAmount, orderItemProduct);
+    public List<OrderItem> selectByPrimaryKey(Long id) {
+        List<OrderItem> orderItemList = orderItemMapper.selectByPrimaryKey(id);
+        for (OrderItem anOrderItemList : orderItemList) {
+            List<OrderItemProduct> orderItemProductList = orderItemProductMapper.selectByPrimaryKey(anOrderItemList.getId());
+            List<OrderItemPrice> orderItemPriceList = orderItemPriceMapper.selectByPrimaryKey(anOrderItemList.getId());
+            List<OrderItemAmount> orderItemAmountList = orderItemAmountMapper.selectByPrimaryKey(anOrderItemList.getId());
+            anOrderItemList.setOrderItemAmountList(orderItemAmountList);
+            anOrderItemList.setOrderItemPriceList(orderItemPriceList);
+            anOrderItemList.setOrderItemProductList(orderItemProductList);
+        }
+
+        return orderItemList ;
 
     }
 
     @Override
-    public OrderItem selectById(Long id) {
+    public List<OrderItem> selectById(Long id) {
         return orderItemMapper.selectByPrimaryKey(id);
     }
 

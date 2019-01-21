@@ -3,6 +3,8 @@ package com.yijiupi.mapper;
 import com.yijiupi.entity.OrderItemPrice;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * @Author: WuCong
  * @Date: 2019/1/17 11:11
@@ -23,7 +25,7 @@ public interface OrderItemPriceMapper {
      * @param id 订单id
      * @return
      */
-    OrderItemPrice selectByPrimaryKey(Long id);
+    List<OrderItemPrice> selectByPrimaryKey(Long id);
 
 
 }

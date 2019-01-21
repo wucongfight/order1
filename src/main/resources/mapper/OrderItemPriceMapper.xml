@@ -31,7 +31,7 @@
     select 
     <include refid="Base_Column_List" />
     from orderitemprice
-    where orderId = #{id,jdbcType=BIGINT}
+    where Id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from orderitemprice

@@ -1,7 +1,8 @@
 package com.yijiupi.service;
 
-import com.yijiupi.entity.OrderDetail;
 import com.yijiupi.entity.OrderItem;
+
+import java.util.List;
 
 /**
  * @Author: WuCong
@@ -30,7 +31,7 @@ public interface OrderItemService {
      * @param id 订单id
      * @return
      */
-    OrderDetail selectByPrimaryKey(Long id);
+    List<OrderItem> selectByPrimaryKey(Long id);
 
     /**
      * 根据订单id查询订单项的信息
@@ -38,6 +39,6 @@ public interface OrderItemService {
      * @param id 订单id
      * @return
      */
-    OrderItem selectById(Long id);
+  List<OrderItem> selectById(Long id);
 
 }

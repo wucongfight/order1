@@ -1,6 +1,5 @@
 package com.yijiupi.controller;
 
-import com.yijiupi.entity.OrderDetail;
 import com.yijiupi.entity.OrderItem;
 import com.yijiupi.service.OrderItemService;
 import org.springframework.http.HttpStatus;
@@ -9,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Author: WuCong
@@ -33,9 +33,9 @@ public class OrderItemController {
      * @return
      */
     @GetMapping("/order/detail/{id}")
-    public ResponseEntity<OrderDetail> queryOrderItem(@PathVariable Long id) {
-        OrderDetail orderDetail = this.orderItemService.selectByPrimaryKey(id);
-        return ResponseEntity.ok(orderDetail);
+    public ResponseEntity<List> queryOrderItem(@PathVariable Long id) {
+        List<OrderItem> orderItemList = this.orderItemService.selectByPrimaryKey(id);
+        return ResponseEntity.ok(orderItemList);
     }
 
     /**
@@ -51,14 +51,14 @@ public class OrderItemController {
     }
 
     /**
-     * 查询订单信息
+     * 查询订单项信息
      *
      * @param id 订单id
      * @return
      */
     @GetMapping("/order/orderItem/{id}")
     public ResponseEntity<OrderItem> query(@PathVariable Long id) {
-        OrderItem orderItem = this.orderItemService.selectById(id);
-        return ResponseEntity.ok(orderItem);
+        List<OrderItem> orderItemList = this.orderItemService.selectById(id);
+        return ResponseEntity.ok(orderItemList.get(0));
     }
 }

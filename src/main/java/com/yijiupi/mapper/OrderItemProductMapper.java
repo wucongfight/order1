@@ -4,6 +4,8 @@ package com.yijiupi.mapper;
 import com.yijiupi.entity.OrderItemProduct;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * @Author: WuCong
  * @Date: 2019/1/17 11:11
@@ -24,7 +26,7 @@ public interface OrderItemProductMapper {
      * @param id 订单id
      * @return
      */
-    OrderItemProduct selectByPrimaryKey(Long id);
+   List<OrderItemProduct> selectByPrimaryKey(Long id);
 
 
 }

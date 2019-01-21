@@ -9,7 +9,7 @@ import java.util.List;
  * @Author: WuCong
  * @Date: 2019/1/17 11:11
  */
-public interface Orderervice {
+public interface OrderService {
     /**
      * 分页查询订单基本信息
      *
@@ -52,4 +52,12 @@ public interface Orderervice {
      * @return
      */
     List<Order> selectOrder(Integer cityId, Byte orderType);
+
+    /**
+     * 根据主键查询订单基本信息
+     *
+     * @param id 主键
+     * @return
+     */
+    Order selectById( Long id);
 }

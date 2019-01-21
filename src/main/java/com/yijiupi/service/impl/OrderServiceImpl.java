@@ -5,7 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.yijiupi.entity.Order;
 import com.yijiupi.mapper.OrderItemMapper;
 import com.yijiupi.mapper.OrderMapper;
-import com.yijiupi.service.Orderervice;
+import com.yijiupi.service.OrderService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,7 +17,7 @@ import java.util.List;
  * @Date: 2019/1/17 11:11
  */
 @Service
-public class OrdererviceImpl implements Orderervice {
+public class OrderServiceImpl implements OrderService {
 
     private OrderMapper orderMapper;
 
@@ -62,5 +62,10 @@ public class OrdererviceImpl implements Orderervice {
     @Override
     public List<Order> selectOrder(Integer cityId, Byte orderType) {
         return orderMapper.selectOrder(cityId, orderType);
+    }
+
+    @Override
+    public Order selectById(Long id) {
+        return orderMapper.selectById(id);
     }
 }

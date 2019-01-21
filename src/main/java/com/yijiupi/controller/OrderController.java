@@ -2,7 +2,7 @@ package com.yijiupi.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.yijiupi.entity.Order;
-import com.yijiupi.service.Orderervice;
+import com.yijiupi.service.OrderService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -20,10 +20,10 @@ import java.util.List;
 @RequestMapping("/orderItem")
 public class OrderController {
 
-    private Orderervice orderService;
+    private OrderService orderService;
 
     @Resource
-    public void setOrderService(Orderervice orderService) {
+    public void setOrderService(OrderService orderService) {
         this.orderService = orderService;
     }
 
@@ -40,7 +40,7 @@ public class OrderController {
             cityId = 0;
         }
         if (orderType == null) {
-            orderType = 0;
+            orderType = -1;
         }
         List<Order> order = this.orderService.selectOrder(cityId, orderType);
         return ResponseEntity.ok(order);
@@ -106,4 +106,13 @@ public class OrderController {
         return ResponseEntity.ok(orderPageInfo);
     }
 
+    /**
+     * @param id
+     * @return
+     */
+    @GetMapping("/order/update/{id}")
+    public ResponseEntity<Order> selectById(@PathVariable(value = "id") Long id) {
+        Order order = this.orderService.selectById(id);
+        return ResponseEntity.ok(order);
+    }
 }

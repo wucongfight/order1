@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Boolean selectByPrimaryKey(User user) {
-        User userOrigin = this.userMapper.selectByPrimaryKey(user.getUsername());
+        User userOrigin = this.userMapper.selectByPrimaryKey(user.getUserName());
         String password = Md5.string(user.getPassword());
         return userOrigin.getPassword().equals(password);
 
@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public Boolean updateByPrimaryKey(TemporaryUser temporaryUser) {
         String s = Md5.string(temporaryUser.getPassword());
-        User user = this.userMapper.selectByPrimaryKey(temporaryUser.getUsername());
+        User user = this.userMapper.selectByPrimaryKey(temporaryUser.getuserName());
         int key = 0;
         if (user.getPassword().equals(s)) {
             user.setPassword(temporaryUser.getNowPassword());

@@ -1,12 +1,20 @@
 package com.yijiupi.entity;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Author: WuCong
  * @Date: 2019/1/17 11:11
  */
 public class OrderItem {
+
+    private List<OrderItemAmount> orderItemAmountList;
+
+    private List<OrderItemPrice> orderItemPriceList;
+
+    private List<OrderItemProduct> orderItemProductList;
+
     private Long id;
 
     private Long orderId;
@@ -87,10 +95,37 @@ public class OrderItem {
         this.lastModifyTime = lastModifyTime;
     }
 
+    public List<OrderItemAmount> getOrderItemAmountList() {
+        return orderItemAmountList;
+    }
+
+    public void setOrderItemAmountList(List<OrderItemAmount> orderItemAmountList) {
+        this.orderItemAmountList = orderItemAmountList;
+    }
+
+    public List<OrderItemPrice> getOrderItemPriceList() {
+        return orderItemPriceList;
+    }
+
+    public void setOrderItemPriceList(List<OrderItemPrice> orderItemPriceList) {
+        this.orderItemPriceList = orderItemPriceList;
+    }
+
+    public List<OrderItemProduct> getOrderItemProductList() {
+        return orderItemProductList;
+    }
+
+    public void setOrderItemProductList(List<OrderItemProduct> orderItemProductList) {
+        this.orderItemProductList = orderItemProductList;
+    }
+
     @Override
     public String toString() {
         return "OrderItem{" +
-                "id=" + id +
+                "orderItemAmountList=" + orderItemAmountList +
+                ", orderItemPriceList=" + orderItemPriceList +
+                ", orderItemProductList=" + orderItemProductList +
+                ", id=" + id +
                 ", orderId=" + orderId +
                 ", remark='" + remark + '\'' +
                 ", sourceType=" + sourceType +

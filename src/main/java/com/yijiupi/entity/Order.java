@@ -9,6 +9,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class Order {
+    private String idNumber;
+
     private Long id;
 
     private Integer cityId;
@@ -117,7 +119,7 @@ public class Order {
 
     private BigDecimal exactPayAmount;
 
-    private String username;
+    private String userName;
 
     private String userMobileNo;
 
@@ -148,6 +150,14 @@ public class Order {
     private Integer onlineSalesManDeptId;
 
     private Long areaId;
+
+    public String getIdNumber() {
+        return this.id.toString();
+    }
+
+    public void setIdNumber(String idNumber) {
+        this.idNumber = idNumber;
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -365,8 +375,8 @@ public class Order {
         this.exactPayAmount = exactPayAmount;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setuserName(String userName) {
+        this.userName = userName;
     }
 
     public void setUserMobileNo(String userMobileNo) {
@@ -645,8 +655,8 @@ public class Order {
         return exactPayAmount;
     }
 
-    public String getUsername() {
-        return username;
+    public String getuserName() {
+        return userName;
     }
 
     public String getUserMobileNo() {
@@ -712,7 +722,8 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                "id=" + id +
+                "idNumber='" + idNumber + '\'' +
+                ", id=" + id +
                 ", cityId=" + cityId +
                 ", orderNo='" + orderNo + '\'' +
                 ", verison='" + verison + '\'' +
@@ -766,7 +777,7 @@ public class Order {
                 ", orderConfirmTime=" + orderConfirmTime +
                 ", orderBatchId=" + orderBatchId +
                 ", exactPayAmount=" + exactPayAmount +
-                ", username='" + username + '\'' +
+                ", userName='" + userName + '\'' +
                 ", userMobileNo='" + userMobileNo + '\'' +
                 ", userCompanyName='" + userCompanyName + '\'' +
                 ", selfPickUpReduceAmount=" + selfPickUpReduceAmount +

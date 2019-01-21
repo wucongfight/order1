@@ -48,9 +48,17 @@ public interface OrderMapper {
     /**
      * 根据城市id，订单类型查询订单基本信息
      *
-     * @param cityId 城市id
+     * @param cityId    城市id
      * @param orderType 订单类型
      * @return
      */
     List<Order> selectOrder(@Param(value = "cityId") Integer cityId, @Param(value = "orderType") Byte orderType);
+
+    /**
+     * 根据主键查询订单基本信息
+     *
+     * @param id 主键
+     * @return
+     */
+    Order selectById(@Param(value = "id") Long id);
 }
