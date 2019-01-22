@@ -59,6 +59,7 @@ public class OrderItemController {
     @GetMapping("/order/orderItem/{id}")
     public ResponseEntity<OrderItem> query(@PathVariable Long id) {
         List<OrderItem> orderItemList = this.orderItemService.selectById(id);
+        System.out.println(orderItemList.get(0).getOrderItemId());
         return ResponseEntity.ok(orderItemList.get(0));
     }
 }

@@ -9,7 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
 import java.util.List;
+
 
 /**
  * @Author: WuCong
@@ -76,12 +78,15 @@ public class OrderController {
     /**
      * 根据id 删除订单基本信息
      *
-     * @param id 主键
+     * @param ids 主键数组
      * @return
      */
-    @DeleteMapping("/order/delete/{id}")
-    public ResponseEntity<Void> deleteOrder(@PathVariable(value = "id") Long id) {
-        this.orderService.deleteByPrimaryKey(id);
+    @DeleteMapping("/order/delete/{ids}")
+    public ResponseEntity<Void> deleteOrder(@PathVariable(value = "ids") Long[] ids) {
+        List<Long> longList = Arrays.asList(ids);
+        longList.forEach(id -> {
+            this.orderService.deleteByPrimaryKey(id);
+        });
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 

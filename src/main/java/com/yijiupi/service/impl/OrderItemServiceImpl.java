@@ -51,9 +51,10 @@ public class OrderItemServiceImpl implements OrderItemService {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public int insert(OrderItem orderItem) {
         List<OrderItem> orderItemList = orderItemMapper.selectByPrimaryKey(orderItem.getId());
-        if (orderItemList != null) {
+        if (orderItemList.size() != 0) {
             return orderItemMapper.updateByPrimaryKey(orderItem);
         } else {
             return orderItemMapper.insert(orderItem);

@@ -15,6 +15,8 @@ public class OrderItem {
 
     private List<OrderItemProduct> orderItemProductList;
 
+    private String orderItemId;
+
     private Long id;
 
     private Long orderId;
@@ -33,6 +35,14 @@ public class OrderItem {
 
     public Long getId() {
         return id;
+    }
+
+    public String getOrderItemId() {
+        return this.orderId.toString();
+    }
+
+    public void setOrderItemId(String orderItemId) {
+        this.orderItemId = orderItemId;
     }
 
     public void setId(Long id) {
@@ -125,6 +135,7 @@ public class OrderItem {
                 "orderItemAmountList=" + orderItemAmountList +
                 ", orderItemPriceList=" + orderItemPriceList +
                 ", orderItemProductList=" + orderItemProductList +
+                ", orderItemId='" + orderItemId + '\'' +
                 ", id=" + id +
                 ", orderId=" + orderId +
                 ", remark='" + remark + '\'' +

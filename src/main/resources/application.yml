@@ -16,10 +16,21 @@ spring:
 mybatis:
   type-aliases-package: com.yijiupi.entity
   mapper-locations: classpath:mapper/*.xml
-#配置pagehelper
+#配置pageHelper
 pagehelper:
   helper-dialect: mysql
   reasonable: true
 #设置日志的级别
+logging:
+  level:
+     root: info
+     com.yijiupi: debug
+  file: D/log/logging.log
+
+
+
+
+
+
 
 

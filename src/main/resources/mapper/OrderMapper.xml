@@ -38,7 +38,7 @@
     <result column="isTestOrder" property="isTestOrder" jdbcType="TINYINT" />
     <result column="userId" property="userId" jdbcType="INTEGER" />
     <result column="salesManId" property="salesManId" jdbcType="INTEGER" />
-    <result column="OrderReducationRule_Id" property="orderReductionRuleId" jdbcType="INTEGER" />
+    <result column="OrderReductionRule_Id" property="orderReductionRuleId" jdbcType="INTEGER" />
     <result column="qrCodeFileId" property="qrCodeFileId" jdbcType="BIGINT" />
     <result column="deliveryMode" property="deliveryMode" jdbcType="TINYINT" />
     <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
@@ -56,7 +56,7 @@
     <result column="orderConfirmTime" property="orderConfirmTime" jdbcType="TIMESTAMP" />
     <result column="OrderBatch_Id" property="orderBatchId" jdbcType="BIGINT" />
     <result column="exactPayAmount" property="exactPayAmount" jdbcType="DECIMAL" />
-    <result column="userName" property="userName" jdbcType="VARCHAR" />
+    <result column="userName" property="userName" jdbcType="VARCHAR" ></result>
     <result column="userMobileNo" property="userMobileNo" jdbcType="VARCHAR" />
     <result column="userCompanyName" property="userCompanyName" jdbcType="VARCHAR" />
     <result column="selfPickUpReduceAmount" property="selfPickUpReduceAmount" jdbcType="DECIMAL" />
