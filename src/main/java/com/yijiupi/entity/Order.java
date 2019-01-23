@@ -9,7 +9,6 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class Order {
-    private String idNumber;
 
     private Long id;
 
@@ -151,649 +150,1266 @@ public class Order {
 
     private Long areaId;
 
-    public String getIdNumber() {
-        return this.id.toString();
+
+
+
+    /**
+     * 获取 主键。
+     *
+     * @return id 主键。
+     */
+    public Long getId() {
+        return this.id;
     }
 
-    public void setIdNumber(String idNumber) {
-        this.idNumber = idNumber;
-    }
-
+    /**
+     * 设置 主键。
+     *
+     * @param id 主键。
+     */
     public void setId(Long id) {
         this.id = id;
     }
 
+    /**
+     * 获取
+     *
+     * @return cityId
+     */
+    public Integer getCityId() {
+        return this.cityId;
+    }
+
+    /**
+     * 设置
+     *
+     * @param cityId
+     */
     public void setCityId(Integer cityId) {
         this.cityId = cityId;
     }
 
+    /**
+     * 获取
+     *
+     * @return orderNo
+     */
+    public String getOrderNo() {
+        return this.orderNo;
+    }
+
+    /**
+     * 设置
+     *
+     * @param orderNo
+     */
     public void setOrderNo(String orderNo) {
         this.orderNo = orderNo;
     }
 
+    /**
+     * 获取
+     *
+     * @return verison
+     */
+    public String getVerison() {
+        return this.verison;
+    }
+
+    /**
+     * 设置
+     *
+     * @param verison
+     */
     public void setVerison(String verison) {
         this.verison = verison;
     }
 
+    /**
+     * 获取
+     *
+     * @return orderType
+     */
+    public Byte getOrderType() {
+        return this.orderType;
+    }
+
+    /**
+     * 设置
+     *
+     * @param orderType
+     */
     public void setOrderType(Byte orderType) {
         this.orderType = orderType;
     }
 
+    /**
+     * 获取
+     *
+     * @return orderClassify
+     */
+    public Byte getOrderClassify() {
+        return this.orderClassify;
+    }
+
+    /**
+     * 设置
+     *
+     * @param orderClassify
+     */
     public void setOrderClassify(Byte orderClassify) {
         this.orderClassify = orderClassify;
     }
 
+    /**
+     * 获取
+     *
+     * @return state
+     */
+    public Short getState() {
+        return this.state;
+    }
+
+    /**
+     * 设置
+     *
+     * @param state
+     */
     public void setState(Short state) {
         this.state = state;
     }
 
+    /**
+     * 获取
+     *
+     * @return stateUser
+     */
+    public Short getStateUser() {
+        return this.stateUser;
+    }
+
+    /**
+     * 设置
+     *
+     * @param stateUser
+     */
     public void setStateUser(Short stateUser) {
         this.stateUser = stateUser;
     }
 
+    /**
+     * 获取
+     *
+     * @return giveCoupOnAmount
+     */
+    public BigDecimal getGiveCoupOnAmount() {
+        return this.giveCoupOnAmount;
+    }
+
+    /**
+     * 设置
+     *
+     * @param giveCoupOnAmount
+     */
     public void setGiveCoupOnAmount(BigDecimal giveCoupOnAmount) {
         this.giveCoupOnAmount = giveCoupOnAmount;
     }
 
+    /**
+     * 获取
+     *
+     * @return sysRemark
+     */
+    public String getSysRemark() {
+        return this.sysRemark;
+    }
+
+    /**
+     * 设置
+     *
+     * @param sysRemark
+     */
     public void setSysRemark(String sysRemark) {
         this.sysRemark = sysRemark;
     }
 
+    /**
+     * 获取
+     *
+     * @return remarkUser
+     */
+    public String getRemarkUser() {
+        return this.remarkUser;
+    }
+
+    /**
+     * 设置
+     *
+     * @param remarkUser
+     */
     public void setRemarkUser(String remarkUser) {
         this.remarkUser = remarkUser;
     }
 
+    /**
+     * 获取
+     *
+     * @return userCancelReason
+     */
+    public String getUserCancelReason() {
+        return this.userCancelReason;
+    }
+
+    /**
+     * 设置
+     *
+     * @param userCancelReason
+     */
     public void setUserCancelReason(String userCancelReason) {
         this.userCancelReason = userCancelReason;
     }
 
+    /**
+     * 获取
+     *
+     * @return remarkService
+     */
+    public String getRemarkService() {
+        return this.remarkService;
+    }
+
+    /**
+     * 设置
+     *
+     * @param remarkService
+     */
     public void setRemarkService(String remarkService) {
         this.remarkService = remarkService;
     }
 
+    /**
+     * 获取
+     *
+     * @return payType
+     */
+    public Byte getPayType() {
+        return this.payType;
+    }
+
+    /**
+     * 设置
+     *
+     * @param payType
+     */
     public void setPayType(Byte payType) {
         this.payType = payType;
     }
 
+    /**
+     * 获取
+     *
+     * @return giveWineScore
+     */
+    public BigDecimal getGiveWineScore() {
+        return this.giveWineScore;
+    }
+
+    /**
+     * 设置
+     *
+     * @param giveWineScore
+     */
     public void setGiveWineScore(BigDecimal giveWineScore) {
         this.giveWineScore = giveWineScore;
     }
 
+    /**
+     * 获取
+     *
+     * @return costWineScore
+     */
+    public BigDecimal getCostWineScore() {
+        return this.costWineScore;
+    }
+
+    /**
+     * 设置
+     *
+     * @param costWineScore
+     */
     public void setCostWineScore(BigDecimal costWineScore) {
         this.costWineScore = costWineScore;
     }
 
+    /**
+     * 获取
+     *
+     * @return orderAmount
+     */
+    public BigDecimal getOrderAmount() {
+        return this.orderAmount;
+    }
+
+    /**
+     * 设置
+     *
+     * @param orderAmount
+     */
     public void setOrderAmount(BigDecimal orderAmount) {
         this.orderAmount = orderAmount;
     }
 
+    /**
+     * 获取
+     *
+     * @return payAbleAmount
+     */
+    public BigDecimal getPayAbleAmount() {
+        return this.payAbleAmount;
+    }
+
+    /**
+     * 设置
+     *
+     * @param payAbleAmount
+     */
     public void setPayAbleAmount(BigDecimal payAbleAmount) {
         this.payAbleAmount = payAbleAmount;
     }
 
+    /**
+     * 获取
+     *
+     * @return reduceAmount
+     */
+    public BigDecimal getReduceAmount() {
+        return this.reduceAmount;
+    }
+
+    /**
+     * 设置
+     *
+     * @param reduceAmount
+     */
     public void setReduceAmount(BigDecimal reduceAmount) {
         this.reduceAmount = reduceAmount;
     }
 
+    /**
+     * 获取
+     *
+     * @return useCoupOnAmount
+     */
+    public BigDecimal getUseCoupOnAmount() {
+        return this.useCoupOnAmount;
+    }
+
+    /**
+     * 设置
+     *
+     * @param useCoupOnAmount
+     */
     public void setUseCoupOnAmount(BigDecimal useCoupOnAmount) {
         this.useCoupOnAmount = useCoupOnAmount;
     }
 
+    /**
+     * 获取
+     *
+     * @return giveBonusAmount
+     */
+    public BigDecimal getGiveBonusAmount() {
+        return this.giveBonusAmount;
+    }
+
+    /**
+     * 设置
+     *
+     * @param giveBonusAmount
+     */
     public void setGiveBonusAmount(BigDecimal giveBonusAmount) {
         this.giveBonusAmount = giveBonusAmount;
     }
 
+    /**
+     * 获取
+     *
+     * @return useBonusAmount
+     */
+    public BigDecimal getUseBonusAmount() {
+        return this.useBonusAmount;
+    }
+
+    /**
+     * 设置
+     *
+     * @param useBonusAmount
+     */
     public void setUseBonusAmount(BigDecimal useBonusAmount) {
         this.useBonusAmount = useBonusAmount;
     }
 
+    /**
+     * 获取
+     *
+     * @return productReduceAmount
+     */
+    public BigDecimal getProductReduceAmount() {
+        return this.productReduceAmount;
+    }
+
+    /**
+     * 设置
+     *
+     * @param productReduceAmount
+     */
     public void setProductReduceAmount(BigDecimal productReduceAmount) {
         this.productReduceAmount = productReduceAmount;
     }
 
+    /**
+     * 获取
+     *
+     * @return hasPayment
+     */
+    public Byte getHasPayment() {
+        return this.hasPayment;
+    }
+
+    /**
+     * 设置
+     *
+     * @param hasPayment
+     */
     public void setHasPayment(Byte hasPayment) {
         this.hasPayment = hasPayment;
     }
 
+    /**
+     * 获取
+     *
+     * @return contact
+     */
+    public String getContact() {
+        return this.contact;
+    }
+
+    /**
+     * 设置
+     *
+     * @param contact
+     */
     public void setContact(String contact) {
         this.contact = contact;
     }
 
+    /**
+     * 获取
+     *
+     * @return addressId
+     */
+    public Integer getAddressId() {
+        return this.addressId;
+    }
+
+    /**
+     * 设置
+     *
+     * @param addressId
+     */
     public void setAddressId(Integer addressId) {
         this.addressId = addressId;
     }
 
+    /**
+     * 获取
+     *
+     * @return province
+     */
+    public String getProvince() {
+        return this.province;
+    }
+
+    /**
+     * 设置
+     *
+     * @param province
+     */
     public void setProvince(String province) {
         this.province = province;
     }
 
+    /**
+     * 获取
+     *
+     * @return city
+     */
+    public String getCity() {
+        return this.city;
+    }
+
+    /**
+     * 设置
+     *
+     * @param city
+     */
     public void setCity(String city) {
         this.city = city;
     }
 
+    /**
+     * 获取
+     *
+     * @return county
+     */
+    public String getCounty() {
+        return this.county;
+    }
+
+    /**
+     * 设置
+     *
+     * @param county
+     */
     public void setCounty(String county) {
         this.county = county;
     }
 
+    /**
+     * 获取
+     *
+     * @return street
+     */
+    public String getStreet() {
+        return this.street;
+    }
+
+    /**
+     * 设置
+     *
+     * @param street
+     */
     public void setStreet(String street) {
         this.street = street;
     }
 
+    /**
+     * 获取
+     *
+     * @return detailAddress
+     */
+    public String getDetailAddress() {
+        return this.detailAddress;
+    }
+
+    /**
+     * 设置
+     *
+     * @param detailAddress
+     */
     public void setDetailAddress(String detailAddress) {
         this.detailAddress = detailAddress;
     }
 
+    /**
+     * 获取
+     *
+     * @return phone
+     */
+    public String getPhone() {
+        return this.phone;
+    }
+
+    /**
+     * 设置
+     *
+     * @param phone
+     */
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
+    /**
+     * 获取
+     *
+     * @return zipCode
+     */
+    public String getZipCode() {
+        return this.zipCode;
+    }
+
+    /**
+     * 设置
+     *
+     * @param zipCode
+     */
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
 
+    /**
+     * 获取
+     *
+     * @return isTestOrder
+     */
+    public Byte getIsTestOrder() {
+        return this.isTestOrder;
+    }
+
+    /**
+     * 设置
+     *
+     * @param isTestOrder
+     */
     public void setIsTestOrder(Byte isTestOrder) {
         this.isTestOrder = isTestOrder;
     }
 
+    /**
+     * 获取
+     *
+     * @return userId
+     */
+    public Integer getUserId() {
+        return this.userId;
+    }
+
+    /**
+     * 设置
+     *
+     * @param userId
+     */
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
+    /**
+     * 获取
+     *
+     * @return salesManId
+     */
+    public Integer getSalesManId() {
+        return this.salesManId;
+    }
+
+    /**
+     * 设置
+     *
+     * @param salesManId
+     */
     public void setSalesManId(Integer salesManId) {
         this.salesManId = salesManId;
     }
 
+    /**
+     * 获取
+     *
+     * @return orderReductionRuleId
+     */
+    public Integer getOrderReductionRuleId() {
+        return this.orderReductionRuleId;
+    }
+
+    /**
+     * 设置
+     *
+     * @param orderReductionRuleId
+     */
     public void setOrderReductionRuleId(Integer orderReductionRuleId) {
         this.orderReductionRuleId = orderReductionRuleId;
     }
 
+    /**
+     * 获取
+     *
+     * @return qrCodeFileId
+     */
+    public Long getQrCodeFileId() {
+        return this.qrCodeFileId;
+    }
+
+    /**
+     * 设置
+     *
+     * @param qrCodeFileId
+     */
     public void setQrCodeFileId(Long qrCodeFileId) {
         this.qrCodeFileId = qrCodeFileId;
     }
 
+    /**
+     * 获取
+     *
+     * @return deliveryMode
+     */
+    public Byte getDeliveryMode() {
+        return this.deliveryMode;
+    }
+
+    /**
+     * 设置
+     *
+     * @param deliveryMode
+     */
     public void setDeliveryMode(Byte deliveryMode) {
         this.deliveryMode = deliveryMode;
     }
 
+    /**
+     * 获取
+     *
+     * @return createTime
+     */
+    public Date getCreateTime() {
+        return this.createTime;
+    }
+
+    /**
+     * 设置
+     *
+     * @param createTime
+     */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
+    /**
+     * 获取
+     *
+     * @return createUserId
+     */
+    public Integer getCreateUserId() {
+        return this.createUserId;
+    }
+
+    /**
+     * 设置
+     *
+     * @param createUserId
+     */
     public void setCreateUserId(Integer createUserId) {
         this.createUserId = createUserId;
     }
 
+    /**
+     * 获取
+     *
+     * @return lastUpDateTime
+     */
+    public Date getLastUpDateTime() {
+        return this.lastUpDateTime;
+    }
+
+    /**
+     * 设置
+     *
+     * @param lastUpDateTime
+     */
     public void setLastUpDateTime(Date lastUpDateTime) {
         this.lastUpDateTime = lastUpDateTime;
     }
 
+    /**
+     * 获取
+     *
+     * @return lastUpDateUserId
+     */
+    public Integer getLastUpDateUserId() {
+        return this.lastUpDateUserId;
+    }
+
+    /**
+     * 设置
+     *
+     * @param lastUpDateUserId
+     */
     public void setLastUpDateUserId(Integer lastUpDateUserId) {
         this.lastUpDateUserId = lastUpDateUserId;
     }
 
+    /**
+     * 获取
+     *
+     * @return orderCreateTime
+     */
+    public Date getOrderCreateTime() {
+        return this.orderCreateTime;
+    }
+
+    /**
+     * 设置
+     *
+     * @param orderCreateTime
+     */
     public void setOrderCreateTime(Date orderCreateTime) {
         this.orderCreateTime = orderCreateTime;
     }
 
+    /**
+     * 获取
+     *
+     * @return orderAuditTime
+     */
+    public Date getOrderAuditTime() {
+        return this.orderAuditTime;
+    }
+
+    /**
+     * 设置
+     *
+     * @param orderAuditTime
+     */
     public void setOrderAuditTime(Date orderAuditTime) {
         this.orderAuditTime = orderAuditTime;
     }
 
+    /**
+     * 获取
+     *
+     * @return orderPrintTime
+     */
+    public Date getOrderPrintTime() {
+        return this.orderPrintTime;
+    }
+
+    /**
+     * 设置
+     *
+     * @param orderPrintTime
+     */
     public void setOrderPrintTime(Date orderPrintTime) {
         this.orderPrintTime = orderPrintTime;
     }
 
+    /**
+     * 获取
+     *
+     * @return orderDeliverTime
+     */
+    public Date getOrderDeliverTime() {
+        return this.orderDeliverTime;
+    }
+
+    /**
+     * 设置
+     *
+     * @param orderDeliverTime
+     */
     public void setOrderDeliverTime(Date orderDeliverTime) {
         this.orderDeliverTime = orderDeliverTime;
     }
 
+    /**
+     * 获取
+     *
+     * @return orderCancelTime
+     */
+    public Date getOrderCancelTime() {
+        return this.orderCancelTime;
+    }
+
+    /**
+     * 设置
+     *
+     * @param orderCancelTime
+     */
     public void setOrderCancelTime(Date orderCancelTime) {
         this.orderCancelTime = orderCancelTime;
     }
 
+    /**
+     * 获取
+     *
+     * @return orderCompleteTime
+     */
+    public Date getOrderCompleteTime() {
+        return this.orderCompleteTime;
+    }
+
+    /**
+     * 设置
+     *
+     * @param orderCompleteTime
+     */
     public void setOrderCompleteTime(Date orderCompleteTime) {
         this.orderCompleteTime = orderCompleteTime;
     }
 
+    /**
+     * 获取
+     *
+     * @return orderSyncTime
+     */
+    public Date getOrderSyncTime() {
+        return this.orderSyncTime;
+    }
+
+    /**
+     * 设置
+     *
+     * @param orderSyncTime
+     */
     public void setOrderSyncTime(Date orderSyncTime) {
         this.orderSyncTime = orderSyncTime;
     }
 
+    /**
+     * 获取
+     *
+     * @return paymentState
+     */
+    public Integer getPaymentState() {
+        return this.paymentState;
+    }
+
+    /**
+     * 设置
+     *
+     * @param paymentState
+     */
     public void setPaymentState(Integer paymentState) {
         this.paymentState = paymentState;
     }
 
+    /**
+     * 获取
+     *
+     * @return orderConfirmTime
+     */
+    public Date getOrderConfirmTime() {
+        return this.orderConfirmTime;
+    }
+
+    /**
+     * 设置
+     *
+     * @param orderConfirmTime
+     */
     public void setOrderConfirmTime(Date orderConfirmTime) {
         this.orderConfirmTime = orderConfirmTime;
     }
 
+    /**
+     * 获取
+     *
+     * @return orderBatchId
+     */
+    public Long getOrderBatchId() {
+        return this.orderBatchId;
+    }
+
+    /**
+     * 设置
+     *
+     * @param orderBatchId
+     */
     public void setOrderBatchId(Long orderBatchId) {
         this.orderBatchId = orderBatchId;
     }
 
+    /**
+     * 获取
+     *
+     * @return exactPayAmount
+     */
+    public BigDecimal getExactPayAmount() {
+        return this.exactPayAmount;
+    }
+
+    /**
+     * 设置
+     *
+     * @param exactPayAmount
+     */
     public void setExactPayAmount(BigDecimal exactPayAmount) {
         this.exactPayAmount = exactPayAmount;
     }
 
-    public void setuserName(String userName) {
+    /**
+     * 获取
+     *
+     * @return userName
+     */
+    public String getUserName() {
+        return this.userName;
+    }
+
+    /**
+     * 设置
+     *
+     * @param userName
+     */
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
+    /**
+     * 获取
+     *
+     * @return userMobileNo
+     */
+    public String getUserMobileNo() {
+        return this.userMobileNo;
+    }
+
+    /**
+     * 设置
+     *
+     * @param userMobileNo
+     */
     public void setUserMobileNo(String userMobileNo) {
         this.userMobileNo = userMobileNo;
     }
 
+    /**
+     * 获取
+     *
+     * @return userCompanyName
+     */
+    public String getUserCompanyName() {
+        return this.userCompanyName;
+    }
+
+    /**
+     * 设置
+     *
+     * @param userCompanyName
+     */
     public void setUserCompanyName(String userCompanyName) {
         this.userCompanyName = userCompanyName;
     }
 
+    /**
+     * 获取
+     *
+     * @return selfPickUpReduceAmount
+     */
+    public BigDecimal getSelfPickUpReduceAmount() {
+        return this.selfPickUpReduceAmount;
+    }
+
+    /**
+     * 设置
+     *
+     * @param selfPickUpReduceAmount
+     */
     public void setSelfPickUpReduceAmount(BigDecimal selfPickUpReduceAmount) {
         this.selfPickUpReduceAmount = selfPickUpReduceAmount;
     }
 
+    /**
+     * 获取
+     *
+     * @return orderAttachedGiftRuleId
+     */
+    public Integer getOrderAttachedGiftRuleId() {
+        return this.orderAttachedGiftRuleId;
+    }
+
+    /**
+     * 设置
+     *
+     * @param orderAttachedGiftRuleId
+     */
     public void setOrderAttachedGiftRuleId(Integer orderAttachedGiftRuleId) {
         this.orderAttachedGiftRuleId = orderAttachedGiftRuleId;
     }
 
+    /**
+     * 获取
+     *
+     * @return shopId
+     */
+    public Long getShopId() {
+        return this.shopId;
+    }
+
+    /**
+     * 设置
+     *
+     * @param shopId
+     */
     public void setShopId(Long shopId) {
         this.shopId = shopId;
     }
 
+    /**
+     * 获取
+     *
+     * @return pickupWarehouseId
+     */
+    public Integer getPickupWarehouseId() {
+        return this.pickupWarehouseId;
+    }
+
+    /**
+     * 设置
+     *
+     * @param pickupWarehouseId
+     */
     public void setPickupWarehouseId(Integer pickupWarehouseId) {
         this.pickupWarehouseId = pickupWarehouseId;
     }
 
+    /**
+     * 获取
+     *
+     * @return useAwardBonusAmount
+     */
+    public BigDecimal getUseAwardBonusAmount() {
+        return this.useAwardBonusAmount;
+    }
+
+    /**
+     * 设置
+     *
+     * @param useAwardBonusAmount
+     */
     public void setUseAwardBonusAmount(BigDecimal useAwardBonusAmount) {
         this.useAwardBonusAmount = useAwardBonusAmount;
     }
 
+    /**
+     * 获取
+     *
+     * @return userEwardBonusAmount
+     */
+    public BigDecimal getUserEwardBonusAmount() {
+        return this.userEwardBonusAmount;
+    }
+
+    /**
+     * 设置
+     *
+     * @param userEwardBonusAmount
+     */
     public void setUserEwardBonusAmount(BigDecimal userEwardBonusAmount) {
         this.userEwardBonusAmount = userEwardBonusAmount;
     }
 
+    /**
+     * 获取
+     *
+     * @return useCouponCodeAmount
+     */
+    public BigDecimal getUseCouponCodeAmount() {
+        return this.useCouponCodeAmount;
+    }
+
+    /**
+     * 设置
+     *
+     * @param useCouponCodeAmount
+     */
     public void setUseCouponCodeAmount(BigDecimal useCouponCodeAmount) {
         this.useCouponCodeAmount = useCouponCodeAmount;
     }
 
+    /**
+     * 获取
+     *
+     * @return lastModifyTime
+     */
+    public Date getLastModifyTime() {
+        return this.lastModifyTime;
+    }
+
+    /**
+     * 设置
+     *
+     * @param lastModifyTime
+     */
     public void setLastModifyTime(Date lastModifyTime) {
         this.lastModifyTime = lastModifyTime;
     }
 
+    /**
+     * 获取
+     *
+     * @return orderItemCount
+     */
+    public Integer getOrderItemCount() {
+        return this.orderItemCount;
+    }
+
+    /**
+     * 设置
+     *
+     * @param orderItemCount
+     */
     public void setOrderItemCount(Integer orderItemCount) {
         this.orderItemCount = orderItemCount;
     }
 
+    /**
+     * 获取
+     *
+     * @return salesManDeptId
+     */
+    public Integer getSalesManDeptId() {
+        return this.salesManDeptId;
+    }
+
+    /**
+     * 设置
+     *
+     * @param salesManDeptId
+     */
     public void setSalesManDeptId(Integer salesManDeptId) {
         this.salesManDeptId = salesManDeptId;
     }
 
+    /**
+     * 获取
+     *
+     * @return onLineSalesManId
+     */
+    public Integer getOnLineSalesManId() {
+        return this.onLineSalesManId;
+    }
+
+    /**
+     * 设置
+     *
+     * @param onLineSalesManId
+     */
     public void setOnLineSalesManId(Integer onLineSalesManId) {
         this.onLineSalesManId = onLineSalesManId;
     }
 
+    /**
+     * 获取
+     *
+     * @return onlineSalesManDeptId
+     */
+    public Integer getOnlineSalesManDeptId() {
+        return this.onlineSalesManDeptId;
+    }
+
+    /**
+     * 设置
+     *
+     * @param onlineSalesManDeptId
+     */
     public void setOnlineSalesManDeptId(Integer onlineSalesManDeptId) {
         this.onlineSalesManDeptId = onlineSalesManDeptId;
     }
 
+    /**
+     * 获取
+     *
+     * @return areaId
+     */
+    public Long getAreaId() {
+        return this.areaId;
+    }
+
+    /**
+     * 设置
+     *
+     * @param areaId
+     */
     public void setAreaId(Long areaId) {
         this.areaId = areaId;
-    }
-
-    public Long getId() {
-
-        return  id;
-    }
-
-    public Integer getCityId() {
-        return cityId;
-    }
-
-    public String getOrderNo() {
-        return orderNo;
-    }
-
-    public String getVerison() {
-        return verison;
-    }
-
-    public Byte getOrderType() {
-        return orderType;
-    }
-
-    public Byte getOrderClassify() {
-        return orderClassify;
-    }
-
-    public Short getState() {
-        return state;
-    }
-
-    public Short getStateUser() {
-        return stateUser;
-    }
-
-    public BigDecimal getGiveCoupOnAmount() {
-        return giveCoupOnAmount;
-    }
-
-    public String getSysRemark() {
-        return sysRemark;
-    }
-
-    public String getRemarkUser() {
-        return remarkUser;
-    }
-
-    public String getUserCancelReason() {
-        return userCancelReason;
-    }
-
-    public String getRemarkService() {
-        return remarkService;
-    }
-
-    public Byte getPayType() {
-        return payType;
-    }
-
-    public BigDecimal getGiveWineScore() {
-        return giveWineScore;
-    }
-
-    public BigDecimal getCostWineScore() {
-        return costWineScore;
-    }
-
-    public BigDecimal getOrderAmount() {
-        return orderAmount;
-    }
-
-    public BigDecimal getPayAbleAmount() {
-        return payAbleAmount;
-    }
-
-    public BigDecimal getReduceAmount() {
-        return reduceAmount;
-    }
-
-    public BigDecimal getUseCoupOnAmount() {
-        return useCoupOnAmount;
-    }
-
-    public BigDecimal getGiveBonusAmount() {
-        return giveBonusAmount;
-    }
-
-    public BigDecimal getUseBonusAmount() {
-        return useBonusAmount;
-    }
-
-    public BigDecimal getProductReduceAmount() {
-        return productReduceAmount;
-    }
-
-    public Byte getHasPayment() {
-        return hasPayment;
-    }
-
-    public String getContact() {
-        return contact;
-    }
-
-    public Integer getAddressId() {
-        return addressId;
-    }
-
-    public String getProvince() {
-        return province;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getCounty() {
-        return county;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public String getDetailAddress() {
-        return detailAddress;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getZipCode() {
-        return zipCode;
-    }
-
-    public Byte getIsTestOrder() {
-        return isTestOrder;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public Integer getSalesManId() {
-        return salesManId;
-    }
-
-    public Integer getOrderReductionRuleId() {
-        return orderReductionRuleId;
-    }
-
-    public Long getQrCodeFileId() {
-        return qrCodeFileId;
-    }
-
-    public Byte getDeliveryMode() {
-        return deliveryMode;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public Integer getCreateUserId() {
-        return createUserId;
-    }
-
-    public Date getLastUpDateTime() {
-        return lastUpDateTime;
-    }
-
-    public Integer getLastUpDateUserId() {
-        return lastUpDateUserId;
-    }
-
-    public Date getOrderCreateTime() {
-        return orderCreateTime;
-    }
-
-    public Date getOrderAuditTime() {
-        return orderAuditTime;
-    }
-
-    public Date getOrderPrintTime() {
-        return orderPrintTime;
-    }
-
-    public Date getOrderDeliverTime() {
-        return orderDeliverTime;
-    }
-
-    public Date getOrderCancelTime() {
-        return orderCancelTime;
-    }
-
-    public Date getOrderCompleteTime() {
-        return orderCompleteTime;
-    }
-
-    public Date getOrderSyncTime() {
-        return orderSyncTime;
-    }
-
-    public Integer getPaymentState() {
-        return paymentState;
-    }
-
-    public Date getOrderConfirmTime() {
-        return orderConfirmTime;
-    }
-
-    public Long getOrderBatchId() {
-        return orderBatchId;
-    }
-
-    public BigDecimal getExactPayAmount() {
-        return exactPayAmount;
-    }
-
-    public String getuserName() {
-        return userName;
-    }
-
-    public String getUserMobileNo() {
-        return userMobileNo;
-    }
-
-    public String getUserCompanyName() {
-        return userCompanyName;
-    }
-
-    public BigDecimal getSelfPickUpReduceAmount() {
-        return selfPickUpReduceAmount;
-    }
-
-    public Integer getOrderAttachedGiftRuleId() {
-        return orderAttachedGiftRuleId;
-    }
-
-    public Long getShopId() {
-        return shopId;
-    }
-
-    public Integer getPickupWarehouseId() {
-        return pickupWarehouseId;
-    }
-
-    public BigDecimal getUseAwardBonusAmount() {
-        return useAwardBonusAmount;
-    }
-
-    public BigDecimal getUserEwardBonusAmount() {
-        return userEwardBonusAmount;
-    }
-
-    public BigDecimal getUseCouponCodeAmount() {
-        return useCouponCodeAmount;
-    }
-
-    public Date getLastModifyTime() {
-        return lastModifyTime;
-    }
-
-    public Integer getOrderItemCount() {
-        return orderItemCount;
-    }
-
-    public Integer getSalesManDeptId() {
-        return salesManDeptId;
-    }
-
-    public Integer getOnLineSalesManId() {
-        return onLineSalesManId;
-    }
-
-    public Integer getOnlineSalesManDeptId() {
-        return onlineSalesManDeptId;
-    }
-
-    public Long getAreaId() {
-        return areaId;
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "idNumber='" + idNumber + '\'' +
-                ", id=" + id +
-                ", cityId=" + cityId +
-                ", orderNo='" + orderNo + '\'' +
-                ", verison='" + verison + '\'' +
-                ", orderType=" + orderType +
-                ", orderClassify=" + orderClassify +
-                ", state=" + state +
-                ", stateUser=" + stateUser +
-                ", giveCoupOnAmount=" + giveCoupOnAmount +
-                ", sysRemark='" + sysRemark + '\'' +
-                ", remarkUser='" + remarkUser + '\'' +
-                ", userCancelReason='" + userCancelReason + '\'' +
-                ", remarkService='" + remarkService + '\'' +
-                ", payType=" + payType +
-                ", giveWineScore=" + giveWineScore +
-                ", costWineScore=" + costWineScore +
-                ", orderAmount=" + orderAmount +
-                ", payAbleAmount=" + payAbleAmount +
-                ", reduceAmount=" + reduceAmount +
-                ", useCoupOnAmount=" + useCoupOnAmount +
-                ", giveBonusAmount=" + giveBonusAmount +
-                ", useBonusAmount=" + useBonusAmount +
-                ", productReduceAmount=" + productReduceAmount +
-                ", hasPayment=" + hasPayment +
-                ", contact='" + contact + '\'' +
-                ", addressId=" + addressId +
-                ", province='" + province + '\'' +
-                ", city='" + city + '\'' +
-                ", county='" + county + '\'' +
-                ", street='" + street + '\'' +
-                ", detailAddress='" + detailAddress + '\'' +
-                ", phone='" + phone + '\'' +
-                ", zipCode='" + zipCode + '\'' +
-                ", isTestOrder=" + isTestOrder +
-                ", userId=" + userId +
-                ", salesManId=" + salesManId +
-                ", orderReductionRuleId=" + orderReductionRuleId +
-                ", qrCodeFileId=" + qrCodeFileId +
-                ", deliveryMode=" + deliveryMode +
-                ", createTime=" + createTime +
-                ", createUserId=" + createUserId +
-                ", lastUpDateTime=" + lastUpDateTime +
-                ", lastUpDateUserId=" + lastUpDateUserId +
-                ", orderCreateTime=" + orderCreateTime +
-                ", orderAuditTime=" + orderAuditTime +
-                ", orderPrintTime=" + orderPrintTime +
-                ", orderDeliverTime=" + orderDeliverTime +
-                ", orderCancelTime=" + orderCancelTime +
-                ", orderCompleteTime=" + orderCompleteTime +
-                ", orderSyncTime=" + orderSyncTime +
-                ", paymentState=" + paymentState +
-                ", orderConfirmTime=" + orderConfirmTime +
-                ", orderBatchId=" + orderBatchId +
-                ", exactPayAmount=" + exactPayAmount +
-                ", userName='" + userName + '\'' +
-                ", userMobileNo='" + userMobileNo + '\'' +
-                ", userCompanyName='" + userCompanyName + '\'' +
-                ", selfPickUpReduceAmount=" + selfPickUpReduceAmount +
-                ", orderAttachedGiftRuleId=" + orderAttachedGiftRuleId +
-                ", shopId=" + shopId +
-                ", pickupWarehouseId=" + pickupWarehouseId +
-                ", useAwardBonusAmount=" + useAwardBonusAmount +
-                ", userEwardBonusAmount=" + userEwardBonusAmount +
-                ", useCouponCodeAmount=" + useCouponCodeAmount +
-                ", lastModifyTime=" + lastModifyTime +
-                ", orderItemCount=" + orderItemCount +
-                ", salesManDeptId=" + salesManDeptId +
-                ", onLineSalesManId=" + onLineSalesManId +
-                ", onlineSalesManDeptId=" + onlineSalesManDeptId +
-                ", areaId=" + areaId +
-                '}';
     }
 }

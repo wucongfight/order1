@@ -15,8 +15,6 @@ public class OrderItem {
 
     private List<OrderItemProduct> orderItemProductList;
 
-    private String orderItemId;
-
     private Long id;
 
     private Long orderId;
@@ -41,17 +39,10 @@ public class OrderItem {
         return this.orderId.toString();
     }
 
-    public void setOrderItemId(String orderItemId) {
-        this.orderItemId = orderItemId;
-    }
-
     public void setId(Long id) {
         this.id = id;
     }
 
-    public Long getOrderId() {
-        return orderId;
-    }
 
     public void setOrderId(Long orderId) {
         this.orderId = orderId;
@@ -129,21 +120,4 @@ public class OrderItem {
         this.orderItemProductList = orderItemProductList;
     }
 
-    @Override
-    public String toString() {
-        return "OrderItem{" +
-                "orderItemAmountList=" + orderItemAmountList +
-                ", orderItemPriceList=" + orderItemPriceList +
-                ", orderItemProductList=" + orderItemProductList +
-                ", orderItemId='" + orderItemId + '\'' +
-                ", id=" + id +
-                ", orderId=" + orderId +
-                ", remark='" + remark + '\'' +
-                ", sourceType=" + sourceType +
-                ", sourceId='" + sourceId + '\'' +
-                ", createTime=" + createTime +
-                ", productType=" + productType +
-                ", lastModifyTime=" + lastModifyTime +
-                '}';
-    }
 }
